@@ -1,14 +1,16 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 
 namespace Repository.Configurations
 {
-    public class UserDataConfiguration : IEntityTypeConfiguration<User>
+    public class UserDataConfiguration : IEntityTypeConfiguration<UserData>
     {
+
+        public void Configure(EntityTypeBuilder<UserData> builder)
+        {
+
+        }
     }
 }

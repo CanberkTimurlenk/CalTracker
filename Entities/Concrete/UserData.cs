@@ -1,4 +1,5 @@
 ﻿using Entities.Abstract;
+using Entities.Enums;
 
 namespace Entities.Concrete
 {
@@ -17,7 +18,7 @@ namespace Entities.Concrete
         public int UserId { get; set; }
         public User User { get; set; }
 
-        public ICollection<UserMeals> UserMeals { get; set; }
+        
 
 
     }

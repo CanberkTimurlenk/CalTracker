@@ -11,7 +11,6 @@ namespace Entities.Concrete
     {
         public string Name { get; set; }
         public double Coefficient { get; set; }
-
-        public List<User> Users { get; set; }
+        public ICollection<User> Users { get; set; }
     }
 }
