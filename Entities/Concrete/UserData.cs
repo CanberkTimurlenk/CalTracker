@@ -1,6 +1,8 @@
-﻿namespace Entities.Concrete
+﻿using Entities.Abstract;
+
+namespace Entities.Concrete
 {
-    public class UserData
+    public class UserData : BaseEntity, IEntity
     {
         public double BodyMassIndex { get; set; }
         public BmiStatus BmiStatus { get; set; }
