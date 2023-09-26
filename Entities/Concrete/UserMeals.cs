@@ -9,8 +9,6 @@ namespace Entities.Concrete
 {
     public class UserMeals : BaseEntity, IEntity
     {
-        public int UserMealsID { get; set; }
-
         public DateTime MealDate { get; set; } = DateTime.Now;
         public MealTimes MealTimes { get; set; }
 

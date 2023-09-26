@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.Interface
+namespace Repository.Abstract.Base
 {
     public interface IBaseRepository<T> where T : BaseEntity, IEntity, new()
     {
@@ -16,7 +16,7 @@ namespace Repository.Interface
         void Delete(T entity);
 
         T GetById(int id);
-        List<T> GetAll(Expression<Func<T,bool>> expression);
+        List<T> GetAll(Expression<Func<T, bool>> filter = null);
 
     }
 }

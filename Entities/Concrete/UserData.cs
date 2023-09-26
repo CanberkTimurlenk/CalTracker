@@ -14,7 +14,10 @@ namespace Entities.Concrete
         public double WaterAmount { get; set; }
         public DateTime Date { get; set; }
 
-        public List<UserMeals> UserMeals { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
+
+        public ICollection<UserMeals> UserMeals { get; set; }
 
 
     }
