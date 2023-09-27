@@ -10,7 +10,7 @@ namespace Entities.Concrete
         public string Password { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }
-        public UserStatus UserStatus { get; set; }
+        public UserStatus UserStatus { get; set; } 
 
         public int AimId { get; set; }
         public Aim Aim { get; set; }
