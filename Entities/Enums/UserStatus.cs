@@ -1,4 +1,4 @@
-﻿namespace Entities.Concrete
+﻿namespace Entities.Enums
 {
     public enum UserStatus
     {
