@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             label6 = new Label();
             label5 = new Label();
             clearButton = new Button();
@@ -39,17 +38,17 @@
             label1 = new Label();
             label3 = new Label();
             txtPassword = new TextBox();
-            bunifuFormControlBox1 = new Bunifu.UI.WinForms.BunifuFormControlBox();
+            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Cursor = Cursors.Hand;
-            label6.ForeColor = Color.FromArgb(116, 78, 165);
-            label6.Location = new Point(95, 426);
+            label6.ForeColor = Color.FromArgb(165, 177, 194);
+            label6.Location = new Point(99, 425);
             label6.Name = "label6";
-            label6.Size = new Size(132, 23);
+            label6.Size = new Size(101, 17);
             label6.TabIndex = 19;
             label6.Text = "Create Account";
             label6.Click += label6_Click;
@@ -57,9 +56,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(67, 390);
+            label5.Location = new Point(76, 386);
             label5.Name = "label5";
-            label5.Size = new Size(189, 23);
+            label5.Size = new Size(147, 17);
             label5.TabIndex = 20;
             label5.Text = "Dont Have an Account";
             // 
@@ -69,7 +68,7 @@
             clearButton.Cursor = Cursors.Hand;
             clearButton.FlatAppearance.BorderSize = 2;
             clearButton.FlatStyle = FlatStyle.Flat;
-            clearButton.ForeColor = Color.FromArgb(116, 86, 174);
+            clearButton.ForeColor = Color.FromArgb(32, 191, 107);
             clearButton.Location = new Point(38, 331);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(218, 34);
@@ -80,7 +79,7 @@
             // 
             // loginButton
             // 
-            loginButton.BackColor = Color.FromArgb(116, 86, 174);
+            loginButton.BackColor = Color.FromArgb(32, 191, 107);
             loginButton.Cursor = Cursors.Hand;
             loginButton.FlatAppearance.BorderSize = 0;
             loginButton.FlatStyle = FlatStyle.Flat;
@@ -98,9 +97,9 @@
             checkboxShowPass.AutoSize = true;
             checkboxShowPass.Cursor = Cursors.Hand;
             checkboxShowPass.FlatStyle = FlatStyle.Flat;
-            checkboxShowPass.Location = new Point(105, 231);
+            checkboxShowPass.Location = new Point(137, 232);
             checkboxShowPass.Name = "checkboxShowPass";
-            checkboxShowPass.Size = new Size(151, 27);
+            checkboxShowPass.Size = new Size(119, 21);
             checkboxShowPass.TabIndex = 2;
             checkboxShowPass.Text = "Show Password";
             checkboxShowPass.UseVisualStyleBackColor = true;
@@ -111,7 +110,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(35, 148);
             label2.Name = "label2";
-            label2.Size = new Size(84, 23);
+            label2.Size = new Size(66, 17);
             label2.TabIndex = 8;
             label2.Text = "Password";
             // 
@@ -131,7 +130,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(35, 72);
             label1.Name = "label1";
-            label1.Size = new Size(89, 23);
+            label1.Size = new Size(69, 17);
             label1.TabIndex = 9;
             label1.Text = "Username";
             // 
@@ -139,10 +138,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("MS UI Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(116, 86, 174);
+            label3.ForeColor = Color.FromArgb(32, 191, 107);
             label3.Location = new Point(33, 19);
             label3.Name = "label3";
-            label3.Size = new Size(194, 34);
+            label3.Size = new Size(155, 27);
             label3.TabIndex = 6;
             label3.Text = "Get Started";
             // 
@@ -158,76 +157,33 @@
             txtPassword.Size = new Size(218, 28);
             txtPassword.TabIndex = 1;
             // 
-            // bunifuFormControlBox1
+            // kryptonButton1
             // 
-            bunifuFormControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            bunifuFormControlBox1.BunifuFormDrag = null;
-            bunifuFormControlBox1.CloseBoxOptions.BackColor = Color.Transparent;
-            bunifuFormControlBox1.CloseBoxOptions.BorderRadius = 0;
-            bunifuFormControlBox1.CloseBoxOptions.Enabled = true;
-            bunifuFormControlBox1.CloseBoxOptions.EnableDefaultAction = true;
-            bunifuFormControlBox1.CloseBoxOptions.HoverColor = Color.FromArgb(232, 17, 35);
-            bunifuFormControlBox1.CloseBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.CloseBoxOptions.Icon");
-            bunifuFormControlBox1.CloseBoxOptions.IconAlt = null;
-            bunifuFormControlBox1.CloseBoxOptions.IconColor = Color.Black;
-            bunifuFormControlBox1.CloseBoxOptions.IconHoverColor = Color.White;
-            bunifuFormControlBox1.CloseBoxOptions.IconPressedColor = Color.White;
-            bunifuFormControlBox1.CloseBoxOptions.IconSize = new Size(18, 18);
-            bunifuFormControlBox1.CloseBoxOptions.PressedColor = Color.FromArgb(232, 17, 35);
-            bunifuFormControlBox1.HelpBox = false;
-            bunifuFormControlBox1.HelpBoxOptions.BackColor = Color.Transparent;
-            bunifuFormControlBox1.HelpBoxOptions.BorderRadius = 0;
-            bunifuFormControlBox1.HelpBoxOptions.Enabled = true;
-            bunifuFormControlBox1.HelpBoxOptions.EnableDefaultAction = true;
-            bunifuFormControlBox1.HelpBoxOptions.HoverColor = Color.LightGray;
-            bunifuFormControlBox1.HelpBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.HelpBoxOptions.Icon");
-            bunifuFormControlBox1.HelpBoxOptions.IconAlt = null;
-            bunifuFormControlBox1.HelpBoxOptions.IconColor = Color.Black;
-            bunifuFormControlBox1.HelpBoxOptions.IconHoverColor = Color.Black;
-            bunifuFormControlBox1.HelpBoxOptions.IconPressedColor = Color.Black;
-            bunifuFormControlBox1.HelpBoxOptions.IconSize = new Size(22, 22);
-            bunifuFormControlBox1.HelpBoxOptions.PressedColor = Color.Silver;
-            bunifuFormControlBox1.Location = new Point(87, 99);
-            bunifuFormControlBox1.Margin = new Padding(4, 4, 4, 4);
-            bunifuFormControlBox1.MaximizeBox = true;
-            bunifuFormControlBox1.MaximizeBoxOptions.BackColor = Color.Transparent;
-            bunifuFormControlBox1.MaximizeBoxOptions.BorderRadius = 0;
-            bunifuFormControlBox1.MaximizeBoxOptions.Enabled = true;
-            bunifuFormControlBox1.MaximizeBoxOptions.EnableDefaultAction = true;
-            bunifuFormControlBox1.MaximizeBoxOptions.HoverColor = Color.LightGray;
-            bunifuFormControlBox1.MaximizeBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.MaximizeBoxOptions.Icon");
-            bunifuFormControlBox1.MaximizeBoxOptions.IconAlt = (Image)resources.GetObject("bunifuFormControlBox1.MaximizeBoxOptions.IconAlt");
-            bunifuFormControlBox1.MaximizeBoxOptions.IconColor = Color.Black;
-            bunifuFormControlBox1.MaximizeBoxOptions.IconHoverColor = Color.Black;
-            bunifuFormControlBox1.MaximizeBoxOptions.IconPressedColor = Color.Black;
-            bunifuFormControlBox1.MaximizeBoxOptions.IconSize = new Size(16, 16);
-            bunifuFormControlBox1.MaximizeBoxOptions.PressedColor = Color.Silver;
-            bunifuFormControlBox1.MinimizeBox = true;
-            bunifuFormControlBox1.MinimizeBoxOptions.BackColor = Color.Transparent;
-            bunifuFormControlBox1.MinimizeBoxOptions.BorderRadius = 0;
-            bunifuFormControlBox1.MinimizeBoxOptions.Enabled = true;
-            bunifuFormControlBox1.MinimizeBoxOptions.EnableDefaultAction = true;
-            bunifuFormControlBox1.MinimizeBoxOptions.HoverColor = Color.LightGray;
-            bunifuFormControlBox1.MinimizeBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.MinimizeBoxOptions.Icon");
-            bunifuFormControlBox1.MinimizeBoxOptions.IconAlt = null;
-            bunifuFormControlBox1.MinimizeBoxOptions.IconColor = Color.Black;
-            bunifuFormControlBox1.MinimizeBoxOptions.IconHoverColor = Color.Black;
-            bunifuFormControlBox1.MinimizeBoxOptions.IconPressedColor = Color.Black;
-            bunifuFormControlBox1.MinimizeBoxOptions.IconSize = new Size(14, 14);
-            bunifuFormControlBox1.MinimizeBoxOptions.PressedColor = Color.Silver;
-            bunifuFormControlBox1.Name = "bunifuFormControlBox1";
-            bunifuFormControlBox1.ShowDesignBorders = false;
-            bunifuFormControlBox1.Size = new Size(182, 49);
-            bunifuFormControlBox1.TabIndex = 21;
+            kryptonButton1.ButtonStyle = Krypton.Toolkit.ButtonStyle.LowProfile;
+            kryptonButton1.CornerRoundingRadius = -1F;
+            kryptonButton1.Location = new Point(249, 12);
+            kryptonButton1.Name = "kryptonButton1";
+            kryptonButton1.Size = new Size(28, 25);
+            kryptonButton1.StatePressed.Back.Color1 = Color.Red;
+            kryptonButton1.StatePressed.Back.Color2 = Color.Red;
+            kryptonButton1.StateTracking.Back.Color1 = Color.FromArgb(255, 128, 128);
+            kryptonButton1.StateTracking.Back.Color2 = Color.FromArgb(255, 128, 128);
+            kryptonButton1.StateTracking.Border.Color1 = Color.FromArgb(255, 128, 128);
+            kryptonButton1.StateTracking.Border.Color2 = Color.FromArgb(255, 128, 128);
+            kryptonButton1.StateTracking.Border.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Local;
+            kryptonButton1.StateTracking.Border.ColorAngle = 1F;
+            kryptonButton1.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonButton1.TabIndex = 21;
+            kryptonButton1.Values.Text = "X";
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(289, 477);
             ControlBox = false;
-            Controls.Add(bunifuFormControlBox1);
+            Controls.Add(kryptonButton1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(clearButton);
@@ -262,6 +218,6 @@
         private Label label1;
         private Label label3;
         private TextBox txtPassword;
-        private Bunifu.UI.WinForms.BunifuFormControlBox bunifuFormControlBox1;
+        private Krypton.Toolkit.KryptonButton kryptonButton1;
     }
 }
