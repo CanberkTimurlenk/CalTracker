@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /ConsoleUI/ConsoleUI.csproj
+/Repository/Context/KaloriTakipDbContext.cs
+/ConsoleUI/Program.cs
