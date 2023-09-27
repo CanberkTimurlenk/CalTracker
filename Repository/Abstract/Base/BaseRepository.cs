@@ -9,46 +9,49 @@ namespace Repository.Abstract.Base
 
         public void Create(T entity)
         {
-            using (KaloriTakipDbContext context = new KaloriTakipDbContext())
-            {
-                context.Add(entity);
-                context.SaveChanges();
-            }
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            context.Set<T>().Add(entity);
+            context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            using (KaloriTakipDbContext context = new KaloriTakipDbContext())
-            {
-                context.Remove(entity);
-                context.SaveChanges();
-            }
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            context.Set<T>().Remove(entity);
+            context.SaveChanges();
         }
 
-        public List<T> GetAll(Expression<Func<T, bool>> filter = null)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
         {
-            using (KaloriTakipDbContext context = new KaloriTakipDbContext())
-            {
-                return context.Set<T>().Where(filter).ToList();
-            }
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            return context.Set<T>().Where(filter).ToList();
+
         }
 
         public T GetById(int id)
         {
-            using (KaloriTakipDbContext context = new KaloriTakipDbContext())
-            {
-                return context.Set<T>().Find(id);
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            return context.Set<T>().Find(id);
 
-            }
+        }
+
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            return context.Set<T>().FirstOrDefault(filter);
         }
 
         public void Update(T entity)
         {
-            using (KaloriTakipDbContext context = new KaloriTakipDbContext())
-            {
-                context.Update(entity);
-                context.SaveChanges();
-            }
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            context.Set<T>().Update(entity);
+            context.SaveChanges();
+        }
+
+        public bool Any(Expression<Func<T, bool>> expression)
+        {
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            return context.Set<T>().Any();
         }
     }
 }

@@ -16,7 +16,8 @@ namespace Repository.Abstract.Base
         void Delete(T entity);
 
         T GetById(int id);
-        List<T> GetAll(Expression<Func<T, bool>> filter = null);
-
+        T Get(Expression<Func<T, bool>> filter);
+        IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null);
+        bool Any(Expression<Func<T, bool>> expression);
     }
 }
