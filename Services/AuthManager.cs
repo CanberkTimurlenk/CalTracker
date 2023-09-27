@@ -19,7 +19,7 @@ namespace Services
 
         public User Register(UserForRegisterDto userForRegister)
         {
-            _userService.Add(user);
+            //_userService.Add(user);
 
             return null;
         }

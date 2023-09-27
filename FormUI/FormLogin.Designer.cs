@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             label6 = new Label();
             label5 = new Label();
             clearButton = new Button();
@@ -38,6 +39,7 @@
             label1 = new Label();
             label3 = new Label();
             txtPassword = new TextBox();
+            bunifuFormControlBox1 = new Bunifu.UI.WinForms.BunifuFormControlBox();
             SuspendLayout();
             // 
             // label6
@@ -156,6 +158,68 @@
             txtPassword.Size = new Size(218, 28);
             txtPassword.TabIndex = 1;
             // 
+            // bunifuFormControlBox1
+            // 
+            bunifuFormControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            bunifuFormControlBox1.BunifuFormDrag = null;
+            bunifuFormControlBox1.CloseBoxOptions.BackColor = Color.Transparent;
+            bunifuFormControlBox1.CloseBoxOptions.BorderRadius = 0;
+            bunifuFormControlBox1.CloseBoxOptions.Enabled = true;
+            bunifuFormControlBox1.CloseBoxOptions.EnableDefaultAction = true;
+            bunifuFormControlBox1.CloseBoxOptions.HoverColor = Color.FromArgb(232, 17, 35);
+            bunifuFormControlBox1.CloseBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.CloseBoxOptions.Icon");
+            bunifuFormControlBox1.CloseBoxOptions.IconAlt = null;
+            bunifuFormControlBox1.CloseBoxOptions.IconColor = Color.Black;
+            bunifuFormControlBox1.CloseBoxOptions.IconHoverColor = Color.White;
+            bunifuFormControlBox1.CloseBoxOptions.IconPressedColor = Color.White;
+            bunifuFormControlBox1.CloseBoxOptions.IconSize = new Size(18, 18);
+            bunifuFormControlBox1.CloseBoxOptions.PressedColor = Color.FromArgb(232, 17, 35);
+            bunifuFormControlBox1.HelpBox = false;
+            bunifuFormControlBox1.HelpBoxOptions.BackColor = Color.Transparent;
+            bunifuFormControlBox1.HelpBoxOptions.BorderRadius = 0;
+            bunifuFormControlBox1.HelpBoxOptions.Enabled = true;
+            bunifuFormControlBox1.HelpBoxOptions.EnableDefaultAction = true;
+            bunifuFormControlBox1.HelpBoxOptions.HoverColor = Color.LightGray;
+            bunifuFormControlBox1.HelpBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.HelpBoxOptions.Icon");
+            bunifuFormControlBox1.HelpBoxOptions.IconAlt = null;
+            bunifuFormControlBox1.HelpBoxOptions.IconColor = Color.Black;
+            bunifuFormControlBox1.HelpBoxOptions.IconHoverColor = Color.Black;
+            bunifuFormControlBox1.HelpBoxOptions.IconPressedColor = Color.Black;
+            bunifuFormControlBox1.HelpBoxOptions.IconSize = new Size(22, 22);
+            bunifuFormControlBox1.HelpBoxOptions.PressedColor = Color.Silver;
+            bunifuFormControlBox1.Location = new Point(87, 99);
+            bunifuFormControlBox1.Margin = new Padding(4, 4, 4, 4);
+            bunifuFormControlBox1.MaximizeBox = true;
+            bunifuFormControlBox1.MaximizeBoxOptions.BackColor = Color.Transparent;
+            bunifuFormControlBox1.MaximizeBoxOptions.BorderRadius = 0;
+            bunifuFormControlBox1.MaximizeBoxOptions.Enabled = true;
+            bunifuFormControlBox1.MaximizeBoxOptions.EnableDefaultAction = true;
+            bunifuFormControlBox1.MaximizeBoxOptions.HoverColor = Color.LightGray;
+            bunifuFormControlBox1.MaximizeBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.MaximizeBoxOptions.Icon");
+            bunifuFormControlBox1.MaximizeBoxOptions.IconAlt = (Image)resources.GetObject("bunifuFormControlBox1.MaximizeBoxOptions.IconAlt");
+            bunifuFormControlBox1.MaximizeBoxOptions.IconColor = Color.Black;
+            bunifuFormControlBox1.MaximizeBoxOptions.IconHoverColor = Color.Black;
+            bunifuFormControlBox1.MaximizeBoxOptions.IconPressedColor = Color.Black;
+            bunifuFormControlBox1.MaximizeBoxOptions.IconSize = new Size(16, 16);
+            bunifuFormControlBox1.MaximizeBoxOptions.PressedColor = Color.Silver;
+            bunifuFormControlBox1.MinimizeBox = true;
+            bunifuFormControlBox1.MinimizeBoxOptions.BackColor = Color.Transparent;
+            bunifuFormControlBox1.MinimizeBoxOptions.BorderRadius = 0;
+            bunifuFormControlBox1.MinimizeBoxOptions.Enabled = true;
+            bunifuFormControlBox1.MinimizeBoxOptions.EnableDefaultAction = true;
+            bunifuFormControlBox1.MinimizeBoxOptions.HoverColor = Color.LightGray;
+            bunifuFormControlBox1.MinimizeBoxOptions.Icon = (Image)resources.GetObject("bunifuFormControlBox1.MinimizeBoxOptions.Icon");
+            bunifuFormControlBox1.MinimizeBoxOptions.IconAlt = null;
+            bunifuFormControlBox1.MinimizeBoxOptions.IconColor = Color.Black;
+            bunifuFormControlBox1.MinimizeBoxOptions.IconHoverColor = Color.Black;
+            bunifuFormControlBox1.MinimizeBoxOptions.IconPressedColor = Color.Black;
+            bunifuFormControlBox1.MinimizeBoxOptions.IconSize = new Size(14, 14);
+            bunifuFormControlBox1.MinimizeBoxOptions.PressedColor = Color.Silver;
+            bunifuFormControlBox1.Name = "bunifuFormControlBox1";
+            bunifuFormControlBox1.ShowDesignBorders = false;
+            bunifuFormControlBox1.Size = new Size(182, 49);
+            bunifuFormControlBox1.TabIndex = 21;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -163,6 +227,7 @@
             BackColor = Color.White;
             ClientSize = new Size(289, 477);
             ControlBox = false;
+            Controls.Add(bunifuFormControlBox1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(clearButton);
@@ -197,5 +262,6 @@
         private Label label1;
         private Label label3;
         private TextBox txtPassword;
+        private Bunifu.UI.WinForms.BunifuFormControlBox bunifuFormControlBox1;
     }
 }
