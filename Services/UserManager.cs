@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.Enums;
 using Entities.Exceptions;
 using Repository.Abstract;
 using Repository.Concrete.EFCore;
@@ -14,7 +15,7 @@ namespace Services
             if (CheckIfUserExists(user.Email))
                 throw new UserAlreadyExistsException(user.Email);
 
-            
+
             _userRepository.Create(user);
 
         }
@@ -34,6 +35,17 @@ namespace Services
         private bool CheckIfUserExists(string email)
 
             => _userRepository.Any(u => u.Email.Equals(email));
+
+
+        public void UpdateStatus(int userId, UserStatus status)
+        {
+
+            var user = _userRepository.GetById(userId);
+
+            user.UserStatus = status;
+
+            _userRepository.Update(user);
+        }
 
     }
 }
