@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Entities.Concrete;
+using Entities.Exceptions;
+using Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +17,7 @@ namespace FormUI
 {
     public partial class FormLogin : Form
     {
+        private readonly IAuthService _authService = new AuthManager();
         public FormLogin()
         {
             InitializeComponent();
@@ -27,60 +33,62 @@ namespace FormUI
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            txtUsername.Focus();
+            txt_Username.Text = "";
+            txt_Password.Text = "";
+            txt_Username.Focus();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            /*
-            if (conn != null && conn.State == ConnectionState.Open)
+            var userToLogin = new Entities.Dtos.UserForLoginDto
             {
-                conn.Close();
-            }
-            conn.Open();
-            string login = ("SELECT * FROM csharp_user WHERE username =  '" + txtUsername.Text + "' and password = '" + txtPassword.Text + "' ");
-            cmd = new NpgsqlCommand(login, conn);
-            NpgsqlDataReader dr = cmd.ExecuteReader();
-            
+                Email = txt_Username.Text,
+                Password = txt_Password.Text
+            };
 
-            if (dr.Read() == true)
+
+            try
             {
-                conn.Close();
-                new Dashboard().Show();
-                Dashboard.instance.lbl.Text = txtUsername.Text;
+                _authService.Login(userToLogin);
+                MessageBox.Show("Logged in Successfuly!");
+            }
+            catch (WrongCredentialsException)
+            {
+                MessageBox.Show("Wrong email or password.");
+            }
+
+            catch (UserNotVerifiedException ex)
+            {
+                MessageBox.Show("Please complete the verification process");
+
+                var formVerification = new FormVerification(ex.UserId);
+                formVerification.Show();
                 this.Hide();
             }
-            else
-            {
-                MessageBox.Show("Invalid Credentials, please try Again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsername.Text = "";
-                txtPassword.Text = "";
-                txtUsername.Focus();
-                if (conn != null && conn.State == ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-            }
-            */
+
         }
 
         private void checkboxShowPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkboxShowPass.Checked)
+            if (chckbox_ShowPassword.Checked)
             {
-                txtPassword.PasswordChar = '\0';
+                txt_Password.PasswordChar = '\0';
             }
             else
             {
-                txtPassword.PasswordChar = '*';
+                txt_Password.PasswordChar = '*';
 
             }
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_CloseWindow_Click(object sender, EventArgs e)
+        {
+            this.Close();
 
         }
     }

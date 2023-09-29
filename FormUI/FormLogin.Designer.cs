@@ -28,179 +28,178 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label6 = new Label();
-            label5 = new Label();
-            clearButton = new Button();
-            loginButton = new Button();
-            checkboxShowPass = new CheckBox();
-            label2 = new Label();
-            txtUsername = new TextBox();
-            label1 = new Label();
-            label3 = new Label();
-            txtPassword = new TextBox();
-            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            lbl_CreateAccount = new Label();
+            lbl_DontHaveAccount = new Label();
+            btn_Clear = new Button();
+            btn_Login = new Button();
+            chckbox_ShowPassword = new CheckBox();
+            lbl_Password = new Label();
+            txt_Username = new TextBox();
+            lbl_Username = new Label();
+            lbl_GetStarted = new Label();
+            txt_Password = new TextBox();
+            btn_CloseWindow = new Krypton.Toolkit.KryptonButton();
             SuspendLayout();
             // 
-            // label6
+            // lbl_CreateAccount
             // 
-            label6.AutoSize = true;
-            label6.Cursor = Cursors.Hand;
-            label6.ForeColor = Color.FromArgb(165, 177, 194);
-            label6.Location = new Point(99, 425);
-            label6.Name = "label6";
-            label6.Size = new Size(101, 17);
-            label6.TabIndex = 19;
-            label6.Text = "Create Account";
-            label6.Click += label6_Click;
+            lbl_CreateAccount.AutoSize = true;
+            lbl_CreateAccount.Cursor = Cursors.Hand;
+            lbl_CreateAccount.ForeColor = Color.FromArgb(165, 177, 194);
+            lbl_CreateAccount.Location = new Point(83, 418);
+            lbl_CreateAccount.Name = "lbl_CreateAccount";
+            lbl_CreateAccount.Size = new Size(132, 23);
+            lbl_CreateAccount.TabIndex = 19;
+            lbl_CreateAccount.Text = "Create Account";
+            lbl_CreateAccount.Click += label6_Click;
             // 
-            // label5
+            // lbl_DontHaveAccount
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(76, 386);
-            label5.Name = "label5";
-            label5.Size = new Size(147, 17);
-            label5.TabIndex = 20;
-            label5.Text = "Dont Have an Account";
+            lbl_DontHaveAccount.AutoSize = true;
+            lbl_DontHaveAccount.Location = new Point(60, 379);
+            lbl_DontHaveAccount.Name = "lbl_DontHaveAccount";
+            lbl_DontHaveAccount.Size = new Size(189, 23);
+            lbl_DontHaveAccount.TabIndex = 20;
+            lbl_DontHaveAccount.Text = "Dont Have an Account";
             // 
-            // clearButton
+            // btn_Clear
             // 
-            clearButton.BackColor = Color.White;
-            clearButton.Cursor = Cursors.Hand;
-            clearButton.FlatAppearance.BorderSize = 2;
-            clearButton.FlatStyle = FlatStyle.Flat;
-            clearButton.ForeColor = Color.FromArgb(32, 191, 107);
-            clearButton.Location = new Point(38, 331);
-            clearButton.Name = "clearButton";
-            clearButton.Size = new Size(218, 34);
-            clearButton.TabIndex = 4;
-            clearButton.Text = "CLEAR";
-            clearButton.UseVisualStyleBackColor = false;
-            clearButton.Click += clearButton_Click;
+            btn_Clear.BackColor = Color.White;
+            btn_Clear.Cursor = Cursors.Hand;
+            btn_Clear.FlatAppearance.BorderSize = 2;
+            btn_Clear.FlatStyle = FlatStyle.Flat;
+            btn_Clear.ForeColor = Color.FromArgb(32, 191, 107);
+            btn_Clear.Location = new Point(42, 321);
+            btn_Clear.Name = "btn_Clear";
+            btn_Clear.Size = new Size(218, 34);
+            btn_Clear.TabIndex = 4;
+            btn_Clear.Text = "CLEAR";
+            btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += clearButton_Click;
             // 
-            // loginButton
+            // btn_Login
             // 
-            loginButton.BackColor = Color.FromArgb(32, 191, 107);
-            loginButton.Cursor = Cursors.Hand;
-            loginButton.FlatAppearance.BorderSize = 0;
-            loginButton.FlatStyle = FlatStyle.Flat;
-            loginButton.ForeColor = Color.White;
-            loginButton.Location = new Point(38, 285);
-            loginButton.Name = "loginButton";
-            loginButton.Size = new Size(218, 28);
-            loginButton.TabIndex = 3;
-            loginButton.Text = "LOGIN";
-            loginButton.UseVisualStyleBackColor = false;
-            loginButton.Click += loginButton_Click;
+            btn_Login.BackColor = Color.FromArgb(32, 191, 107);
+            btn_Login.Cursor = Cursors.Hand;
+            btn_Login.FlatAppearance.BorderSize = 0;
+            btn_Login.FlatStyle = FlatStyle.Flat;
+            btn_Login.ForeColor = Color.White;
+            btn_Login.Location = new Point(42, 275);
+            btn_Login.Name = "btn_Login";
+            btn_Login.Size = new Size(218, 28);
+            btn_Login.TabIndex = 3;
+            btn_Login.Text = "LOGIN";
+            btn_Login.UseVisualStyleBackColor = false;
+            btn_Login.Click += loginButton_Click;
             // 
-            // checkboxShowPass
+            // chckbox_ShowPassword
             // 
-            checkboxShowPass.AutoSize = true;
-            checkboxShowPass.Cursor = Cursors.Hand;
-            checkboxShowPass.FlatStyle = FlatStyle.Flat;
-            checkboxShowPass.Location = new Point(137, 232);
-            checkboxShowPass.Name = "checkboxShowPass";
-            checkboxShowPass.Size = new Size(119, 21);
-            checkboxShowPass.TabIndex = 2;
-            checkboxShowPass.Text = "Show Password";
-            checkboxShowPass.UseVisualStyleBackColor = true;
-            checkboxShowPass.CheckedChanged += checkboxShowPass_CheckedChanged;
+            chckbox_ShowPassword.AutoSize = true;
+            chckbox_ShowPassword.Cursor = Cursors.Hand;
+            chckbox_ShowPassword.FlatStyle = FlatStyle.Flat;
+            chckbox_ShowPassword.Location = new Point(141, 222);
+            chckbox_ShowPassword.Name = "chckbox_ShowPassword";
+            chckbox_ShowPassword.Size = new Size(151, 27);
+            chckbox_ShowPassword.TabIndex = 2;
+            chckbox_ShowPassword.Text = "Show Password";
+            chckbox_ShowPassword.UseVisualStyleBackColor = true;
+            chckbox_ShowPassword.CheckedChanged += checkboxShowPass_CheckedChanged;
             // 
-            // label2
+            // lbl_Password
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(35, 148);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 17);
-            label2.TabIndex = 8;
-            label2.Text = "Password";
+            lbl_Password.AutoSize = true;
+            lbl_Password.Location = new Point(39, 138);
+            lbl_Password.Name = "lbl_Password";
+            lbl_Password.Size = new Size(84, 23);
+            lbl_Password.TabIndex = 8;
+            lbl_Password.Text = "Password";
             // 
-            // txtUsername
+            // txt_Username
             // 
-            txtUsername.BackColor = Color.FromArgb(230, 231, 233);
-            txtUsername.BorderStyle = BorderStyle.None;
-            txtUsername.Font = new Font("MS UI Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(38, 102);
-            txtUsername.Multiline = true;
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(218, 28);
-            txtUsername.TabIndex = 0;
+            txt_Username.BackColor = Color.FromArgb(230, 231, 233);
+            txt_Username.BorderStyle = BorderStyle.None;
+            txt_Username.Font = new Font("MS UI Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Username.Location = new Point(42, 92);
+            txt_Username.Name = "txt_Username";
+            txt_Username.Size = new Size(218, 27);
+            txt_Username.TabIndex = 0;
             // 
-            // label1
+            // lbl_Username
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(35, 72);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 17);
-            label1.TabIndex = 9;
-            label1.Text = "Username";
+            lbl_Username.AutoSize = true;
+            lbl_Username.Location = new Point(39, 62);
+            lbl_Username.Name = "lbl_Username";
+            lbl_Username.Size = new Size(89, 23);
+            lbl_Username.TabIndex = 9;
+            lbl_Username.Text = "Username";
             // 
-            // label3
+            // lbl_GetStarted
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("MS UI Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(32, 191, 107);
-            label3.Location = new Point(33, 19);
-            label3.Name = "label3";
-            label3.Size = new Size(155, 27);
-            label3.TabIndex = 6;
-            label3.Text = "Get Started";
+            lbl_GetStarted.AutoSize = true;
+            lbl_GetStarted.Font = new Font("MS UI Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_GetStarted.ForeColor = Color.FromArgb(32, 191, 107);
+            lbl_GetStarted.Location = new Point(37, 9);
+            lbl_GetStarted.Name = "lbl_GetStarted";
+            lbl_GetStarted.Size = new Size(194, 34);
+            lbl_GetStarted.TabIndex = 6;
+            lbl_GetStarted.Text = "Get Started";
             // 
-            // txtPassword
+            // txt_Password
             // 
-            txtPassword.BackColor = Color.FromArgb(230, 231, 233);
-            txtPassword.BorderStyle = BorderStyle.None;
-            txtPassword.Font = new Font("MS UI Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(38, 177);
-            txtPassword.Multiline = true;
-            txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(218, 28);
-            txtPassword.TabIndex = 1;
+            txt_Password.BackColor = Color.FromArgb(230, 231, 233);
+            txt_Password.BorderStyle = BorderStyle.None;
+            txt_Password.Font = new Font("MS UI Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Password.Location = new Point(42, 167);
+            txt_Password.Name = "txt_Password";
+            txt_Password.PasswordChar = '*';
+            txt_Password.Size = new Size(218, 27);
+            txt_Password.TabIndex = 1;
             // 
-            // kryptonButton1
+            // btn_CloseWindow
             // 
-            kryptonButton1.ButtonStyle = Krypton.Toolkit.ButtonStyle.LowProfile;
-            kryptonButton1.CornerRoundingRadius = -1F;
-            kryptonButton1.Location = new Point(249, 12);
-            kryptonButton1.Name = "kryptonButton1";
-            kryptonButton1.Size = new Size(28, 25);
-            kryptonButton1.StatePressed.Back.Color1 = Color.Red;
-            kryptonButton1.StatePressed.Back.Color2 = Color.Red;
-            kryptonButton1.StateTracking.Back.Color1 = Color.FromArgb(255, 128, 128);
-            kryptonButton1.StateTracking.Back.Color2 = Color.FromArgb(255, 128, 128);
-            kryptonButton1.StateTracking.Border.Color1 = Color.FromArgb(255, 128, 128);
-            kryptonButton1.StateTracking.Border.Color2 = Color.FromArgb(255, 128, 128);
-            kryptonButton1.StateTracking.Border.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Local;
-            kryptonButton1.StateTracking.Border.ColorAngle = 1F;
-            kryptonButton1.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButton1.TabIndex = 21;
-            kryptonButton1.Values.Text = "X";
+            btn_CloseWindow.ButtonStyle = Krypton.Toolkit.ButtonStyle.LowProfile;
+            btn_CloseWindow.CornerRoundingRadius = -1F;
+            btn_CloseWindow.Location = new Point(253, 2);
+            btn_CloseWindow.Name = "btn_CloseWindow";
+            btn_CloseWindow.Size = new Size(28, 25);
+            btn_CloseWindow.StatePressed.Back.Color1 = Color.Red;
+            btn_CloseWindow.StatePressed.Back.Color2 = Color.Red;
+            btn_CloseWindow.StateTracking.Back.Color1 = Color.FromArgb(255, 128, 128);
+            btn_CloseWindow.StateTracking.Back.Color2 = Color.FromArgb(255, 128, 128);
+            btn_CloseWindow.StateTracking.Border.Color1 = Color.FromArgb(255, 128, 128);
+            btn_CloseWindow.StateTracking.Border.Color2 = Color.FromArgb(255, 128, 128);
+            btn_CloseWindow.StateTracking.Border.ColorAlign = Krypton.Toolkit.PaletteRectangleAlign.Local;
+            btn_CloseWindow.StateTracking.Border.ColorAngle = 1F;
+            btn_CloseWindow.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_CloseWindow.TabIndex = 21;
+            btn_CloseWindow.Values.Text = "X";
+            btn_CloseWindow.Click += btn_CloseWindow_Click;
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(289, 477);
             ControlBox = false;
-            Controls.Add(kryptonButton1);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(clearButton);
-            Controls.Add(loginButton);
-            Controls.Add(checkboxShowPass);
-            Controls.Add(txtPassword);
-            Controls.Add(label2);
-            Controls.Add(txtUsername);
-            Controls.Add(label1);
-            Controls.Add(label3);
+            Controls.Add(btn_CloseWindow);
+            Controls.Add(lbl_CreateAccount);
+            Controls.Add(lbl_DontHaveAccount);
+            Controls.Add(btn_Clear);
+            Controls.Add(btn_Login);
+            Controls.Add(chckbox_ShowPassword);
+            Controls.Add(txt_Password);
+            Controls.Add(lbl_Password);
+            Controls.Add(txt_Username);
+            Controls.Add(lbl_Username);
+            Controls.Add(lbl_GetStarted);
             Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(164, 165, 169);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4);
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
+            Text = " ";
             Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -208,16 +207,16 @@
 
         #endregion
 
-        private Label label6;
-        private Label label5;
-        private Button clearButton;
-        private Button loginButton;
-        private CheckBox checkboxShowPass;
-        private Label label2;
-        private TextBox txtUsername;
-        private Label label1;
-        private Label label3;
-        private TextBox txtPassword;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private Label lbl_CreateAccount;
+        private Label lbl_DontHaveAccount;
+        private Button btn_Clear;
+        private Button btn_Login;
+        private CheckBox chckbox_ShowPassword;
+        private Label lbl_Password;
+        private TextBox txt_Username;
+        private Label lbl_Username;
+        private Label lbl_GetStarted;
+        private TextBox txt_Password;
+        private Krypton.Toolkit.KryptonButton btn_CloseWindow;
     }
 }

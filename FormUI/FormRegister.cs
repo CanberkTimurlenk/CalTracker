@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FluentValidation;
+using FormUI.Utilities;
+using Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -11,91 +14,82 @@ using System.Windows.Forms;
 
 namespace FormUI
 {
+
     public partial class FormRegister : Form
     {
+        private readonly IAuthService _authService = new AuthManager();
+        private readonly IAimService _aimService = new AimManager();
         public FormRegister()
         {
             InitializeComponent();
         }
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Clear_Click(object sender, EventArgs e)
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            txtComPassword.Text = "";
-            txtUsername.Focus();
+            FormHelpers.Clear(this.Controls);
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void lbl_Login_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void registrationButton_Click(object sender, EventArgs e)
-        {
-            if (txtUsername.Text == "" && txtPassword.Text == "" && txtComPassword.Text == "")
-            {
-                MessageBox.Show("Username and Password fields are empty", "Sign Up Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (txtPassword.Text == txtComPassword.Text)
-            {
-                /*
-                try
-                {
-                    conn.Open();
-                    MessageBox.Show("Connection opened");
-                    string register = "INSERT INTO csharp_user (username,password) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
-                    cmd = new NpgsqlCommand(register, conn);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    txtUsername.Text = "";
-                    txtPassword.Text = "";
-                    txtComPassword.Text = "";
-                    MessageBox.Show("Your account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                */
-            }
-            else
-            {
-                MessageBox.Show("Passwords does not match, Please Re-enter", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtComPassword.Text = "";
-                txtPassword.Text = "";
-                txtPassword.Focus();
-
-            }
-        }
-
-        private void checkboxShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkboxShowPass.Checked)
-            {
-                txtPassword.PasswordChar = '\0';
-                txtComPassword.PasswordChar = '\0';
-
-            }
-            else
-            {
-                txtPassword.PasswordChar = '*';
-                txtComPassword.PasswordChar = '*';
-            }
-        }
-
-        private void label6_Click_1(object sender, EventArgs e)
-        {
-
             new FormLogin().Show();
             this.Hide();
         }
 
+        private void checkboxShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckbox_ShowPassword.Checked)
+            {
+                txt_Password.PasswordChar = '\0';
+                txt_ComPassword.PasswordChar = '\0';
+
+            }
+            else
+            {
+                txt_Password.PasswordChar = '*';
+                txt_ComPassword.PasswordChar = '*';
+            }
+        }
+
         private void FormRegister_Load(object sender, EventArgs e)
         {
+            cmb_Aim.DataSource = _aimService.GetAll();
+            cmb_Aim.DisplayMember = "Name";
+            cmb_Aim.ValueMember = "Id";
+        }
 
+        private void registrationButton_Click(object sender, EventArgs e)
+        {
+            int userId;
+            var userToRegister = new Entities.Dtos.UserForRegisterDto
+            {
+                FirstName = txt_Firstname.Text,
+                LastName = txt_Lastname.Text,
+                Email = txt_Username.Text,
+                Password = txt_Password.Text,
+                Height = Convert.ToDouble(num_Height.Value),
+                Weight = Convert.ToDouble(num_Weight.Value),
+                AimId = Convert.ToInt32(cmb_Aim.SelectedValue),
+            };
+
+            try
+            {
+                userId = _authService.Register(userToRegister).Id;
+            }
+            catch (ValidationException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                return;
+            }
+
+            new FormVerification(userId).Show();
+            this.Hide();
+
+        }
+
+        private void btn_CloseWindow_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
