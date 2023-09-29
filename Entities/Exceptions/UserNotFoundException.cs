@@ -4,7 +4,7 @@
     {
         public UserNotFoundException(string email) : base($"Email:{email} not found")
         {
-            
+
         }
     }
 
