@@ -11,6 +11,7 @@ namespace Entities.Concrete
         public double Protein { get; set; }
         public string? Description { get; set; }
         public string? ImagePath { get; set; }
+        public int Gram { get; set; }
 
         public int FoodCategoryId { get; set; }
         public FoodCategory FoodCategory { get; set; }

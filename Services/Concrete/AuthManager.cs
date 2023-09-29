@@ -6,7 +6,7 @@ using FluentValidation;
 using Services.Utilities.Hashing;
 using Services.Utilities.Validation.FluentValidation;
 
-namespace Services
+namespace Services.Concrete
 {
     public class AuthManager : IAuthService
     {

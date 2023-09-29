@@ -1,7 +1,7 @@
 ﻿using Entities.Concrete;
 using Entities.Enums;
 
-namespace Services
+namespace Services.Abstract
 {
     public interface IUserService
     {

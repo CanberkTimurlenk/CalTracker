@@ -30,6 +30,7 @@ namespace Repository.Abstract.Base
                 : context.Set<T>().Where(filter).ToList();
 
         }
+
         public T GetById(int id)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();
@@ -44,6 +45,7 @@ namespace Repository.Abstract.Base
             return context.Set<T>().FirstOrDefault(filter);
 
         }
+
         public void Update(T entity)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();

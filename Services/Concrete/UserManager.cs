@@ -3,8 +3,9 @@ using Entities.Enums;
 using Entities.Exceptions;
 using Repository.Abstract;
 using Repository.Concrete.EFCore;
+using Services.Abstract;
 
-namespace Services
+namespace Services.Concrete
 {
     public class UserManager : IUserService
     {
