@@ -1,8 +1,9 @@
 ﻿using Entities.Concrete;
 using Entities.Dtos;
 using Entities.Exceptions;
+using Services.Abstract;
 
-namespace Services
+namespace Services.Concrete
 {
     public class AuthManager : IAuthService
     {

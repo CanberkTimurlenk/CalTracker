@@ -10,5 +10,6 @@ namespace Repository.Abstract
 {
     public interface IFoodRepository : IBaseRepository<Food>
     {
+        public IEnumerable<string> GetFoodNamesContains(string word);
     }
 }

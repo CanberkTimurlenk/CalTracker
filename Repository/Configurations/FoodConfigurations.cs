@@ -19,6 +19,6 @@ namespace Repository.Configurations
             builder.Property(x => x.Carbonhidrate).HasMaxLength(8);
             builder.Property(x => x.Protein).HasMaxLength(8);
             //desc ve imagepath maxlength vermedik
-        }
+        }        
     }
 }

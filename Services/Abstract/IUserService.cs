@@ -1,6 +1,6 @@
 ﻿using Entities.Concrete;
 
-namespace Services
+namespace Services.Abstract
 {
     public interface IUserService
     {

@@ -2,8 +2,9 @@
 using Entities.Exceptions;
 using Repository.Abstract;
 using Repository.Concrete.EFCore;
+using Services.Abstract;
 
-namespace Services
+namespace Services.Concrete
 {
     public class UserManager : IUserService
     {
@@ -14,7 +15,7 @@ namespace Services
             if (CheckIfUserExists(user.Email))
                 throw new UserAlreadyExistsException(user.Email);
 
-            
+
             _userRepository.Create(user);
 
         }

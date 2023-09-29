@@ -24,7 +24,9 @@ namespace Repository.Abstract.Base
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();
-            return context.Set<T>().Where(filter).ToList();
+            return filter is null
+                ? context.Set<T>().ToList()
+                : context.Set<T>().Where(filter).ToList();
 
         }
 

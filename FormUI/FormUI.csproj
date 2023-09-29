@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>FormUI.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,11 @@
     <PackageReference Include="Krypton.Ribbon" Version="70.22.11.312" />
     <PackageReference Include="Krypton.Toolkit" Version="70.22.11.312" />
     <PackageReference Include="Krypton.Workspace" Version="70.22.11.312" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>
