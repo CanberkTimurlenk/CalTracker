@@ -3,7 +3,7 @@ using Repository.Abstract.Base;
 
 namespace Repository.Abstract
 {
-    public interface IUserDataRepository : IBaseRepository<UserData>
+    public interface IVerificationRepository : IBaseRepository<UserVerification>
     {
     }
 }

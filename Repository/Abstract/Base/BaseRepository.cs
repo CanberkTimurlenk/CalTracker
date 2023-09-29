@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Repository.Abstract.Base
 {
-    public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, IEntity, new()
+    public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity, new()
     {
 
         public void Create(T entity)
@@ -24,10 +24,12 @@ namespace Repository.Abstract.Base
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();
-            return context.Set<T>().Where(filter).ToList();
+
+            return filter is null
+                ? context.Set<T>().ToList()
+                : context.Set<T>().Where(filter).ToList();
 
         }
-
         public T GetById(int id)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();
@@ -38,9 +40,10 @@ namespace Repository.Abstract.Base
         public T Get(Expression<Func<T, bool>> filter)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();
-            return context.Set<T>().FirstOrDefault(filter);
-        }
 
+            return context.Set<T>().FirstOrDefault(filter);
+
+        }
         public void Update(T entity)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();

@@ -4,7 +4,7 @@ using Repository.Abstract.Base;
 
 namespace Repository.Concrete.EFCore
 {
-    public class UserRepository : BaseRepository<User>, IUserRepository
+    public class VerificationRepository : BaseRepository<UserVerification>, IVerificationRepository
     {
 
     }
