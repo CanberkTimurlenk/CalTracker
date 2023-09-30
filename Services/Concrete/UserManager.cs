@@ -48,5 +48,46 @@ namespace Services.Concrete
             _userRepository.Update(user);
         }
 
+        public void ChangeUserFirstName(int userId, string newFirstname)
+        {
+           var user = _userRepository.GetById(userId);
+
+            user.FirstName = newFirstname;
+
+            _userRepository.Update(user);
+        }
+
+        public void ChangeUserLastName(int userId, string newLastname)
+        {
+            var user = _userRepository.GetById(userId);
+
+            user.LastName = newLastname;
+
+            _userRepository.Update(user);
+        }
+
+        public void ChangeUserAim(int userId, Aim newAim)
+        {
+            var user = _userRepository.GetById(userId);
+
+            user.Aim = newAim;
+            _userRepository.Update(user);
+        }
+
+        public void ChangeUserHeight(int userId, double newHeight)
+        {
+            var user = _userRepository.GetById(userId);
+
+            user.Height = newHeight;
+            _userRepository.Update(user);
+        }
+
+        public void ChangeUserWeight(int userId, double newWeight)
+        {
+            var user = _userRepository.GetById(userId);
+
+            user.Weight = newWeight;
+            _userRepository.Update(user);
+        }
     }
 }

@@ -38,41 +38,45 @@
             // menuStrip1
             // 
             menuStrip1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { gunlukRaporToolStripMenuItem, kiyasRaporuToolStripMenuItem, yemekRaporuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(914, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
             // gunlukRaporToolStripMenuItem
             // 
             gunlukRaporToolStripMenuItem.Name = "gunlukRaporToolStripMenuItem";
-            gunlukRaporToolStripMenuItem.Size = new Size(91, 20);
+            gunlukRaporToolStripMenuItem.Size = new Size(112, 24);
             gunlukRaporToolStripMenuItem.Text = "Gunluk Rapor";
             // 
             // kiyasRaporuToolStripMenuItem
             // 
             kiyasRaporuToolStripMenuItem.Name = "kiyasRaporuToolStripMenuItem";
-            kiyasRaporuToolStripMenuItem.Size = new Size(87, 20);
+            kiyasRaporuToolStripMenuItem.Size = new Size(109, 24);
             kiyasRaporuToolStripMenuItem.Text = "Kiyas Raporu";
             // 
             // yemekRaporuToolStripMenuItem
             // 
             yemekRaporuToolStripMenuItem.Name = "yemekRaporuToolStripMenuItem";
-            yemekRaporuToolStripMenuItem.Size = new Size(95, 20);
+            yemekRaporuToolStripMenuItem.Size = new Size(118, 24);
             yemekRaporuToolStripMenuItem.Text = "Yemek Raporu";
             // 
             // FormReports
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormReports";
             Text = "FormReports";
+            Load += FormReports_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

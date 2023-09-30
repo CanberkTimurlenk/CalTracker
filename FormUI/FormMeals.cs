@@ -5,6 +5,7 @@ using Repository.Abstract;
 using Services.Abstract;
 using Services.Concrete;
 using System.Data;
+using System.Drawing.Drawing2D;
 
 namespace FormUI
 {
@@ -29,6 +30,17 @@ namespace FormUI
         private void FormMeals_Load(object sender, EventArgs e)
         {
 
+            this.BackColor = Color.FromArgb(32, 191, 107);
+            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(32, 191, 107),
+                Color.FromArgb(50, 210, 255),
+                360f
+            );
+            this.Paint += (sender, e) =>
+            {
+                e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
+            };
             btn_Search.Enabled = false;
             btn_Save.Enabled = false;
             /*

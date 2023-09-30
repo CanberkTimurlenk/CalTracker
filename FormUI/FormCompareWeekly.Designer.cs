@@ -52,10 +52,11 @@
             // 
             // plotView1
             // 
-            plotView1.Location = new Point(51, 284);
+            plotView1.Location = new Point(58, 379);
+            plotView1.Margin = new Padding(3, 4, 3, 4);
             plotView1.Name = "plotView1";
             plotView1.PanCursor = Cursors.Hand;
-            plotView1.Size = new Size(305, 113);
+            plotView1.Size = new Size(349, 151);
             plotView1.TabIndex = 0;
             plotView1.Text = "plotView1";
             plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -64,10 +65,11 @@
             // 
             // plotView2
             // 
-            plotView2.Location = new Point(452, 284);
+            plotView2.Location = new Point(517, 379);
+            plotView2.Margin = new Padding(3, 4, 3, 4);
             plotView2.Name = "plotView2";
             plotView2.PanCursor = Cursors.Hand;
-            plotView2.Size = new Size(305, 113);
+            plotView2.Size = new Size(349, 151);
             plotView2.TabIndex = 0;
             plotView2.Text = "plotView1";
             plotView2.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -77,54 +79,54 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(212, 118);
+            label1.Location = new Point(242, 157);
             label1.Name = "label1";
-            label1.Size = new Size(21, 15);
+            label1.Size = new Size(28, 20);
             label1.TabIndex = 1;
             label1.Text = "Siz";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(137, 145);
+            label2.Location = new Point(157, 193);
             label2.Name = "label2";
-            label2.Size = new Size(96, 15);
+            label2.Size = new Size(123, 20);
             label2.TabIndex = 1;
             label2.Text = "Diger Kullanicilar";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(257, 87);
+            label3.Location = new Point(294, 116);
             label3.Name = "label3";
-            label3.Size = new Size(49, 15);
+            label3.Size = new Size(62, 20);
             label3.TabIndex = 1;
             label3.Text = "Kahvalti";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(312, 87);
+            label4.Location = new Point(357, 116);
             label4.Name = "label4";
-            label4.Size = new Size(39, 15);
+            label4.Size = new Size(49, 20);
             label4.TabIndex = 1;
             label4.Text = "Oglen";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(359, 87);
+            label5.Location = new Point(410, 116);
             label5.Name = "label5";
-            label5.Size = new Size(43, 15);
+            label5.Size = new Size(53, 20);
             label5.TabIndex = 1;
             label5.Text = "Aksam";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(414, 87);
+            label6.Location = new Point(473, 116);
             label6.Name = "label6";
-            label6.Size = new Size(49, 15);
+            label6.Size = new Size(63, 20);
             label6.TabIndex = 1;
             label6.Text = "Aperatif";
             // 
@@ -133,9 +135,10 @@
             kryptonComboBox1.CornerRoundingRadius = -1F;
             kryptonComboBox1.DropDownWidth = 121;
             kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(476, 83);
+            kryptonComboBox1.Location = new Point(544, 111);
+            kryptonComboBox1.Margin = new Padding(3, 4, 3, 4);
             kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(121, 21);
+            kryptonComboBox1.Size = new Size(138, 25);
             kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             kryptonComboBox1.TabIndex = 2;
             kryptonComboBox1.Text = "Kategori";
@@ -143,98 +146,98 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(271, 118);
+            label7.Location = new Point(310, 157);
             label7.Name = "label7";
-            label7.Size = new Size(13, 15);
+            label7.Size = new Size(17, 20);
             label7.TabIndex = 1;
             label7.Text = "0";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(326, 118);
+            label8.Location = new Point(373, 157);
             label8.Name = "label8";
-            label8.Size = new Size(13, 15);
+            label8.Size = new Size(17, 20);
             label8.TabIndex = 1;
             label8.Text = "0";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(373, 118);
+            label9.Location = new Point(426, 157);
             label9.Name = "label9";
-            label9.Size = new Size(13, 15);
+            label9.Size = new Size(17, 20);
             label9.TabIndex = 1;
             label9.Text = "0";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(428, 118);
+            label10.Location = new Point(489, 157);
             label10.Name = "label10";
-            label10.Size = new Size(13, 15);
+            label10.Size = new Size(17, 20);
             label10.TabIndex = 1;
             label10.Text = "0";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(271, 145);
+            label11.Location = new Point(310, 193);
             label11.Name = "label11";
-            label11.Size = new Size(13, 15);
+            label11.Size = new Size(17, 20);
             label11.TabIndex = 1;
             label11.Text = "0";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(326, 145);
+            label12.Location = new Point(373, 193);
             label12.Name = "label12";
-            label12.Size = new Size(13, 15);
+            label12.Size = new Size(17, 20);
             label12.TabIndex = 1;
             label12.Text = "0";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(373, 145);
+            label13.Location = new Point(426, 193);
             label13.Name = "label13";
-            label13.Size = new Size(13, 15);
+            label13.Size = new Size(17, 20);
             label13.TabIndex = 1;
             label13.Text = "0";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(428, 145);
+            label14.Location = new Point(489, 193);
             label14.Name = "label14";
-            label14.Size = new Size(13, 15);
+            label14.Size = new Size(17, 20);
             label14.TabIndex = 1;
             label14.Text = "0";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(501, 118);
+            label15.Location = new Point(573, 157);
             label15.Name = "label15";
-            label15.Size = new Size(13, 15);
+            label15.Size = new Size(17, 20);
             label15.TabIndex = 1;
             label15.Text = "0";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(501, 145);
+            label16.Location = new Point(573, 193);
             label16.Name = "label16";
-            label16.Size = new Size(13, 15);
+            label16.Size = new Size(17, 20);
             label16.TabIndex = 1;
             label16.Text = "0";
             // 
-            // FormCompare
+            // FormCompareWeekly
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(kryptonComboBox1);
             Controls.Add(label2);
             Controls.Add(label16);
@@ -255,8 +258,10 @@
             Controls.Add(plotView2);
             Controls.Add(plotView1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormCompare";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "FormCompareWeekly";
             Text = "FormCompare";
+            Load += FormCompareWeekly_Load;
             ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
