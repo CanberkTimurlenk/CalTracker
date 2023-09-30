@@ -1,6 +1,7 @@
 ﻿using Entities.Dtos;
 using Entities.Enums;
 using Krypton.Toolkit;
+using Repository.Abstract;
 using Services.Abstract;
 using Services.Concrete;
 using System.Data;

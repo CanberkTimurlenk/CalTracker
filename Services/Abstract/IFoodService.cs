@@ -10,6 +10,9 @@ namespace Services.Abstract
 {
     public interface IFoodService
     {
+         IEnumerable<string> GetFoodNamesContains(string word);
+         Food GetFoodsNameBy(string word);
+        public void AddNewFood(Food food);
         IEnumerable<string> GetFoodNamesContains(string word);
         //Food GetFoodsNameBy(string word);
 

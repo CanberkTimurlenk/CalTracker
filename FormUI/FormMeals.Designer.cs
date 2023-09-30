@@ -38,7 +38,6 @@
             btn_Snack = new Krypton.Toolkit.KryptonButton();
             btn_Save = new Krypton.Toolkit.KryptonButton();
             dgv_MealList = new Krypton.Toolkit.KryptonDataGridView();
-            kryptonButton6 = new Krypton.Toolkit.KryptonButton();
             label1 = new Label();
             label2 = new Label();
             btn_Add = new Krypton.Toolkit.KryptonButton();
@@ -260,7 +259,6 @@
         private Krypton.Toolkit.KryptonButton btn_Snack;
         private Krypton.Toolkit.KryptonButton btn_Save;
         private Krypton.Toolkit.KryptonDataGridView dgv_MealList;
-        private Krypton.Toolkit.KryptonButton kryptonButton6;
         private Label label1;
         private Label label2;
         private Krypton.Toolkit.KryptonButton btn_Add;
