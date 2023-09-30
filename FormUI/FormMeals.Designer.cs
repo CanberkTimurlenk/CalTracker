@@ -32,13 +32,12 @@
             dgv_SelectedMealList = new Krypton.Toolkit.KryptonDataGridView();
             txt_Meal_Search = new TextBox();
             kryptonButton1 = new Krypton.Toolkit.KryptonButton();
-            kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            kryptonButton3 = new Krypton.Toolkit.KryptonButton();
-            kryptonButton4 = new Krypton.Toolkit.KryptonButton();
-            kryptonButton5 = new Krypton.Toolkit.KryptonButton();
+            btn_Breakfast = new Krypton.Toolkit.KryptonButton();
+            btn_Lunch = new Krypton.Toolkit.KryptonButton();
+            btn_Dinner = new Krypton.Toolkit.KryptonButton();
+            btn_Snack = new Krypton.Toolkit.KryptonButton();
             kryptonButton8 = new Krypton.Toolkit.KryptonButton();
             dgv_MealList = new Krypton.Toolkit.KryptonDataGridView();
-            kryptonButton6 = new Krypton.Toolkit.KryptonButton();
             label1 = new Label();
             label2 = new Label();
             kryptonButton7 = new Krypton.Toolkit.KryptonButton();
@@ -75,49 +74,49 @@
             kryptonButton1.Values.Text = "Ara";
             kryptonButton1.Click += Click;
             // 
-            // kryptonButton2
+            // btn_Breakfast
             // 
-            kryptonButton2.CornerRoundingRadius = -1F;
-            kryptonButton2.Location = new Point(22, 12);
-            kryptonButton2.Name = "kryptonButton2";
-            kryptonButton2.Size = new Size(107, 25);
-            kryptonButton2.TabIndex = 4;
-            kryptonButton2.Tag = "1";
-            kryptonButton2.Values.Text = "SABAH";
-            kryptonButton2.Click += Click;
+            btn_Breakfast.CornerRoundingRadius = -1F;
+            btn_Breakfast.Location = new Point(22, 12);
+            btn_Breakfast.Name = "btn_Breakfast";
+            btn_Breakfast.Size = new Size(107, 25);
+            btn_Breakfast.TabIndex = 4;
+            btn_Breakfast.Tag = "1";
+            btn_Breakfast.Values.Text = "SABAH";
+            btn_Breakfast.Click += Click;
             // 
-            // kryptonButton3
+            // btn_Lunch
             // 
-            kryptonButton3.CornerRoundingRadius = -1F;
-            kryptonButton3.Location = new Point(153, 12);
-            kryptonButton3.Name = "kryptonButton3";
-            kryptonButton3.Size = new Size(107, 25);
-            kryptonButton3.TabIndex = 4;
-            kryptonButton3.Tag = "2";
-            kryptonButton3.Values.Text = "Öğlen";
-            kryptonButton3.Click += Click;
+            btn_Lunch.CornerRoundingRadius = -1F;
+            btn_Lunch.Location = new Point(153, 12);
+            btn_Lunch.Name = "btn_Lunch";
+            btn_Lunch.Size = new Size(107, 25);
+            btn_Lunch.TabIndex = 4;
+            btn_Lunch.Tag = "2";
+            btn_Lunch.Values.Text = "Öğlen";
+            btn_Lunch.Click += Click;
             // 
-            // kryptonButton4
+            // btn_Dinner
             // 
-            kryptonButton4.CornerRoundingRadius = -1F;
-            kryptonButton4.Location = new Point(289, 12);
-            kryptonButton4.Name = "kryptonButton4";
-            kryptonButton4.Size = new Size(107, 25);
-            kryptonButton4.TabIndex = 4;
-            kryptonButton4.Tag = "3";
-            kryptonButton4.Values.Text = "Akşam";
-            kryptonButton4.Click += Click;
+            btn_Dinner.CornerRoundingRadius = -1F;
+            btn_Dinner.Location = new Point(289, 12);
+            btn_Dinner.Name = "btn_Dinner";
+            btn_Dinner.Size = new Size(107, 25);
+            btn_Dinner.TabIndex = 4;
+            btn_Dinner.Tag = "3";
+            btn_Dinner.Values.Text = "Akşam";
+            btn_Dinner.Click += Click;
             // 
-            // kryptonButton5
+            // btn_Snack
             // 
-            kryptonButton5.CornerRoundingRadius = -1F;
-            kryptonButton5.Location = new Point(420, 12);
-            kryptonButton5.Name = "kryptonButton5";
-            kryptonButton5.Size = new Size(107, 25);
-            kryptonButton5.TabIndex = 4;
-            kryptonButton5.Tag = "4";
-            kryptonButton5.Values.Text = "Aperatif";
-            kryptonButton5.Click += Click;
+            btn_Snack.CornerRoundingRadius = -1F;
+            btn_Snack.Location = new Point(420, 12);
+            btn_Snack.Name = "btn_Snack";
+            btn_Snack.Size = new Size(107, 25);
+            btn_Snack.TabIndex = 4;
+            btn_Snack.Tag = "4";
+            btn_Snack.Values.Text = "Aperatif";
+            btn_Snack.Click += Click;
             // 
             // kryptonButton8
             // 
@@ -138,16 +137,6 @@
             dgv_MealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_MealList.Size = new Size(337, 238);
             dgv_MealList.TabIndex = 5;
-            // 
-            // kryptonButton6
-            // 
-            kryptonButton6.CornerRoundingRadius = -1F;
-            kryptonButton6.Location = new Point(644, 75);
-            kryptonButton6.Name = "kryptonButton6";
-            kryptonButton6.Size = new Size(107, 25);
-            kryptonButton6.TabIndex = 4;
-            kryptonButton6.Tag = "6";
-            kryptonButton6.Values.Text = "Öğünlerim";
             // 
             // label1
             // 
@@ -208,14 +197,13 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dgv_MealList);
-            Controls.Add(kryptonButton6);
-            Controls.Add(kryptonButton5);
-            Controls.Add(kryptonButton4);
+            Controls.Add(btn_Snack);
+            Controls.Add(btn_Dinner);
             Controls.Add(kryptonButton9);
             Controls.Add(kryptonButton7);
             Controls.Add(kryptonButton8);
-            Controls.Add(kryptonButton3);
-            Controls.Add(kryptonButton2);
+            Controls.Add(btn_Lunch);
+            Controls.Add(btn_Breakfast);
             Controls.Add(kryptonButton1);
             Controls.Add(txt_Meal_Search);
             Controls.Add(dgv_SelectedMealList);
@@ -235,13 +223,12 @@
         private Krypton.Toolkit.KryptonDataGridView dgv_SelectedMealList;
         private TextBox txt_Meal_Search;
         private Krypton.Toolkit.KryptonButton kryptonButton1;
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonButton kryptonButton3;
-        private Krypton.Toolkit.KryptonButton kryptonButton4;
-        private Krypton.Toolkit.KryptonButton kryptonButton5;
+        private Krypton.Toolkit.KryptonButton btn_Breakfast;
+        private Krypton.Toolkit.KryptonButton btn_Lunch;
+        private Krypton.Toolkit.KryptonButton btn_Dinner;
+        private Krypton.Toolkit.KryptonButton btn_Snack;
         private Krypton.Toolkit.KryptonButton kryptonButton8;
         private Krypton.Toolkit.KryptonDataGridView dgv_MealList;
-        private Krypton.Toolkit.KryptonButton kryptonButton6;
         private Label label1;
         private Label label2;
         private Krypton.Toolkit.KryptonButton kryptonButton7;

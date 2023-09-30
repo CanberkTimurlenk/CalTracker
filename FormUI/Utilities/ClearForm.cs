@@ -37,6 +37,10 @@ namespace FormUI.Utilities
                 {
                     ((KryptonComboBox)ctrl).SelectedIndex = -1;
                 }
+                else if (ctrl is KryptonTextBox)
+                {
+                    ((KryptonTextBox)ctrl).Clear();
+                }
             }
         }
     }

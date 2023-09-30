@@ -11,5 +11,6 @@ namespace Services.Abstract
     {
          IEnumerable<string> GetFoodNamesContains(string word);
          Food GetFoodsNameBy(string word);
+        public void AddNewFood(Food food);
     }
 }

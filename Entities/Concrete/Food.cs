@@ -1,4 +1,5 @@
 ﻿using Entities.Abstract;
+using Entities.Enums;
 
 namespace Entities.Concrete
 {

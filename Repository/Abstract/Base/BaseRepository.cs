@@ -56,7 +56,7 @@ namespace Repository.Abstract.Base
         public bool Any(Expression<Func<T, bool>> expression)
         {
             using KaloriTakipDbContext context = new KaloriTakipDbContext();
-            return context.Set<T>().Any();
+            return context.Set<T>().Any(expression);
         }
     }
 }

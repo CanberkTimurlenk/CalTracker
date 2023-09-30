@@ -22,5 +22,21 @@ namespace Services.Concrete
         {
             return _foodRepository.Get(f=>f.Name.Equals(word));
         }
+        public void AddNewFood(Food food)
+        //public void AddNewFood(string name, double calorie, double fat, double protein, double carbonhidrate,int categoryId, string? imagePath, int gram)
+        {
+            //Food food = new Food() 
+            //{
+            //    Name = name,
+            //    Calorie = calorie,
+            //    Fat = fat,
+            //    Protein = protein,
+            //    Carbonhidrate = carbonhidrate,
+            //    FoodCategoryId = categoryId,
+            //    ImagePath = imagePath,
+            //    Gram = gram
+            //};
+            _foodRepository.Create(food);
+        }
     }
 }

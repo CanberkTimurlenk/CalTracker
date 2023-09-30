@@ -1,5 +1,7 @@
-﻿using Entities.Enums;
+﻿using Entities.Concrete;
+using Entities.Enums;
 using Krypton.Toolkit;
+using Repository.Abstract;
 using Services.Abstract;
 using Services.Concrete;
 using System;
@@ -31,6 +33,7 @@ namespace FormUI
             dgv_SelectedMealList.Columns.Add("Fat", "Yağ");
             dgv_SelectedMealList.Columns.Add("Carbonhidrate", "Karbonhidrat");
             dgv_SelectedMealList.Columns.Add("Protein", "Protein");
+            dgv_SelectedMealList.AllowUserToAddRows = false;
             dgv_SelectedMealList.ReadOnly = true;
             dgv_MealList.ReadOnly = true;
         }
@@ -58,6 +61,7 @@ namespace FormUI
                 case "1":
                     selectedMealTime = MealTimes.Breakfast;
                     ButtonActivities(btn);
+
                     break;
                 case "2":
                     selectedMealTime = MealTimes.Lunch;
@@ -82,7 +86,20 @@ namespace FormUI
                     ButtonActivities(btn);
                     break;
                 case "7":
+                    if (!btn_Breakfast.Enabled || !btn_Lunch.Enabled || !btn_Dinner.Enabled || !btn_Snack.Enabled)
+                    {
 
+                        //UserMeals userMeals = new UserMeals()
+                        //{
+                        //    MealTimes = selectedMealTime,
+                        //    Calorie = 
+
+                        //}
+                    }
+                    else
+                    {
+                        MessageBox.Show("Secili Degil");
+                    }
                     break;
                 case "8":
 
