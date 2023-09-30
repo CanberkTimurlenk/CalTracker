@@ -1,4 +1,5 @@
-﻿using Repository.Abstract;
+﻿using Entities.Concrete;
+using Repository.Abstract;
 using Repository.Concrete.EFCore;
 using Services.Abstract;
 
@@ -29,6 +30,11 @@ namespace Services.Concrete
             return calculatedFoodNutrionals;
 
         }
+
+        public Food GetFoodByName(string name)
+
+           => _foodRepository.Get(f => f.Name.Equals(name));
+
         public void AddNewFood(Food food)
         //public void AddNewFood(string name, double calorie, double fat, double protein, double carbonhidrate,int categoryId, string? imagePath, int gram)
         {

@@ -151,18 +151,7 @@
             dgv_MealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_MealList.Size = new Size(385, 317);
             dgv_MealList.TabIndex = 5;
-            // 
-            // kryptonButton6
-            // 
-            kryptonButton6.CornerRoundingRadius = -1F;
-            kryptonButton6.Location = new Point(746, 77);
-            kryptonButton6.Margin = new Padding(3, 4, 3, 4);
-            kryptonButton6.Name = "kryptonButton6";
-            kryptonButton6.Size = new Size(122, 33);
-            kryptonButton6.TabIndex = 4;
-            kryptonButton6.Tag = "6";
-            kryptonButton6.Values.Text = "Öğünlerim";
-            // 
+            //             
             // label1
             // 
             label1.AutoSize = true;
@@ -225,7 +214,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dgv_MealList);
-            Controls.Add(kryptonButton6);
             Controls.Add(btn_Snack);
             Controls.Add(btn_Dinner);
             Controls.Add(btn_Remove);

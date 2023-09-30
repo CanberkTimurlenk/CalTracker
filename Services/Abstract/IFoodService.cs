@@ -10,14 +10,12 @@ namespace Services.Abstract
 {
     public interface IFoodService
     {
-         IEnumerable<string> GetFoodNamesContains(string word);
-         Food GetFoodsNameBy(string word);
-        public void AddNewFood(Food food);
-        IEnumerable<string> GetFoodNamesContains(string word);
-        //Food GetFoodsNameBy(string word);
-
+        void AddNewFood(Food food);
+        Food GetFoodByName(string name);
         FoodNutrionals GetFoodNutrionals(string name, int gram);
+        IEnumerable<int> GetFoodIdsByFoodName(IEnumerable<string> names);
+        IEnumerable<string> GetFoodNamesContains(string word);
 
-        public IEnumerable<int> GetFoodIdsByFoodName(IEnumerable<string> names);
     }
 }
+
