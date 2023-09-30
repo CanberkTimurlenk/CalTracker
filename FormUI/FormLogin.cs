@@ -1,6 +1,8 @@
 ﻿using Entities.Concrete;
 using Entities.Exceptions;
+using FormUI.Utilities;
 using Services;
+using Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,8 +35,7 @@ namespace FormUI
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            txt_Username.Text = "";
-            txt_Password.Text = "";
+            FormHelpers.Clear(this.Controls);
             txt_Username.Focus();
         }
 

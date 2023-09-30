@@ -1,5 +1,6 @@
 ﻿using Entities.Abstract;
 using Entities.Enums;
+using System.Text;
 
 namespace Entities.Concrete
 {
@@ -8,8 +9,8 @@ namespace Entities.Concrete
         public string FirstName { get; set; }
         public string LastName { get; set; } 
         public string Email { get; set; }    
-        public byte[] PasswordHash { get; set; } 
-        public byte[] PasswordSalt { get; set; } 
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
         public double Height { get; set; }
         public double Weight { get; set; }
         public UserStatus UserStatus { get; set; }

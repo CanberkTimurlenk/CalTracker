@@ -1,9 +1,10 @@
 ﻿using Entities.Concrete;
 using Repository.Abstract;
 using Repository.Concrete.EFCore;
+using Services.Abstract;
 using Services.Utilities.MailSender;
 
-namespace Services
+namespace Services.Concrete
 {
     public class VerificationManager : IVerificationService
     {

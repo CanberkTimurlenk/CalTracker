@@ -12,10 +12,9 @@ namespace Entities.Concrete
         public string? Description { get; set; }
         public string? ImagePath { get; set; }
         public int Gram { get; set; }
-
         public int FoodCategoryId { get; set; }
         public FoodCategory FoodCategory { get; set; }
 
-        public List<UserMeals> UserMeals { get; set; }
+        public List<UserMeal> UserMeals { get; set; }
     }
 }

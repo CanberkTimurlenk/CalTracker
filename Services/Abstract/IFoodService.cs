@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,11 @@ namespace Services.Abstract
 {
     public interface IFoodService
     {
-         IEnumerable<string> GetFoodNamesContains(string word);
-         Food GetFoodsNameBy(string word);
+        IEnumerable<string> GetFoodNamesContains(string word);
+        //Food GetFoodsNameBy(string word);
+
+        FoodNutrionals GetFoodNutrionals(string name, int gram);
+
+        public IEnumerable<int> GetFoodIdsByFoodName(IEnumerable<string> names);
     }
 }
