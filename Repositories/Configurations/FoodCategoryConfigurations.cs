@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Repositories.Configurations.Extensions;
 
 namespace Repositories.Configurations
 {
@@ -9,6 +10,8 @@ namespace Repositories.Configurations
         public void Configure(EntityTypeBuilder<FoodCategory> builder)
         {
             builder.Property(fc => fc.CategoryName).HasMaxLength(50);
+
+            builder.AddSeedData();
 
         }
     }
