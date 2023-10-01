@@ -5,6 +5,7 @@ namespace Repository.Abstract
 {
     public interface IUserRepository : IBaseRepository<User>
     {
+        int GetActiveUserCount();
 
     }
 }

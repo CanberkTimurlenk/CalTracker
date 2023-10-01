@@ -1,14 +1,12 @@
 ﻿using Entities.Dtos;
 using Entities.Enums;
 using Krypton.Toolkit;
-using Repository.Abstract;
 using Services.Abstract;
 using Services.Concrete;
 using System.Data;
 
 namespace FormUI
 {
-
     public partial class FormMeals : Form
     {
 
@@ -16,13 +14,14 @@ namespace FormUI
         private readonly IFoodService _foodService = new FoodManager();
         private readonly IUserMealService _userMealService = new UserMealManager();
         private readonly IFoodAmountService _foodAmountService = new FoodAmountManager();
-        private readonly int _userId = 5; // BURAYI CONSTRUCTOR DA ALACAK
-        private List<MealItem> _mealItemToDelete = new List<MealItem>();
-        private List<MealItem> _mealItemToAdd = new List<MealItem>();
+        private readonly int _userId;
+        private List<MealItemDto> _mealItemToDelete = new List<MealItemDto>();
+        private List<MealItemDto> _mealItemToAdd = new List<MealItemDto>();
         private List<FoodNutrionals> _dataSource = new();
 
-        public FormMeals()
+        public FormMeals(int userId)
         {
+            _userId = 5;
             InitializeComponent();
         }
 
@@ -31,23 +30,11 @@ namespace FormUI
 
             btn_Search.Enabled = false;
             btn_Save.Enabled = false;
-            /*
-            dgv_SelectedMealList.Columns.Add("Name", "İsim");
-            dgv_SelectedMealList.Columns.Add("Calorie", "Kalori");
-            dgv_SelectedMealList.Columns.Add("Fat", "Yağ");
-            dgv_SelectedMealList.Columns.Add("Carbonhidrate", "Karbonhidrat");
-            dgv_SelectedMealList.Columns.Add("Protein", "Protein");
-            */
             dgv_SelectedMealList.AllowUserToAddRows = false;
             dgv_SelectedMealList.ReadOnly = true;
             dgv_MealList.ReadOnly = true;
-
-
-        }
-
-
-        private void Click(object sender, EventArgs e)
-        {
+            dgv_MealList.AllowUserToAddRows = false;
+            dgv_MealList.AllowUserToAddRows = false;
 
         }
 
@@ -56,10 +43,6 @@ namespace FormUI
             SetButtonStates();
             KryptonButton btn = sender as KryptonButton;
             selectedMealTime = MealTimes.Breakfast;
-            /*
-            _dataSource = _userMealService.GetUserMeals(_userId, DateTime.Now, selectedMealTime).ToList();
-            dgv_SelectedMealList.DataSource = _dataSource;
-            */
             SetDgvContent();
             ButtonActivities(btn);
 
@@ -102,39 +85,15 @@ namespace FormUI
         {
             var userMealId = _userMealService.CreateUserMeal(_userId, selectedMealTime, DateTime.Now);
 
-            // add meal item
-            // FoodId, Gram, UserMealId
-
-            // elimde olanlar foodname,gram, usermealId
-
             if (_mealItemToAdd.Count > 0)
                 _foodAmountService.AddRangeMealItems(_mealItemToAdd, userMealId);
 
             if (_mealItemToDelete.Count > 0)
                 _foodAmountService.RemoveRangeMealItems(_mealItemToDelete, userMealId);
 
-
             _mealItemToDelete.Clear();
             _mealItemToAdd.Clear();
 
-            //CreateUserMeal(int userId, );
-            /*
-            if (!btn_Breakfast.Enabled || !btn_Lunch.Enabled || !btn_Dinner.Enabled || !btn_Snack.Enabled)
-            {
-
-                //UserMeals userMeals = new UserMeals()
-                //{
-                //    MealTimes = selectedMealTime,
-                //    Calorie = 
-
-                //}
-            }
-            else
-            {
-                MessageBox.Show("Secili Degil");
-            }
-            btn_Search.Enabled = false;
-            */
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -149,14 +108,12 @@ namespace FormUI
                 dgv_SelectedMealList.DataSource = null;
                 dgv_SelectedMealList.DataSource = _dataSource;
 
-                _mealItemToAdd.Add(new MealItem()
+                _mealItemToAdd.Add(new MealItemDto()
                 {
                     UserId = _userId,
                     FoodName = selectedFoodName,
                     Gram = Convert.ToInt32(nud_Amount.Value)
                 });
-                //var data1 = _foodService.GetFoodsNameBy(selectedFoodName);
-                //dgv_SelectedMealList.Rows.Add(data1.Name, Math.Round(((data1.Calorie / data1.Gram) * (double)nud_Amount.Value), 2), Math.Round(((data1.Fat / data1.Gram) * (double)nud_Amount.Value), 2), Math.Round(((data1.Carbonhidrate / data1.Gram) * (double)nud_Amount.Value), 2), Math.Round(((data1.Protein / data1.Gram) * (double)nud_Amount.Value), 2));
             }
 
             else
@@ -176,7 +133,7 @@ namespace FormUI
                 dgv_SelectedMealList.DataSource = null;
                 dgv_SelectedMealList.DataSource = _dataSource;
 
-                _mealItemToDelete.Add(new MealItem()
+                _mealItemToDelete.Add(new MealItemDto()
                 {
                     UserId = _userId,
                     FoodName = selectedFoodName,
@@ -185,9 +142,8 @@ namespace FormUI
 
             }
             else
-            {
                 MessageBox.Show("Lütfen Silinecek Besini Seçiniz");
-            }
+
         }
 
         private void ButtonActivities(KryptonButton btn)
@@ -195,9 +151,8 @@ namespace FormUI
             foreach (Control item in this.Controls)
             {
                 if (item is KryptonButton)
-                {
                     ((KryptonButton)item).Enabled = true;
-                }
+
             }
             btn.Enabled = false;
         }
@@ -215,21 +170,6 @@ namespace FormUI
             _dataSource = _userMealService.GetUserMeals(_userId, DateTime.Now, selectedMealTime).ToList();
             dgv_SelectedMealList.DataSource = _dataSource;
         }
-
-        private void dgv_SelectedMealList_SelectionChanged(object sender, EventArgs e)
-        {
-            /*
-            var X = dgv_MealList.SelectedRows[0].DataBoundItem as FoodMealDto;
-            int z = 5;
-            */
-        }
-
-        private void dgv_SelectedMealList_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            //var foodname = dgv_MealList.SelectedRows[0].Cells[0].Value; // name
-            //var gram = dgv_MealList.SelectedRows[0].Cells[2].Value; // gram
-        }
-
 
     }
 }

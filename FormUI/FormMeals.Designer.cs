@@ -58,7 +58,7 @@
             dgv_SelectedMealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_SelectedMealList.Size = new Size(367, 317);
             dgv_SelectedMealList.TabIndex = 0;
-            dgv_SelectedMealList.CellContentClick += dgv_SelectedMealList_CellContentClick_1;
+            
             // 
             // txt_Meal_Search
             // 

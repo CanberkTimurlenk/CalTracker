@@ -8,10 +8,10 @@ namespace Services.Concrete
     public class FoodManager : IFoodService
     {
         IFoodRepository _foodRepository = new FoodRepository();
+
         public IEnumerable<string> GetFoodNamesContains(string word)
 
             => _foodRepository.GetFoodNamesContains(word);
-
 
         public FoodNutrionals GetFoodNutrionals(string name, int gram)
         {
@@ -36,19 +36,7 @@ namespace Services.Concrete
            => _foodRepository.Get(f => f.Name.Equals(name));
 
         public void AddNewFood(Food food)
-        //public void AddNewFood(string name, double calorie, double fat, double protein, double carbonhidrate,int categoryId, string? imagePath, int gram)
         {
-            //Food food = new Food() 
-            //{
-            //    Name = name,
-            //    Calorie = calorie,
-            //    Fat = fat,
-            //    Protein = protein,
-            //    Carbonhidrate = carbonhidrate,
-            //    FoodCategoryId = categoryId,
-            //    ImagePath = imagePath,
-            //    Gram = gram
-            //};
             _foodRepository.Create(food);
         }
 
