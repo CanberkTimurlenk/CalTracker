@@ -36,18 +36,18 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
+            cmb_Categories = new Krypton.Toolkit.KryptonComboBox();
+            lbl_Breakfast = new Label();
+            lbl_lunch = new Label();
+            lbl_Dinner = new Label();
+            lbl_Snack = new Label();
+            lbl_OthersBreakfast = new Label();
+            lbl_OthersLunch = new Label();
+            lbl_OthersDinner = new Label();
+            lbl_OthersSnack = new Label();
+            lbl_Total = new Label();
+            lbl_OthersTotal = new Label();
+            ((System.ComponentModel.ISupportInitialize)cmb_Categories).BeginInit();
             SuspendLayout();
             // 
             // plotView1
@@ -130,128 +130,128 @@
             label6.TabIndex = 1;
             label6.Text = "Aperatif";
             // 
-            // kryptonComboBox1
+            // cmb_Categories
             // 
-            kryptonComboBox1.CornerRoundingRadius = -1F;
-            kryptonComboBox1.DropDownWidth = 121;
-            kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(544, 111);
-            kryptonComboBox1.Margin = new Padding(3, 4, 3, 4);
-            kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(138, 25);
-            kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kryptonComboBox1.TabIndex = 2;
-            kryptonComboBox1.Text = "Kategori";
+            cmb_Categories.CornerRoundingRadius = -1F;
+            cmb_Categories.DropDownWidth = 121;
+            cmb_Categories.IntegralHeight = false;
+            cmb_Categories.Location = new Point(544, 111);
+            cmb_Categories.Margin = new Padding(3, 4, 3, 4);
+            cmb_Categories.Name = "cmb_Categories";
+            cmb_Categories.Size = new Size(138, 25);
+            cmb_Categories.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            cmb_Categories.TabIndex = 2;
+            cmb_Categories.Text = "Kategori";
             // 
-            // label7
+            // lbl_Breakfast
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(310, 157);
-            label7.Name = "label7";
-            label7.Size = new Size(17, 20);
-            label7.TabIndex = 1;
-            label7.Text = "0";
+            lbl_Breakfast.AutoSize = true;
+            lbl_Breakfast.Location = new Point(310, 157);
+            lbl_Breakfast.Name = "lbl_Breakfast";
+            lbl_Breakfast.Size = new Size(17, 20);
+            lbl_Breakfast.TabIndex = 1;
+            lbl_Breakfast.Text = "0";
             // 
-            // label8
+            // lbl_lunch
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(373, 157);
-            label8.Name = "label8";
-            label8.Size = new Size(17, 20);
-            label8.TabIndex = 1;
-            label8.Text = "0";
+            lbl_lunch.AutoSize = true;
+            lbl_lunch.Location = new Point(373, 157);
+            lbl_lunch.Name = "lbl_lunch";
+            lbl_lunch.Size = new Size(17, 20);
+            lbl_lunch.TabIndex = 1;
+            lbl_lunch.Text = "0";
             // 
-            // label9
+            // lbl_Dinner
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(426, 157);
-            label9.Name = "label9";
-            label9.Size = new Size(17, 20);
-            label9.TabIndex = 1;
-            label9.Text = "0";
+            lbl_Dinner.AutoSize = true;
+            lbl_Dinner.Location = new Point(426, 157);
+            lbl_Dinner.Name = "lbl_Dinner";
+            lbl_Dinner.Size = new Size(17, 20);
+            lbl_Dinner.TabIndex = 1;
+            lbl_Dinner.Text = "0";
             // 
-            // label10
+            // lbl_Snack
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(489, 157);
-            label10.Name = "label10";
-            label10.Size = new Size(17, 20);
-            label10.TabIndex = 1;
-            label10.Text = "0";
+            lbl_Snack.AutoSize = true;
+            lbl_Snack.Location = new Point(489, 157);
+            lbl_Snack.Name = "lbl_Snack";
+            lbl_Snack.Size = new Size(17, 20);
+            lbl_Snack.TabIndex = 1;
+            lbl_Snack.Text = "0";
             // 
-            // label11
+            // lbl_OthersBreakfast
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(310, 193);
-            label11.Name = "label11";
-            label11.Size = new Size(17, 20);
-            label11.TabIndex = 1;
-            label11.Text = "0";
+            lbl_OthersBreakfast.AutoSize = true;
+            lbl_OthersBreakfast.Location = new Point(310, 193);
+            lbl_OthersBreakfast.Name = "lbl_OthersBreakfast";
+            lbl_OthersBreakfast.Size = new Size(17, 20);
+            lbl_OthersBreakfast.TabIndex = 1;
+            lbl_OthersBreakfast.Text = "0";
             // 
-            // label12
+            // lbl_OthersLunch
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(373, 193);
-            label12.Name = "label12";
-            label12.Size = new Size(17, 20);
-            label12.TabIndex = 1;
-            label12.Text = "0";
+            lbl_OthersLunch.AutoSize = true;
+            lbl_OthersLunch.Location = new Point(373, 193);
+            lbl_OthersLunch.Name = "lbl_OthersLunch";
+            lbl_OthersLunch.Size = new Size(17, 20);
+            lbl_OthersLunch.TabIndex = 1;
+            lbl_OthersLunch.Text = "0";
             // 
-            // label13
+            // lbl_OthersDinner
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(426, 193);
-            label13.Name = "label13";
-            label13.Size = new Size(17, 20);
-            label13.TabIndex = 1;
-            label13.Text = "0";
+            lbl_OthersDinner.AutoSize = true;
+            lbl_OthersDinner.Location = new Point(426, 193);
+            lbl_OthersDinner.Name = "lbl_OthersDinner";
+            lbl_OthersDinner.Size = new Size(17, 20);
+            lbl_OthersDinner.TabIndex = 1;
+            lbl_OthersDinner.Text = "0";
             // 
-            // label14
+            // lbl_OthersSnack
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(489, 193);
-            label14.Name = "label14";
-            label14.Size = new Size(17, 20);
-            label14.TabIndex = 1;
-            label14.Text = "0";
+            lbl_OthersSnack.AutoSize = true;
+            lbl_OthersSnack.Location = new Point(489, 193);
+            lbl_OthersSnack.Name = "lbl_OthersSnack";
+            lbl_OthersSnack.Size = new Size(17, 20);
+            lbl_OthersSnack.TabIndex = 1;
+            lbl_OthersSnack.Text = "0";
             // 
-            // label15
+            // lbl_Total
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(573, 157);
-            label15.Name = "label15";
-            label15.Size = new Size(17, 20);
-            label15.TabIndex = 1;
-            label15.Text = "0";
+            lbl_Total.AutoSize = true;
+            lbl_Total.Location = new Point(573, 157);
+            lbl_Total.Name = "lbl_Total";
+            lbl_Total.Size = new Size(17, 20);
+            lbl_Total.TabIndex = 1;
+            lbl_Total.Text = "0";
             // 
-            // label16
+            // lbl_OthersTotal
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(573, 193);
-            label16.Name = "label16";
-            label16.Size = new Size(17, 20);
-            label16.TabIndex = 1;
-            label16.Text = "0";
+            lbl_OthersTotal.AutoSize = true;
+            lbl_OthersTotal.Location = new Point(573, 193);
+            lbl_OthersTotal.Name = "lbl_OthersTotal";
+            lbl_OthersTotal.Size = new Size(17, 20);
+            lbl_OthersTotal.TabIndex = 1;
+            lbl_OthersTotal.Text = "0";
             // 
             // FormCompareWeekly
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(kryptonComboBox1);
+            Controls.Add(cmb_Categories);
             Controls.Add(label2);
-            Controls.Add(label16);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label15);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label12);
+            Controls.Add(lbl_OthersTotal);
+            Controls.Add(lbl_OthersSnack);
+            Controls.Add(lbl_OthersDinner);
+            Controls.Add(lbl_Total);
+            Controls.Add(lbl_Snack);
+            Controls.Add(lbl_Dinner);
+            Controls.Add(lbl_OthersLunch);
             Controls.Add(label6);
-            Controls.Add(label8);
-            Controls.Add(label11);
+            Controls.Add(lbl_lunch);
+            Controls.Add(lbl_OthersBreakfast);
             Controls.Add(label5);
-            Controls.Add(label7);
+            Controls.Add(lbl_Breakfast);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
@@ -262,7 +262,7 @@
             Name = "FormCompareWeekly";
             Text = "FormCompare";
             Load += FormCompareWeekly_Load;
-            ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cmb_Categories).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,16 +277,16 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
+        private Krypton.Toolkit.KryptonComboBox cmb_Categories;
+        private Label lbl_Breakfast;
+        private Label lbl_lunch;
+        private Label lbl_Dinner;
+        private Label lbl_Snack;
+        private Label lbl_OthersBreakfast;
+        private Label lbl_OthersLunch;
+        private Label lbl_OthersDinner;
+        private Label lbl_OthersSnack;
+        private Label lbl_Total;
+        private Label lbl_OthersTotal;
     }
 }

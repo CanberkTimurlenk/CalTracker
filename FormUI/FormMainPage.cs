@@ -1,4 +1,9 @@
 ﻿using Entities.Concrete;
+using Repositories.Abstract;
+using Repositories.Concrete.EFCore;
+using Repositories.Context;
+using Services.Abstract;
+using Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +19,14 @@ namespace FormUI
 {
     public partial class FormMainPage : Form
     {
-        private readonly int _userId;
-        public FormMainPage(int userId)
+        private readonly User _user;
+        private readonly IUserService _userService = new UserManager();
+        KaloriTakipDbContext db = new KaloriTakipDbContext();
+
+
+        public FormMainPage(User user)
         {
-            _userId = userId;
+            _user = user;
             InitializeComponent();
         }
 
@@ -29,27 +38,30 @@ namespace FormUI
                 Color.FromArgb(32, 191, 107),
                 Color.FromArgb(50, 210, 255),
                 360f
+
             );
             this.Paint += (sender, e) =>
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+            lbl_Welcome.Text = $"Hoşgeldin :  {_user.FirstName} {_user.LastName} ";
+            lbl_BmiStatus.Text = $"Bmi İndeksiniz : {_userService.CalculateBmi(_user.Id, _user.Height, _user.Weight)}";
         }
 
         private void btn_Settings_Click(object sender, EventArgs e)
         {
-            new FormSettings(_userId).Show();
+            new FormSettings(_user.Id).Show();
 
         }
 
         private void btn_Reports_Click(object sender, EventArgs e)
         {
-            new FormReports(_userId).Show();
+            new FormReports(_user.Id).Show();
         }
 
         private void btn_CalorieTrack_Click(object sender, EventArgs e)
         {
-            new FormMeals(_userId).Show();
+            new FormMeals(_user.Id).Show();
         }
     }
 }

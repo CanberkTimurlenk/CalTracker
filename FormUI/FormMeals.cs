@@ -21,9 +21,9 @@ namespace FormUI
         private List<FoodNutrionals> _dataSource = new();
         private readonly int _userMealId;
 
-        public FormMeals(int userId)
+        public FormMeals(int user)
         {
-            _userId = userId;
+            _userId = user;
             InitializeComponent();
         }
 

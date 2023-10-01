@@ -35,6 +35,8 @@
             pictureBox3 = new PictureBox();
             btn_Reports = new Krypton.Toolkit.KryptonButton();
             btn_Settings = new Krypton.Toolkit.KryptonButton();
+            lbl_Welcome = new Label();
+            lbl_BmiStatus = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -140,6 +142,26 @@
             btn_Settings.Values.Text = "Ayarlar";
             btn_Settings.Click += btn_Settings_Click;
             // 
+            // lbl_Welcome
+            // 
+            lbl_Welcome.AutoSize = true;
+            lbl_Welcome.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_Welcome.Location = new Point(12, 9);
+            lbl_Welcome.Name = "lbl_Welcome";
+            lbl_Welcome.Size = new Size(51, 20);
+            lbl_Welcome.TabIndex = 2;
+            lbl_Welcome.Text = "label1";
+            // 
+            // lbl_BmiStatus
+            // 
+            lbl_BmiStatus.AutoSize = true;
+            lbl_BmiStatus.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lbl_BmiStatus.Location = new Point(373, 9);
+            lbl_BmiStatus.Name = "lbl_BmiStatus";
+            lbl_BmiStatus.Size = new Size(54, 20);
+            lbl_BmiStatus.TabIndex = 2;
+            lbl_BmiStatus.Text = "label1";
+            // 
             // FormMainPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -147,6 +169,8 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(450, 517);
+            Controls.Add(lbl_BmiStatus);
+            Controls.Add(lbl_Welcome);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -162,6 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -171,5 +196,7 @@
         private PictureBox pictureBox3;
         private Krypton.Toolkit.KryptonButton btn_Reports;
         private Krypton.Toolkit.KryptonButton btn_Settings;
+        private Label lbl_Welcome;
+        private Label lbl_BmiStatus;
     }
 }

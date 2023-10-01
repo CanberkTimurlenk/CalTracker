@@ -2,6 +2,8 @@
 using OxyPlot.Axes;
 using OxyPlot.Legends;
 using OxyPlot.Series;
+using Services.Abstract;
+using Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +20,11 @@ namespace FormUI
 {
     public partial class FormCompareMonthly : Form
     {
-        public FormCompareMonthly()
+        private readonly IUserMealService _userMealService = new UserMealManager();
+        private readonly int _userId;
+        public FormCompareMonthly(int userId)
         {
+            _userId = userId;
             InitializeComponent();
         }
 
@@ -37,45 +42,21 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+            cmb_Categories.DataSource=Enum.GetValues(typeof(Entities.Enums.Categories));
+            var user = _userMealService.GetUserNutrionalsByUserIdAndDateRange(_userId, DateTime.Now.AddDays(-7), DateTime.Now, cmb_Categories.SelectedIndex);
+            var otherUsers = _userMealService.GetUserNutrionalsAllByDateRange(DateTime.Now.AddDays(-7), DateTime.Now, cmb_Categories.SelectedIndex);
 
-            Random random = new Random();
-            double[] ys1 = { 5, 18, 7, 12, 3 };
-            double[] ys2 = { 3, 7, 20, 5, 9 };
-            var user = new BarSeries()
-            {
-                Title = "Siz",
-                StrokeColor = OxyColors.Black,
-                FillColor = OxyColors.LightSeaGreen,
-                StrokeThickness = 1,
-            };
-            var avarage = new BarSeries()
-            {
-                Title = "Diger Kullanicilar",
-                StrokeColor = OxyColors.Black,
-                FillColor = OxyColors.MediumOrchid,
-                StrokeThickness = 1,
-            };
-            for (int i = 0; i < 5; i++)
-            {
-                user.Items.Add(new BarItem(ys1[i], i));
-                avarage.Items.Add(new BarItem(ys2[i], i));
-            }
-            pv_Category.Model = new PlotModel 
-            { 
-                Title = "Kategori",
-            };
-            //pv_Category.Model.PlotType = PlotType.XY;
-            var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom };
-            categoryAxis.Labels.Add("Birinci");
-            categoryAxis.Labels.Add("Ikinci");
-            categoryAxis.Labels.Add("Ucuncu");
-            categoryAxis.Labels.Add("Dorduncu");
-            categoryAxis.Labels.Add("Besinci");
-            var valueAxis = new LinearAxis { Position = AxisPosition.Left, MinimumPadding = 0, MaximumPadding = 0 };
-            pv_Category.Model.Series.Add(user);
-            pv_Category.Model.Series.Add(avarage);
-            pv_Category.Model.Axes.Add(categoryAxis);
-            pv_Category.Model.Axes.Add(valueAxis);
+            lbl_Breakfast.Text = user.Breakfast.ToString();
+            lbl_lunch.Text = user.Lunch.ToString();
+            lbl_Dinner.Text = user.Dinner.ToString();
+            lbl_Snack.Text = user.Snack.ToString();
+            lbl_Total.Text = (user.Breakfast + user.Lunch + user.Dinner + user.Snack).ToString() + " kcal";
+
+            lbl_OthersBreakfast.Text = otherUsers.Breakfast.ToString();
+            lbl_OthersLunch.Text = otherUsers.Lunch.ToString();
+            lbl_OthersDinner.Text = otherUsers.Dinner.ToString();
+            lbl_OthersSnack.Text = otherUsers.Snack.ToString();
+            lbl_OthersTotal.Text = (otherUsers.Breakfast + otherUsers.Lunch + otherUsers.Dinner + otherUsers.Snack).ToString() + " kcal";
         }
     }
 }
