@@ -1,7 +1,7 @@
 ﻿using Entities.Abstract;
 using System.Linq.Expressions;
 
-namespace Repository.Abstract.Base
+namespace Repositories.Abstract.Base
 {
     public interface IBaseRepository<T> where T : class, IEntity, new()
     {

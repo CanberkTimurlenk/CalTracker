@@ -250,7 +250,7 @@
             // 
             // FormCompareMonthly
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(cmb_Category);
@@ -272,6 +272,7 @@
             Controls.Add(label3);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormCompareMonthly";
             StartPosition = FormStartPosition.Manual;
             Text = "FormCompareMonthly";

@@ -1,11 +1,11 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
-using Repository.Abstract;
-using Repository.Abstract.Base;
+using Repositories.Abstract;
+using Repositories.Abstract.Base;
 using Repositories.Context;
 using Services.Concrete;
 
-namespace Repository.Concrete.EFCore
+namespace Repositories.Concrete.EFCore
 {
     public class FoodRepository : BaseRepository<Food>, IFoodRepository
     {

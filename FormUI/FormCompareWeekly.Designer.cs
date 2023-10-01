@@ -122,7 +122,7 @@
             kryptonComboBox1.IntegralHeight = false;
             kryptonComboBox1.Location = new Point(611, 134);
             kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(121, 21);
+            kryptonComboBox1.Size = new Size(138, 25);
             kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             kryptonComboBox1.TabIndex = 2;
             kryptonComboBox1.Text = "Kategori";
@@ -250,9 +250,9 @@
             // 
             // FormCompareWeekly
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(kryptonComboBox1);
             Controls.Add(label2);
             Controls.Add(lbl_AvgCategory);

@@ -2,7 +2,7 @@
 using Repositories.Context;
 using System.Linq.Expressions;
 
-namespace Repository.Abstract.Base
+namespace Repositories.Abstract.Base
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : class, IEntity, new()
     {

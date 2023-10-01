@@ -1,8 +1,8 @@
 ﻿using Entities.Concrete;
-using Repository.Abstract.Base;
+using Repositories.Abstract.Base;
 using Services.Concrete;
 
-namespace Repository.Abstract
+namespace Repositories.Abstract
 {
     public interface IFoodRepository : IBaseRepository<Food>
     {

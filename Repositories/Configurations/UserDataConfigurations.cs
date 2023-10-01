@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
-namespace Repository.Configurations
+namespace Repositories.Configurations
 {
     public class UserDataConfiguration : IEntityTypeConfiguration<UserData>
     {

@@ -36,6 +36,34 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+            {
+                Title = "Diger Kullanicilar",
+                StrokeColor = OxyColors.Black,
+                FillColor = OxyColors.MediumOrchid,
+                StrokeThickness = 1,
+            };
+            for (int i = 0; i < 5; i++)
+            {
+                user.Items.Add(new BarItem(ys1[i], i));
+                avarage.Items.Add(new BarItem(ys2[i], i));
+            }
+            pv_Category.Model = new PlotModel 
+            { 
+                Title = "Kategori",
+            };
+            //pv_Category.Model.PlotType = PlotType.XY;
+            var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom };
+            categoryAxis.Labels.Add("Birinci");
+            categoryAxis.Labels.Add("Ikinci");
+            categoryAxis.Labels.Add("Ucuncu");
+            categoryAxis.Labels.Add("Dorduncu");
+            categoryAxis.Labels.Add("Besinci");
+            var valueAxis = new LinearAxis { Position = AxisPosition.Left, MinimumPadding = 0, MaximumPadding = 0 };
+            pv_Category.Model.Series.Add(user);
+            pv_Category.Model.Series.Add(avarage);
+            pv_Category.Model.Axes.Add(categoryAxis);
+            pv_Category.Model.Axes.Add(valueAxis);
+            
         }
     }
 }

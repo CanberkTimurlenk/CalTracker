@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositories.Context;
 
@@ -11,9 +12,11 @@ using Repositories.Context;
 namespace Repositories.Migrations
 {
     [DbContext(typeof(KaloriTakipDbContext))]
-    partial class KaloriTakipDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230929132935_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,16 +97,24 @@ namespace Repositories.Migrations
 
             modelBuilder.Entity("Entities.Concrete.FoodAmount", b =>
                 {
-                    b.Property<int>("FoodId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("UserMealId")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("FoodId")
                         .HasColumnType("int");
 
                     b.Property<int>("Gram")
                         .HasColumnType("int");
 
-                    b.HasKey("FoodId", "UserMealId");
+                    b.Property<int>("UserMealId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FoodId");
 
                     b.HasIndex("UserMealId");
 
@@ -228,13 +239,22 @@ namespace Repositories.Migrations
                     b.ToTable("UserDatas");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.UserMeal", b =>
+            modelBuilder.Entity("Entities.Concrete.UserMeals", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double>("Calorie")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Carbonhidrate")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Fat")
+                        .HasColumnType("float");
 
                     b.Property<int?>("FoodId")
                         .HasColumnType("int");
@@ -245,16 +265,10 @@ namespace Repositories.Migrations
                     b.Property<int>("MealTime")
                         .HasColumnType("int");
 
-                    b.Property<double>("TotalCalorie")
+                    b.Property<double>("Portion")
                         .HasColumnType("float");
 
-                    b.Property<double>("TotalCarbonhidrate")
-                        .HasColumnType("float");
-
-                    b.Property<double>("TotalFat")
-                        .HasColumnType("float");
-
-                    b.Property<double>("TotalProtein")
+                    b.Property<double>("Protein")
                         .HasColumnType("float");
 
                     b.Property<int>("UserId")
@@ -302,7 +316,7 @@ namespace Repositories.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Concrete.UserMeal", "UserMeal")
+                    b.HasOne("Entities.Concrete.UserMeals", "UserMeal")
                         .WithMany("FoodAmounts")
                         .HasForeignKey("UserMealId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -335,7 +349,7 @@ namespace Repositories.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.UserMeal", b =>
+            modelBuilder.Entity("Entities.Concrete.UserMeals", b =>
                 {
                     b.HasOne("Entities.Concrete.Food", null)
                         .WithMany("UserMeals")
@@ -384,7 +398,7 @@ namespace Repositories.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Entities.Concrete.UserMeal", b =>
+            modelBuilder.Entity("Entities.Concrete.UserMeals", b =>
                 {
                     b.Navigation("FoodAmounts");
                 });

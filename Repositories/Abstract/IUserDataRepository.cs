@@ -1,7 +1,7 @@
 ﻿using Entities.Concrete;
-using Repository.Abstract.Base;
+using Repositories.Abstract.Base;
 
-namespace Repository.Abstract
+namespace Repositories.Abstract
 {
     public interface IUserDataRepository : IBaseRepository<UserData>
     {

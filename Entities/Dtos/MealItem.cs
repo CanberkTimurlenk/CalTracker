@@ -1,6 +1,6 @@
 ﻿namespace Entities.Dtos
 {
-    public record MealItem
+    public record MealItemDto
     {
         public int UserId { get; init; }
         public string FoodName { get; init; }
