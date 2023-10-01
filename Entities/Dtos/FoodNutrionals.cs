@@ -1,10 +1,10 @@
 ﻿namespace Services.Concrete
 {
-    public class FoodNutrionals
+    public record FoodNutrionals
     {
-        public string FoodName { get; set; }
-        public int Gram { get; set; }
-        public Nutrionals Nutrionals { get; set; }
+        public string FoodName { get; init; }
+        public int Gram { get; init; }
+        public Nutrionals Nutrionals { get; init; }
 
     }
 }

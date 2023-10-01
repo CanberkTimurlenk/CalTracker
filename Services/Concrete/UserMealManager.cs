@@ -30,7 +30,7 @@ namespace Services.Concrete
                     Nutrionals = CalculateNutrionals(userMeals.FoodAmounts)
                 });
             });
-            
+
             return foodList;
         }
 
@@ -46,7 +46,6 @@ namespace Services.Concrete
             return userMeal.Id;
 
         }
-
 
         public IEnumerable<MealNutrionals> GetUserMealsByUserIdAndMealDate(int userId, DateTime mealDate)
         {
@@ -68,16 +67,17 @@ namespace Services.Concrete
         {
             var userMeals = _userMealRepository.GetUserMealsAllByDateRange(startDate, endDate).ToList();
 
-            var periodicCalories = CalculateNutrionals(userMeals, categoryId);
+            var pC = CalculateNutrionals(userMeals, categoryId);    // Periodic Calories
 
             var activeUserCount = _userRepository.GetActiveUserCount();
 
-            periodicCalories.Breakfast = Math.Round(periodicCalories.Breakfast / activeUserCount, 2);
-            periodicCalories.Lunch = Math.Round(periodicCalories.Lunch / activeUserCount, 2);
-            periodicCalories.Dinner = Math.Round(periodicCalories.Dinner / activeUserCount, 2);
-            periodicCalories.Snack = Math.Round(periodicCalories.Snack / activeUserCount, 2);
 
-            return periodicCalories;
+            pC.Breakfast = Math.Round(pC.Breakfast / activeUserCount, 2);
+            pC.Lunch = Math.Round(pC.Lunch / activeUserCount, 2);
+            pC.Dinner = Math.Round(pC.Dinner / activeUserCount, 2);
+            pC.Snack = Math.Round(pC.Snack / activeUserCount, 2);
+
+            return pC;
 
         }
 
@@ -100,7 +100,7 @@ namespace Services.Concrete
         {
             var mealNutrionalsList = new List<MealNutrionals>();
 
-            if (!userMeals.SelectMany(um => um.FoodAmounts).Any()) 
+            if (!userMeals.SelectMany(um => um.FoodAmounts).Any())
                 return mealNutrionalsList;
 
             if (!categoryId.Equals(0))
@@ -131,7 +131,7 @@ namespace Services.Concrete
                         Nutrionals = CalculateNutrionals(meals.SelectMany(um => um.FoodAmounts))
                     };
 
-                    mealNutrionals.MealTime = mealTime;
+
                     mealNutrionalsList.Add(mealNutrionals);
                 }
             }

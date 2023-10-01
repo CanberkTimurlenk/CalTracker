@@ -2,8 +2,8 @@
 {
     public record UserVerificationDto
     {
-        public int UserId { get; set; }
-        public string UserEmail { get; set; }
-        public string VerificationCode { get; set; }
+        public int UserId { get; init; }
+        public string UserEmail { get; init; }
+        public string VerificationCode { get; init; }
     }
 }

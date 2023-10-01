@@ -3,9 +3,9 @@ using Services.Concrete;
 
 namespace Entities.Dtos
 {
-    public class MealNutrionals
+    public record MealNutrionals
     {
-        public MealTimes MealTime { get; set; }
-        public Nutrionals Nutrionals { get; set; }
+        public MealTimes MealTime { get; init; }
+        public Nutrionals Nutrionals { get; init; }
     }
 }

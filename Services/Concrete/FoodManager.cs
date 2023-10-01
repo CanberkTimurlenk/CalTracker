@@ -25,10 +25,13 @@ namespace Services.Concrete
             {
                 FoodName = fn.FoodName,
                 Gram = gram,
-                Calorie = Math.Round((fn.Calorie / fn.Gram) * gram, 2),
-                Carbonhidrate = Math.Round((fn.Carbonhidrate / fn.Gram) * gram, 2),
-                Protein = Math.Round((fn.Protein / fn.Gram) * gram, 2),
-                Fat = Math.Round((fn.Fat / fn.Gram) * gram, 2)
+                Nutrionals = new Nutrionals
+                {
+                    Calorie = Math.Round((fn.Nutrionals.Calorie / fn.Gram) * gram, 2),
+                    Carbonhidrate = Math.Round((fn.Nutrionals.Carbonhidrate / fn.Gram) * gram, 2),
+                    Protein = Math.Round((fn.Nutrionals.Protein / fn.Gram) * gram, 2),
+                    Fat = Math.Round((fn.Nutrionals.Fat / fn.Gram) * gram, 2)
+                }                
             };
             return calculatedFoodNutrionals;
 
