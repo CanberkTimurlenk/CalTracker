@@ -17,12 +17,13 @@ namespace FormUI
 {
     public partial class FormSettings : Form
     {
-
+        private readonly int _userId;
         private readonly IUserService _userService = new UserManager();
         private readonly IAimService _aimService = new AimManager();
-        public FormSettings()
+        public FormSettings(int userId)
         {
             InitializeComponent();
+            _userId = userId;
         }
         private void FormSettings_Load(object sender, EventArgs e)
         {

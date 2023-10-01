@@ -20,7 +20,7 @@ namespace FormUI
         private List<MealItemDto> _mealItemToAdd = new List<MealItemDto>();
         private List<FoodNutrionals> _dataSource = new();
 
-        public FormMeals()
+        public FormMeals(int userId)
         {
             _userId = userId;
             InitializeComponent();
@@ -185,16 +185,16 @@ namespace FormUI
 
         private void dgv_MealList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
+            if (dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
             {
                 var selectedFoodName = dgv_MealList.SelectedRows[0].Cells[0].Value.ToString();
                 var image = _foodService.GetFoodImageByFoodName(selectedFoodName);
 
-                if(image is not null)
-                pb_Food.Load(image);
-                
+                if (image is not null)
+                    pb_Food.Load(image);
+
             }
-            
+
         }
         private void FormMeals_FormClosed(object sender, FormClosedEventArgs e)
         {

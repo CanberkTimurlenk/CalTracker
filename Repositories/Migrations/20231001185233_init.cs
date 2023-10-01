@@ -129,11 +129,6 @@ namespace Repositories.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     MealTime = table.Column<int>(type: "int", nullable: false),
-                    Calorie = table.Column<double>(type: "float", nullable: false),
-                    Fat = table.Column<double>(type: "float", nullable: false),
-                    Carbonhidrate = table.Column<double>(type: "float", nullable: false),
-                    Protein = table.Column<double>(type: "float", nullable: false),
-                    Portion = table.Column<double>(type: "float", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -166,28 +161,34 @@ namespace Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FoodUserMeals",
+                name: "FoodAmounts",
                 columns: table => new
                 {
-                    FoodsId = table.Column<int>(type: "int", nullable: false),
-                    UserMealsId = table.Column<int>(type: "int", nullable: false)
+                    FoodId = table.Column<int>(type: "int", nullable: false),
+                    UserMealId = table.Column<int>(type: "int", nullable: false),
+                    Gram = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FoodUserMeals", x => new { x.FoodsId, x.UserMealsId });
+                    table.PrimaryKey("PK_FoodAmounts", x => new { x.FoodId, x.UserMealId });
                     table.ForeignKey(
-                        name: "FK_FoodUserMeals_Foods_FoodsId",
-                        column: x => x.FoodsId,
+                        name: "FK_FoodAmounts_Foods_FoodId",
+                        column: x => x.FoodId,
                         principalTable: "Foods",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FoodUserMeals_UserMeals_UserMealsId",
-                        column: x => x.UserMealsId,
+                        name: "FK_FoodAmounts_UserMeals_UserMealId",
+                        column: x => x.UserMealId,
                         principalTable: "UserMeals",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FoodAmounts_UserMealId",
+                table: "FoodAmounts",
+                column: "UserMealId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Foods_FoodCategoryId",
@@ -195,9 +196,10 @@ namespace Repositories.Migrations
                 column: "FoodCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FoodUserMeals_UserMealsId",
-                table: "FoodUserMeals",
-                column: "UserMealsId");
+                name: "IX_Foods_Name",
+                table: "Foods",
+                column: "Name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserDatas_UserId",
@@ -219,7 +221,7 @@ namespace Repositories.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FoodUserMeals");
+                name: "FoodAmounts");
 
             migrationBuilder.DropTable(
                 name: "UserDatas");

@@ -13,9 +13,11 @@ namespace FormUI
 {
     public partial class FormMostConsumed : Form
     {
-        public FormMostConsumed()
+        private readonly int _userId;
+        public FormMostConsumed(int userId)
         {
             InitializeComponent();
+            _userId = userId;
         }
 
         private void FormMostConsumed_Load(object sender, EventArgs e)

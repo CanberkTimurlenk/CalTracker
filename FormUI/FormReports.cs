@@ -13,8 +13,11 @@ namespace FormUI
 {
     public partial class FormReports : Form
     {
-        public FormReports()
+        private readonly int _userId;
+
+        public FormReports(int userId)
         {
+            userId = _userId;
             InitializeComponent();
         }
 
@@ -33,7 +36,7 @@ namespace FormUI
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
 
-            FormDailyReport daily = new FormDailyReport();
+            FormDailyReport daily = new FormDailyReport(_userId);
             daily.MdiParent = this;
             daily.Show();
         }
@@ -45,42 +48,38 @@ namespace FormUI
 
         private void gunlukRaporToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDailyReport daily = new FormDailyReport();
-            //CloseOtherChildForms(daily);
-            daily.MdiParent = this;
-            daily.Show();
+            FormDailyReport daily = new FormDailyReport(_userId);
+            CloseOtherChildForms(daily);
         }
 
         private void haftalikKiyasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCompareWeekly weekly = new FormCompareWeekly();
-            //CloseOtherChildForms(weekly);
-            weekly.MdiParent = this;
-            weekly.Show();
+            FormCompareWeekly weekly = new FormCompareWeekly(_userId);
+            CloseOtherChildForms(weekly);
         }
 
         private void aylikKiyasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCompareMonthly monthly = new FormCompareMonthly();
-            //CloseOtherChildForms(monthly);
-            monthly.MdiParent = this;
-            monthly.Show();
+            FormCompareMonthly monthly = new FormCompareMonthly(_userId);
+            CloseOtherChildForms(monthly);            
         }
 
         private void yemekRaporuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormMostConsumed mostConsumed = new FormMostConsumed();
-            //CloseOtherChildForms(mostConsumed);
-            mostConsumed.MdiParent = this;
-            mostConsumed.Show();
+            FormMostConsumed mostConsumed = new FormMostConsumed(_userId);
+            CloseOtherChildForms(mostConsumed);
+            
         }
-        private void CloseOtherChildForms(Form form)
+        private void CloseOtherChildForms<T>(T form) where T : Form
         {
-            //foreach icinde patliyor(InvalidOperationException)
-            foreach (Form f in Application.OpenForms)
+            if (ActiveMdiChild != null)
             {
-                if (f != form)
-                    f.Close();
+                foreach (Form item in this.MdiChildren)
+                {
+                    item.Close();
+                }
+                form.MdiParent = this;
+                form.Show();
             }
         }
     }

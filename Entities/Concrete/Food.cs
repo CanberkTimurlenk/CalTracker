@@ -15,7 +15,5 @@ namespace Entities.Concrete
         public int Gram { get; set; }
         public int FoodCategoryId { get; set; }
         public FoodCategory FoodCategory { get; set; }
-
-        public List<UserMeal> UserMeals { get; set; }
     }
 }

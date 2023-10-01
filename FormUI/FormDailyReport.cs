@@ -17,9 +17,9 @@ namespace FormUI
     {
         private readonly int _userId;
         private readonly IUserMealService _userMealService = new UserMealManager();
-        public FormDailyReport()//int userId)
+        public FormDailyReport(int userId)//int userId)
         {
-            _userId = 5;
+            _userId = userId;
             InitializeComponent();
         }
 

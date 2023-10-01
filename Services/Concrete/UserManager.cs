@@ -89,5 +89,30 @@ namespace Services.Concrete
             user.Weight = newWeight;
             _userRepository.Update(user);
         }
+        public string CalculateBmi(int userId, double height, double weight)
+        {
+            var user = _userRepository.GetById(userId);
+
+            user.Weight = weight;
+            user.Height = height;
+            double status = (weight / (Math.Pow(height, 2)));
+            if (status < 18.5)
+            {
+                return BmiStatus.UnderWeight.ToString();
+            }
+            else if (status >= 18.5 && status < 25)
+            {
+                return BmiStatus.NormalWeight.ToString();
+            }
+            else if (status >= 25 && status < 30)
+            {
+                return BmiStatus.Overweight.ToString();
+            }
+            else
+            {
+                return BmiStatus.Obesity.ToString();
+            }
+
+        }
     }
 }

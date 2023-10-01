@@ -15,7 +15,7 @@ namespace FormUI
             ApplicationConfiguration.Initialize();
 
 
-                Application.Run(new FormMeals(2));
+                Application.Run(new FormMainPage());
             /*
             catch (SqlException)
             {
