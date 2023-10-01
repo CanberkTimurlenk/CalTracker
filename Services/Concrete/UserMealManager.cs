@@ -21,23 +21,16 @@ namespace Services.Concrete
                 return new List<FoodNutrionals>();
 
             var foodList = new List<FoodNutrionals>();
-
-
-
             userMeals.FoodAmounts.ForEach(fa =>
             {
                 foodList.Add(new FoodNutrionals
                 {
                     FoodName = fa.Food.Name,
                     Gram = fa.Gram,
-                    Calorie = Math.Round((fa.Food.Calorie / fa.Food.Gram) * fa.Gram, 2),
-                    Carbonhidrate = Math.Round((fa.Food.Carbonhidrate / fa.Food.Gram) * fa.Gram, 2),
-                    Fat = Math.Round((fa.Food.Carbonhidrate / fa.Food.Gram) * fa.Gram, 2),
-                    Protein = Math.Round((fa.Food.Protein / fa.Food.Gram) * fa.Gram, 2)
+                    Nutrionals = CalculateNutrionals(userMeals.FoodAmounts)
                 });
             });
-
-
+            
             return foodList;
         }
 
@@ -71,7 +64,6 @@ namespace Services.Concrete
 
         }
 
-
         public PeriodicCalories GetUserNutrionalsAllByDateRange(DateTime startDate, DateTime endDate, int categoryId = 0)
         {
             var userMeals = _userMealRepository.GetUserMealsAllByDateRange(startDate, endDate).ToList();
@@ -96,7 +88,7 @@ namespace Services.Concrete
 
             foreach (MealTimes mealTime in Enum.GetValues(typeof(MealTimes)))
             {
-                var totalCalorie = nutrionals.Where(mn => mn.MealTime == mealTime).Sum(mn => mn.Calorie);
+                var totalCalorie = nutrionals.Where(mn => mn.MealTime == mealTime).Sum(mn => mn.Nutrionals.Calorie);
                 typeof(PeriodicCalories).GetProperty(mealTime.ToString()).SetValue(periodicNutrionals, totalCalorie);
             }
 
@@ -131,7 +123,13 @@ namespace Services.Concrete
 
                 if (meals.Any()) // if there is no meal in the meal time then, no need to calculate.
                 {
-                    var mealNutrionals = CalculateNutrionals(meals.SelectMany(um => um.FoodAmounts));
+                    var nutrionals = CalculateNutrionals(meals.SelectMany(um => um.FoodAmounts));
+
+                    var mealNutrionals = new MealNutrionals
+                    {
+                        MealTime = mealTime,
+                        Nutrionals = CalculateNutrionals(meals.SelectMany(um => um.FoodAmounts))
+                    };
 
                     mealNutrionals.MealTime = mealTime;
                     mealNutrionalsList.Add(mealNutrionals);
@@ -139,7 +137,7 @@ namespace Services.Concrete
             }
             return mealNutrionalsList;
         }
-        private MealNutrionals CalculateNutrionals(IEnumerable<FoodAmount> foodAmounts)
+        private Nutrionals CalculateNutrionals(IEnumerable<FoodAmount> foodAmounts)
         {
             double totalCalorie = 0, totalCarbonhidrate = 0, totalFat = 0, totalProtein = 0;
 
@@ -154,7 +152,7 @@ namespace Services.Concrete
                 totalProtein += (food.Protein / food.Gram) * gram;
             });
 
-            return new MealNutrionals
+            return new Nutrionals
             {
                 Calorie = Math.Round(totalCalorie, 2),
                 Carbonhidrate = Math.Round(totalCarbonhidrate, 2),

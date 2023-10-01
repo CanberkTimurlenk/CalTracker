@@ -22,7 +22,7 @@ namespace FormUI
 
         public FormMeals()
         {
-            _userId = 5;
+            _userId = userId;
             InitializeComponent();
         }
 
@@ -183,6 +183,19 @@ namespace FormUI
             dgv_SelectedMealList.DataSource = _dataSource;
         }
 
+        private void dgv_MealList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
+            {
+                var selectedFoodName = dgv_MealList.SelectedRows[0].Cells[0].Value.ToString();
+                var image = _foodService.GetFoodImageByFoodName(selectedFoodName);
+
+                if(image is not null)
+                pb_Food.Load(image);
+                
+            }
+            
+        }
         private void FormMeals_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Owner.Show();

@@ -26,10 +26,22 @@ namespace Repositories.Concrete.EFCore
                             {
                                 FoodName = f.Name,
                                 Gram = f.Gram,
-                                Calorie = f.Calorie,
-                                Protein = f.Protein,
-                                Fat = f.Fat
+                                Nutrionals = new Nutrionals
+                                {
+                                    Calorie = f.Calorie,
+                                    Carbonhidrate = f.Carbonhidrate,
+                                    Fat = f.Fat,
+                                }
                             }).FirstOrDefault()!;
+        }
+
+        public string GetFoodImageByFoodName(string name)
+        {
+
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            return context.Foods
+                            .Where(f => f.Name.Equals(name))
+                            .Select(f => f.ImagePath).FirstOrDefault()!;
         }
 
 
@@ -40,7 +52,7 @@ namespace Repositories.Concrete.EFCore
             return KaloriTakipDbContext.Foods
             .Where(food => names.Contains(food.Name))
             .Select(food => food.Id).ToList();
-          
+
         }
     }
 }

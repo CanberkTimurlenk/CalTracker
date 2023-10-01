@@ -42,9 +42,12 @@
             btn_Search = new Krypton.Toolkit.KryptonButton();
             btn_Add = new Krypton.Toolkit.KryptonButton();
             btn_Remove = new Krypton.Toolkit.KryptonButton();
+            nud_Amount = new Krypton.Toolkit.KryptonNumericUpDown();
+            pb_Food = new PictureBox();
             btn_Save = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)dgv_SelectedMealList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_MealList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb_Food).BeginInit();
             SuspendLayout();
             // 
             // dgv_SelectedMealList
@@ -57,7 +60,6 @@
             dgv_SelectedMealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_SelectedMealList.Size = new Size(321, 238);
             dgv_SelectedMealList.TabIndex = 0;
-            
             // 
             // txt_Meal_Search
             // 
@@ -191,6 +193,46 @@
             // 
             // btn_Search
             // 
+            btn_Save.CornerRoundingRadius = -1F;
+            btn_Save.Location = new Point(736, 517);
+            btn_Save.Margin = new Padding(3, 4, 3, 4);
+            btn_Save.Name = "btn_Save";
+            btn_Save.Size = new Size(122, 33);
+            btn_Save.TabIndex = 4;
+            btn_Save.Tag = "7";
+            btn_Save.Values.Text = "Kaydet";
+            btn_Save.Click += btn_Save_Click;
+            // 
+            // dgv_MealList
+            // 
+            dgv_MealList.ColumnHeadersHeight = 36;
+            dgv_MealList.Location = new Point(25, 159);
+            dgv_MealList.Margin = new Padding(3, 4, 3, 4);
+            dgv_MealList.Name = "dgv_MealList";
+            dgv_MealList.RowHeadersWidth = 51;
+            dgv_MealList.RowTemplate.Height = 25;
+            dgv_MealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_MealList.Size = new Size(385, 317);
+            dgv_MealList.TabIndex = 5;
+            dgv_MealList.CellContentClick += dgv_MealList_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(25, 528);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 20);
+            label1.TabIndex = 6;
+            label1.Text = "Miktar:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(226, 531);
+            label2.Name = "label2";
+            label2.Size = new Size(45, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Gram";
             btn_Search.CornerRoundingRadius = 40F;
             btn_Search.Location = new Point(328, 62);
             btn_Search.Name = "btn_Search";
@@ -269,6 +311,14 @@
             btn_Save.Values.Text = "Kaydet";
             btn_Save.Click += btn_Save_Click;
             // 
+            // pb_Food
+            // 
+            pb_Food.Location = new Point(62, 589);
+            pb_Food.Name = "pb_Food";
+            pb_Food.Size = new Size(807, 392);
+            pb_Food.TabIndex = 8;
+            pb_Food.TabStop = false;
+            // 
             // FormMeals
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -282,6 +332,8 @@
             Controls.Add(btn_Dinner);
             Controls.Add(btn_Lunch);
             Controls.Add(btn_Breakfast);
+            ClientSize = new Size(923, 1016);
+            Controls.Add(pb_Food);
             Controls.Add(nud_Amount);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -296,6 +348,7 @@
             Load += FormMeals_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_SelectedMealList).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_MealList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb_Food).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -316,6 +369,8 @@
         private Krypton.Toolkit.KryptonButton btn_Search;
         private Krypton.Toolkit.KryptonButton btn_Add;
         private Krypton.Toolkit.KryptonButton btn_Remove;
+        private Krypton.Toolkit.KryptonNumericUpDown nud_Amount;
+        private PictureBox pb_Food;
         private Krypton.Toolkit.KryptonButton btn_Save;
     }
 }
