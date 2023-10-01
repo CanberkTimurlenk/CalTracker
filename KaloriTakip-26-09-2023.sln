@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{7FC8750F-86FA-40D8-9473-4FA7941732CE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{9D5281DA-DBEA-4DEB-82B1-54F4CC67C53D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{9D5281DA-DBEA-4DEB-82B1-54F4CC67C53D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormUI", "FormUI\FormUI.csproj", "{3FDDB2AD-A4B5-41BE-97F8-9EBD7FCDEDE4}"
 EndProject
