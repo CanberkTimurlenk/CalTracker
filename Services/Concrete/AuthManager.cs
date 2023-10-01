@@ -18,15 +18,14 @@ namespace Services.Concrete
         public User Login(UserForLoginDto userForLogin)
         {
             var user = _userService.GetByEmail(userForLogin.Email);
-
+            
             var IsAuthenticated = HashingHelper.VerifyPasswordHash(userForLogin.Password, user.PasswordHash, user.PasswordSalt);
 
             if (!IsAuthenticated)
                 throw new WrongCredentialsException(userForLogin.Email);
-
+            
             if (user.UserStatus == UserStatus.NotVerified)
                 throw new UserNotVerifiedException(userForLogin.Email, user.Id);
-
             return user;
         }
 

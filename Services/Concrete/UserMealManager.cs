@@ -63,6 +63,10 @@ namespace Services.Concrete
 
         }
 
+        public IEnumerable<MostConsumed> GetMostConsumed()
+
+            => _userMealRepository.GetMostConsumed();
+
         public PeriodicCalories GetUserNutrionalsAllByDateRange(DateTime startDate, DateTime endDate, int categoryId = 0)
         {
             var userMeals = _userMealRepository.GetUserMealsAllByDateRange(startDate, endDate).ToList();
@@ -80,6 +84,10 @@ namespace Services.Concrete
             return pC;
 
         }
+
+        public IEnumerable<FoodConsumption> GetFoodConsumptionForAllTimes()
+
+            => _userMealRepository.GetFoodConsumptionForAllTimes();
 
         private PeriodicCalories CalculateNutrionals(IEnumerable<UserMeal> mealNutrionals, int categoryId = 0)
         {

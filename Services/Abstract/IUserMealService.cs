@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using Entities.Dtos;
 using Entities.Enums;
+using Repositories.Concrete.EFCore;
 using Services.Concrete;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Services.Abstract
         IEnumerable<MealNutrionals> GetUserMealsByUserIdAndMealDate(int userId, DateTime mealDate);
         PeriodicCalories GetUserNutrionalsByUserIdAndDateRange(int userId, DateTime startDate, DateTime endDate, int categoryId = 0);
         PeriodicCalories GetUserNutrionalsAllByDateRange(DateTime startDate, DateTime endDate, int categoryId = 0);
+        IEnumerable<MostConsumed> GetMostConsumed();
+        IEnumerable<FoodConsumption> GetFoodConsumptionForAllTimes();
 
     }
 }

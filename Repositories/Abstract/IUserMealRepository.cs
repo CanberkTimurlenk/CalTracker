@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using Entities.Enums;
 using Repositories.Abstract.Base;
+using Repositories.Concrete.EFCore;
 
 namespace Repositories.Abstract
 {
@@ -11,5 +12,7 @@ namespace Repositories.Abstract
         IEnumerable<UserMeal> GetUserMealsByUserIdAndMealDate(int userId, DateTime mealDate);
         IEnumerable<UserMeal> GetUserMealsByUserIdAndDateRange(int userId, DateTime startDate, DateTime endDate);
         IEnumerable<UserMeal> GetUserMealsAllByDateRange(DateTime startDate, DateTime endDate);
+        IEnumerable<MostConsumed> GetMostConsumed();
+        IEnumerable<FoodConsumption> GetFoodConsumptionForAllTimes();
     }
 }

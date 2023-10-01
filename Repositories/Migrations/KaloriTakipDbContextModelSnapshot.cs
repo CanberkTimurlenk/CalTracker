@@ -4875,9 +4875,6 @@ namespace Repositories.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("FoodId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("MealDate")
                         .HasColumnType("datetime2");
 
@@ -4888,8 +4885,6 @@ namespace Repositories.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FoodId");
 
                     b.HasIndex("UserId");
 
@@ -4964,10 +4959,6 @@ namespace Repositories.Migrations
 
             modelBuilder.Entity("Entities.Concrete.UserMeal", b =>
                 {
-                    b.HasOne("Entities.Concrete.Food", null)
-                        .WithMany("UserMeals")
-                        .HasForeignKey("FoodId");
-
                     b.HasOne("Entities.Concrete.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -4991,11 +4982,6 @@ namespace Repositories.Migrations
             modelBuilder.Entity("Entities.Concrete.Aim", b =>
                 {
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("Entities.Concrete.Food", b =>
-                {
-                    b.Navigation("UserMeals");
                 });
 
             modelBuilder.Entity("Entities.Concrete.FoodCategory", b =>
