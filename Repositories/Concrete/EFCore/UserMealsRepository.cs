@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Repositories.Abstract;
 using Repositories.Abstract.Base;
 using Repositories.Context;
+using System.Linq;
 
 namespace Repositories.Concrete.EFCore
 {
@@ -77,6 +78,46 @@ namespace Repositories.Concrete.EFCore
                                         && um.MealTime == mealTime)
                                     .Select(um => um.Id)
                                     .FirstOrDefault();
+        }
+
+
+
+        public IEnumerable<MostConsumed> GetMostConsumed()
+        {
+            using var context = new KaloriTakipDbContext();
+
+            return context.UserMeals
+                         .GroupBy(um => um.MealTime)
+                         .Select(group => new MostConsumed
+                         {
+                             MealTime = group.Key,
+                             FoodName = group
+                                 .SelectMany(um => um.FoodAmounts)
+                                 .GroupBy(fa => fa.FoodId)
+                                 .OrderByDescending(faGroup => faGroup.Count())
+                                 .Select(faGroup => faGroup.First().Food.Name)
+                                 .FirstOrDefault()!
+                         }).ToList();
+
+
+        }
+
+
+        public IEnumerable<FoodConsumption> GetFoodConsumptionForAllTimes()
+        {
+            using var context = new KaloriTakipDbContext();
+
+            return context.UserMeals
+                          .SelectMany(um => um.FoodAmounts)
+                          .GroupBy(fa => new { fa.Food.Name, fa.UserMeal.MealTime })
+                          .Select(group => new FoodConsumption
+                          {
+                              FoodName = group.Key.Name,
+                              MealTime = group.Key.MealTime,
+                              TimesConsumed = group.Count()
+                          }).ToList();
+
+
         }
     }
 }

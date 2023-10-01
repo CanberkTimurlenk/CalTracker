@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repositories.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace FormUI
         public FormMostConsumed()
         {
             InitializeComponent();
+        }
+
+        private void FormMostConsumed_Load(object sender, EventArgs e)
+        {
+            
+
+
+           
+
+            
+
         }
     }
 }

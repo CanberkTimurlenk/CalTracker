@@ -124,6 +124,27 @@ namespace Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "UserMeals",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MealTime = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserMeals", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserMeals_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "UserVerifications",
                 columns: table => new
                 {
@@ -135,33 +156,6 @@ namespace Repositories.Migrations
                     table.PrimaryKey("PK_UserVerifications", x => x.UserId);
                     table.ForeignKey(
                         name: "FK_UserVerifications_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserMeals",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    MealTime = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    FoodId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserMeals", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserMeals_Foods_FoodId",
-                        column: x => x.FoodId,
-                        principalTable: "Foods",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_UserMeals_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -618,11 +612,6 @@ namespace Repositories.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserMeals_FoodId",
-                table: "UserMeals",
-                column: "FoodId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_UserMeals_UserId",
                 table: "UserMeals",
                 column: "UserId");
@@ -646,16 +635,16 @@ namespace Repositories.Migrations
                 name: "UserVerifications");
 
             migrationBuilder.DropTable(
-                name: "UserMeals");
-
-            migrationBuilder.DropTable(
                 name: "Foods");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "UserMeals");
 
             migrationBuilder.DropTable(
                 name: "FoodCategories");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Aims");
