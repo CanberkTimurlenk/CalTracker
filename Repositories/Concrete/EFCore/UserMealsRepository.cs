@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Repositories.Abstract;
 using Repositories.Abstract.Base;
 using Repositories.Context;
-using Repository.Abstract;
-using Repository.Abstract.Base;
 
 namespace Repositories.Concrete.EFCore
 {

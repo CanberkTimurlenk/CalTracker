@@ -377,7 +377,6 @@
         private Krypton.Toolkit.KryptonButton btn_Add;
         private Krypton.Toolkit.KryptonButton btn_Remove;
         private Krypton.Toolkit.KryptonButton btn_Save;
-        private Krypton.Toolkit.KryptonNumericUpDown nud_Amount;
         private PictureBox pb_Food;
     }
 }

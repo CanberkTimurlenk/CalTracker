@@ -20,8 +20,4 @@
     <Folder Include="Utilities\Validation\FluentValidation\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Services.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -17,10 +17,8 @@ namespace FormUI
     public partial class FormDailyReport : Form
     {
         private readonly int _userId;
-        public FormDailyReport(int userId)
-        private readonly int _userId;
         private readonly IUserMealService _userMealService = new UserMealManager();
-        public FormDailyReport()//int userId)
+        public FormDailyReport(int userId)
         {
             _userId = userId;
             InitializeComponent();
