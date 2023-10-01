@@ -20,7 +20,7 @@ namespace FormUI
         private List<MealItemDto> _mealItemToAdd = new List<MealItemDto>();
         private List<FoodNutrionals> _dataSource = new();
 
-        public FormMeals(int userId)
+        public FormMeals()
         {
             _userId = 5;
             InitializeComponent();

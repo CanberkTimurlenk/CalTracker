@@ -55,19 +55,6 @@
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             SuspendLayout();
             // 
-            // pv_DailyGraph
-            // 
-            pv_DailyGraph.Location = new Point(159, 425);
-            pv_DailyGraph.Margin = new Padding(3, 4, 3, 4);
-            pv_DailyGraph.Name = "pv_DailyGraph";
-            pv_DailyGraph.PanCursor = Cursors.Hand;
-            pv_DailyGraph.Size = new Size(570, 227);
-            pv_DailyGraph.TabIndex = 0;
-            pv_DailyGraph.Text = "plotView1";
-            pv_DailyGraph.ZoomHorizontalCursor = Cursors.SizeWE;
-            pv_DailyGraph.ZoomRectangleCursor = Cursors.SizeNWSE;
-            pv_DailyGraph.ZoomVerticalCursor = Cursors.SizeNS;
-            // 
             // label1
             // 
             label1.AutoSize = true;

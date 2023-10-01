@@ -28,12 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            //System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainPage));
+            //kryptonButton2 = new Krypton.Toolkit.KryptonButton();
+            //kryptonButton3 = new Krypton.Toolkit.KryptonButton();
+            //pictureBox1 = new System.Windows.Forms.PictureBox();
+            //sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
+            //button1 = new Button();
+            //kryptonButton1 = new Krypton.Toolkit.KryptonButton();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainPage));
-            kryptonButton2 = new Krypton.Toolkit.KryptonButton();
-            kryptonButton3 = new Krypton.Toolkit.KryptonButton();
-            sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            button1 = new Button();
-            kryptonButton1 = new Krypton.Toolkit.KryptonButton();
+            pictureBox1 = new PictureBox();
+            btn_CalorieTrack = new Krypton.Toolkit.KryptonButton();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            btn_Reports = new Krypton.Toolkit.KryptonButton();
+            btn_Settings = new Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // kryptonButton2
@@ -180,10 +191,17 @@
         }
 
         #endregion
-        private Krypton.Toolkit.KryptonButton kryptonButton2;
-        private Krypton.Toolkit.KryptonButton kryptonButton3;
-        private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
-        private Button button1;
-        private Krypton.Toolkit.KryptonButton kryptonButton1;
+        //private Krypton.Toolkit.KryptonButton kryptonButton2;
+        //private Krypton.Toolkit.KryptonButton kryptonButton3;
+        //private PictureBox pictureBox1;
+        //private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
+        //private Button button1;
+        //private Krypton.Toolkit.KryptonButton kryptonButton1;
+        private PictureBox pictureBox1;
+        private Krypton.Toolkit.KryptonButton btn_CalorieTrack;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private Krypton.Toolkit.KryptonButton btn_Reports;
+        private Krypton.Toolkit.KryptonButton btn_Settings;
     }
 }
