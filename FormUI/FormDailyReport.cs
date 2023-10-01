@@ -1,4 +1,14 @@
-﻿using Services.Abstract;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Services.Abstract;
 using Services.Concrete;
 using Entities.Enums;
 
@@ -8,14 +18,26 @@ namespace FormUI
     {
         private readonly int _userId;
         private readonly IUserMealService _userMealService = new UserMealManager();
-        public FormDailyReport()//int userId)
+        public FormDailyReport(int userId)
         {
-            _userId = 5;
+            _userId = userId;
             InitializeComponent();
         }
 
         private void FormDailyReport_Load(object sender, EventArgs e)
         {
+
+            this.BackColor = Color.FromArgb(32, 191, 107);
+            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(32, 191, 107),
+                Color.FromArgb(50, 210, 255),
+                360f
+            );
+            this.Paint += (sender, e) =>
+            {
+                e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
+            };
             var userMeals = _userMealService.GetUserMealsByUserIdAndMealDate(_userId, DateTime.Now).ToList();
 
             var breakFast = userMeals.FirstOrDefault(um => um.MealTime == MealTimes.Breakfast);

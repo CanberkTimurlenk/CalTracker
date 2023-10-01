@@ -50,8 +50,9 @@ namespace FormUI
 
             try
             {
-                _authService.Login(userToLogin);
+                var user =_authService.Login(userToLogin);
                 MessageBox.Show("Logged in Successfuly!");
+                new FormMainPage(user).Show();
             }
             catch (WrongCredentialsException)
             {

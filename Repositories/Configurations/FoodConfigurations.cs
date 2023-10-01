@@ -9,6 +9,7 @@ namespace Repository.Configurations
     {
         public void Configure(EntityTypeBuilder<Food> builder)
         {
+            builder.HasIndex(f => f.Name).IsUnique();
             builder.Property(f => f.Name).HasMaxLength(100);
             builder.Property(f => f.Calorie).HasMaxLength(8);
             builder.Property(f => f.Fat).HasMaxLength(8);
