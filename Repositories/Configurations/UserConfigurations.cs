@@ -13,6 +13,7 @@ namespace Repositories.Configurations
             builder.Property(u => u.Email).HasMaxLength(50);
             builder.Property(u => u.Height).HasMaxLength(5);
             builder.Property(u => u.Weight).HasMaxLength(5);
+            
         }
     }
 }
