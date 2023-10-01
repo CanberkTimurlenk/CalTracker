@@ -1,6 +1,6 @@
 ﻿using Entities.Dtos;
-using Repository.Abstract;
-using Repository.Concrete.EFCore;
+using Repositories.Abstract;
+using Repositories.Concrete.EFCore;
 using Entities.Concrete;
 using Services.Abstract;
 

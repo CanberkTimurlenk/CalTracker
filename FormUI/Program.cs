@@ -15,7 +15,7 @@ namespace FormUI
             ApplicationConfiguration.Initialize();
 
 
-                Application.Run(new FormCompareWeekly());
+                Application.Run(new FormLogin());
             /*
             catch (SqlException)
             {
