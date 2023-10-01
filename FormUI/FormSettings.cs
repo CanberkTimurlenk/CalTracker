@@ -58,5 +58,10 @@ namespace FormUI
             if (nud_Weight.Value > 0) _userService.ChangeUserWeight(5, (double)nud_Weight.Value);
 
         }
+
+        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Owner.Show();
+        }
     }
 }

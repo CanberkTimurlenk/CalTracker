@@ -38,90 +38,140 @@
             // 
             // kryptonButton2
             // 
-            kryptonButton2.CornerRoundingRadius = -1F;
-            kryptonButton2.Location = new Point(77, 197);
-            kryptonButton2.Name = "kryptonButton2";
-            kryptonButton2.PaletteMode = Krypton.Toolkit.PaletteMode.Office365Silver;
-            kryptonButton2.Size = new Size(162, 53);
-            kryptonButton2.TabIndex = 0;
-            kryptonButton2.Values.Text = "Raporlar";
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources._133363_tape_apple_measure_download_free_image;
+            pictureBox1.Location = new Point(60, 75);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(94, 68);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // kryptonButton1
             // 
-            kryptonButton3.CornerRoundingRadius = -1F;
-            kryptonButton3.Location = new Point(77, 304);
-            kryptonButton3.Name = "kryptonButton3";
-            kryptonButton3.PaletteMode = Krypton.Toolkit.PaletteMode.Office365Silver;
-            kryptonButton3.Size = new Size(162, 53);
-            kryptonButton3.TabIndex = 0;
-            kryptonButton3.Values.Text = "Ayarlar";
+            btn_CalorieTrack.CornerRoundingRadius = 40F;
+            btn_CalorieTrack.Location = new Point(160, 89);
+            btn_CalorieTrack.Name = "btn_CalorieTrack";
+            btn_CalorieTrack.OverrideDefault.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_CalorieTrack.OverrideDefault.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_CalorieTrack.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            btn_CalorieTrack.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_CalorieTrack.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_CalorieTrack.Size = new Size(123, 42);
+            btn_CalorieTrack.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_CalorieTrack.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_CalorieTrack.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_CalorieTrack.StateCommon.Border.Rounding = 40F;
+            btn_CalorieTrack.StatePressed.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_CalorieTrack.StatePressed.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_CalorieTrack.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_CalorieTrack.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_CalorieTrack.StateTracking.Border.Color2 = Color.DarkGreen;
+            btn_CalorieTrack.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_CalorieTrack.TabIndex = 0;
+            btn_CalorieTrack.TabStop = false;
+            btn_CalorieTrack.Values.Text = "Kalori Takip";
+            btn_CalorieTrack.Click += btn_CalorieTrack_Click;
             // 
             // button1
             // 
-            button1.BackColor = Color.LightGreen;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 191, 107);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(52, 62);
-            button1.Name = "button1";
-            button1.Size = new Size(376, 89);
-            button1.TabIndex = 1;
-            button1.Text = "Kalori Takip                   ";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(73, 192);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(63, 63);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // kryptonButton1
             // 
-            kryptonButton1.ButtonStyle = Krypton.Toolkit.ButtonStyle.LowProfile;
-            kryptonButton1.CornerRoundingRadius = 40F;
-            kryptonButton1.Enabled = false;
-            kryptonButton1.Location = new Point(52, 67);
-            kryptonButton1.Name = "kryptonButton1";
-            kryptonButton1.OverrideDefault.Back.Image = (Image)resources.GetObject("kryptonButton1.OverrideDefault.Back.Image");
-            kryptonButton1.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            kryptonButton1.Size = new Size(104, 77);
-            kryptonButton1.StateCommon.Back.Color1 = Color.Transparent;
-            kryptonButton1.StateCommon.Back.Color2 = Color.Transparent;
-            kryptonButton1.StateCommon.Back.ColorAngle = 0F;
-            kryptonButton1.StateCommon.Back.Draw = Krypton.Toolkit.InheritBool.True;
-            kryptonButton1.StateCommon.Back.Image = (Image)resources.GetObject("kryptonButton1.StateCommon.Back.Image");
-            kryptonButton1.StateCommon.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
-            kryptonButton1.StateCommon.Border.Color1 = Color.Transparent;
-            kryptonButton1.StateCommon.Border.Color2 = Color.Transparent;
-            kryptonButton1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButton1.StateCommon.Border.Rounding = 40F;
-            kryptonButton1.StateCommon.Border.Width = 0;
-            kryptonButton1.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButton1.StateNormal.Border.Rounding = 40F;
-            kryptonButton1.StateNormal.Border.Width = 0;
-            kryptonButton1.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
-            kryptonButton1.StateTracking.Back.Color2 = Color.FromArgb(32, 191, 107);
-            kryptonButton1.StateTracking.Border.Color1 = Color.Transparent;
-            kryptonButton1.StateTracking.Border.Color2 = Color.Transparent;
-            kryptonButton1.StateTracking.Border.ColorAngle = 0F;
-            kryptonButton1.StateTracking.Border.Draw = Krypton.Toolkit.InheritBool.True;
-            kryptonButton1.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonButton1.StateTracking.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
-            kryptonButton1.StateTracking.Border.Rounding = 40F;
-            kryptonButton1.StateTracking.Border.Width = 0;
-            kryptonButton1.StateTracking.Content.Draw = Krypton.Toolkit.InheritBool.False;
-            kryptonButton1.StateTracking.Content.DrawFocus = Krypton.Toolkit.InheritBool.False;
-            kryptonButton1.TabIndex = 0;
-            kryptonButton1.Values.Text = "";
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(73, 302);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(64, 64);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 1;
+            pictureBox3.TabStop = false;
+            // 
+            // btn_Reports
+            // 
+            btn_Reports.CornerRoundingRadius = 40F;
+            btn_Reports.Location = new Point(160, 203);
+            btn_Reports.Name = "btn_Reports";
+            btn_Reports.OverrideDefault.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Reports.OverrideDefault.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_Reports.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            btn_Reports.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Reports.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Reports.Size = new Size(123, 42);
+            btn_Reports.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Reports.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_Reports.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Reports.StateCommon.Border.Rounding = 40F;
+            btn_Reports.StatePressed.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Reports.StatePressed.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_Reports.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Reports.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_Reports.StateTracking.Border.Color2 = Color.DarkGreen;
+            btn_Reports.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Reports.TabIndex = 0;
+            btn_Reports.TabStop = false;
+            btn_Reports.Values.Text = "Raporlar";
+            btn_Reports.Click += btn_Reports_Click;
+            // 
+            // btn_Settings
+            // 
+            btn_Settings.CornerRoundingRadius = 40F;
+            btn_Settings.Location = new Point(161, 315);
+            btn_Settings.Name = "btn_Settings";
+            btn_Settings.OverrideDefault.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Settings.OverrideDefault.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_Settings.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
+            btn_Settings.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Settings.OverrideDefault.Border.Width = 0;
+            btn_Settings.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Settings.PaletteMode = Krypton.Toolkit.PaletteMode.Office365Silver;
+            btn_Settings.Size = new Size(123, 42);
+            btn_Settings.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_Settings.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Settings.StateCommon.Border.Rounding = 40F;
+            btn_Settings.StateDisabled.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StateNormal.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StateNormal.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StatePressed.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StatePressed.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Settings.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_Settings.StateTracking.Border.Color2 = Color.DarkGreen;
+            btn_Settings.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Settings.TabIndex = 0;
+            btn_Settings.TabStop = false;
+            btn_Settings.Values.Text = "Ayarlar";
+            btn_Settings.Click += btn_Settings_Click;
             // 
             // FormMainPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 431);
-            Controls.Add(kryptonButton3);
-            Controls.Add(kryptonButton2);
-            Controls.Add(kryptonButton1);
-            Controls.Add(button1);
+            BackColor = Color.White;
+            ClientSize = new Size(394, 431);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(btn_Settings);
+            Controls.Add(btn_Reports);
+            Controls.Add(btn_CalorieTrack);
+            DoubleBuffered = true;
             Name = "FormMainPage";
-            Text = "FormMainPage";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Kalori Takip";
+            FormClosing += FormMainPage_FormClosing;
             Load += FormMainPage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

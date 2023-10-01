@@ -73,6 +73,16 @@ namespace FormUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arabic_kebab_sandwich_ingredients_top_view {
+            get {
+                object obj = ResourceManager.GetObject("arabic-kebab-sandwich-ingredients-top-view", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
@@ -86,6 +96,16 @@ namespace FormUI.Properties {
         internal static System.Drawing.Bitmap maxresdefault {
             get {
                 object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noodles_with_vegetables_with_copy_space {
+            get {
+                object obj = ResourceManager.GetObject("noodles-with-vegetables-with-copy-space", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

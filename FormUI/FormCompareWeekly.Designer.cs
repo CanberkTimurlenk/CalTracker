@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            plotView1 = new OxyPlot.WindowsForms.PlotView();
-            plotView2 = new OxyPlot.WindowsForms.PlotView();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -37,96 +35,83 @@
             label5 = new Label();
             label6 = new Label();
             kryptonComboBox1 = new Krypton.Toolkit.KryptonComboBox();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
+            lbl_UserBreakfast = new Label();
+            lbl_UserLunch = new Label();
+            lbl_UserDinner = new Label();
+            lbl_UserSnack = new Label();
+            lbl_AvgBreakfast = new Label();
+            lbl_AvgLunch = new Label();
+            lbl_AvgDinner = new Label();
+            lbl_AvgSnack = new Label();
+            lbl_UserCategory = new Label();
+            lbl_AvgCategory = new Label();
+            label17 = new Label();
             ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).BeginInit();
             SuspendLayout();
-            // 
-            // plotView1
-            // 
-            plotView1.Location = new Point(58, 379);
-            plotView1.Margin = new Padding(3, 4, 3, 4);
-            plotView1.Name = "plotView1";
-            plotView1.PanCursor = Cursors.Hand;
-            plotView1.Size = new Size(349, 151);
-            plotView1.TabIndex = 0;
-            plotView1.Text = "plotView1";
-            plotView1.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView1.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView1.ZoomVerticalCursor = Cursors.SizeNS;
-            // 
-            // plotView2
-            // 
-            plotView2.Location = new Point(517, 379);
-            plotView2.Margin = new Padding(3, 4, 3, 4);
-            plotView2.Name = "plotView2";
-            plotView2.PanCursor = Cursors.Hand;
-            plotView2.Size = new Size(349, 151);
-            plotView2.TabIndex = 0;
-            plotView2.Text = "plotView1";
-            plotView2.ZoomHorizontalCursor = Cursors.SizeWE;
-            plotView2.ZoomRectangleCursor = Cursors.SizeNWSE;
-            plotView2.ZoomVerticalCursor = Cursors.SizeNS;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(242, 157);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(122, 168);
             label1.Name = "label1";
-            label1.Size = new Size(28, 20);
+            label1.Size = new Size(30, 21);
             label1.TabIndex = 1;
             label1.Text = "Siz";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(157, 193);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(44, 236);
             label2.Name = "label2";
-            label2.Size = new Size(123, 20);
+            label2.Size = new Size(128, 21);
             label2.TabIndex = 1;
             label2.Text = "Diger Kullanicilar";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(294, 116);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(206, 134);
             label3.Name = "label3";
-            label3.Size = new Size(62, 20);
+            label3.Size = new Size(65, 21);
             label3.TabIndex = 1;
             label3.Text = "Kahvalti";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(357, 116);
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(302, 134);
             label4.Name = "label4";
-            label4.Size = new Size(49, 20);
+            label4.Size = new Size(52, 21);
             label4.TabIndex = 1;
             label4.Text = "Oglen";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(410, 116);
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(371, 134);
             label5.Name = "label5";
-            label5.Size = new Size(53, 20);
+            label5.Size = new Size(57, 21);
             label5.TabIndex = 1;
             label5.Text = "Aksam";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(473, 116);
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(448, 134);
             label6.Name = "label6";
-            label6.Size = new Size(63, 20);
+            label6.Size = new Size(65, 21);
             label6.TabIndex = 1;
             label6.Text = "Aperatif";
             // 
@@ -135,131 +120,160 @@
             kryptonComboBox1.CornerRoundingRadius = -1F;
             kryptonComboBox1.DropDownWidth = 121;
             kryptonComboBox1.IntegralHeight = false;
-            kryptonComboBox1.Location = new Point(544, 111);
-            kryptonComboBox1.Margin = new Padding(3, 4, 3, 4);
+            kryptonComboBox1.Location = new Point(611, 134);
             kryptonComboBox1.Name = "kryptonComboBox1";
-            kryptonComboBox1.Size = new Size(138, 25);
+            kryptonComboBox1.Size = new Size(121, 21);
             kryptonComboBox1.StateCommon.ComboBox.Content.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
             kryptonComboBox1.TabIndex = 2;
             kryptonComboBox1.Text = "Kategori";
             // 
-            // label7
+            // lbl_UserBreakfast
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(310, 157);
-            label7.Name = "label7";
-            label7.Size = new Size(17, 20);
-            label7.TabIndex = 1;
-            label7.Text = "0";
+            lbl_UserBreakfast.AutoSize = true;
+            lbl_UserBreakfast.BackColor = Color.Transparent;
+            lbl_UserBreakfast.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_UserBreakfast.Location = new Point(223, 168);
+            lbl_UserBreakfast.Name = "lbl_UserBreakfast";
+            lbl_UserBreakfast.Size = new Size(19, 21);
+            lbl_UserBreakfast.TabIndex = 1;
+            lbl_UserBreakfast.Text = "0";
             // 
-            // label8
+            // lbl_UserLunch
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(373, 157);
-            label8.Name = "label8";
-            label8.Size = new Size(17, 20);
-            label8.TabIndex = 1;
-            label8.Text = "0";
+            lbl_UserLunch.AutoSize = true;
+            lbl_UserLunch.BackColor = Color.Transparent;
+            lbl_UserLunch.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_UserLunch.Location = new Point(318, 168);
+            lbl_UserLunch.Name = "lbl_UserLunch";
+            lbl_UserLunch.Size = new Size(19, 21);
+            lbl_UserLunch.TabIndex = 1;
+            lbl_UserLunch.Text = "0";
             // 
-            // label9
+            // lbl_UserDinner
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(426, 157);
-            label9.Name = "label9";
-            label9.Size = new Size(17, 20);
-            label9.TabIndex = 1;
-            label9.Text = "0";
+            lbl_UserDinner.AutoSize = true;
+            lbl_UserDinner.BackColor = Color.Transparent;
+            lbl_UserDinner.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_UserDinner.Location = new Point(387, 168);
+            lbl_UserDinner.Name = "lbl_UserDinner";
+            lbl_UserDinner.Size = new Size(19, 21);
+            lbl_UserDinner.TabIndex = 1;
+            lbl_UserDinner.Text = "0";
             // 
-            // label10
+            // lbl_UserSnack
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(489, 157);
-            label10.Name = "label10";
-            label10.Size = new Size(17, 20);
-            label10.TabIndex = 1;
-            label10.Text = "0";
+            lbl_UserSnack.AutoSize = true;
+            lbl_UserSnack.BackColor = Color.Transparent;
+            lbl_UserSnack.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_UserSnack.Location = new Point(461, 168);
+            lbl_UserSnack.Name = "lbl_UserSnack";
+            lbl_UserSnack.Size = new Size(19, 21);
+            lbl_UserSnack.TabIndex = 1;
+            lbl_UserSnack.Text = "0";
             // 
-            // label11
+            // lbl_AvgBreakfast
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(310, 193);
-            label11.Name = "label11";
-            label11.Size = new Size(17, 20);
-            label11.TabIndex = 1;
-            label11.Text = "0";
+            lbl_AvgBreakfast.AutoSize = true;
+            lbl_AvgBreakfast.BackColor = Color.Transparent;
+            lbl_AvgBreakfast.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_AvgBreakfast.Location = new Point(223, 236);
+            lbl_AvgBreakfast.Name = "lbl_AvgBreakfast";
+            lbl_AvgBreakfast.Size = new Size(19, 21);
+            lbl_AvgBreakfast.TabIndex = 1;
+            lbl_AvgBreakfast.Text = "0";
             // 
-            // label12
+            // lbl_AvgLunch
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(373, 193);
-            label12.Name = "label12";
-            label12.Size = new Size(17, 20);
-            label12.TabIndex = 1;
-            label12.Text = "0";
+            lbl_AvgLunch.AutoSize = true;
+            lbl_AvgLunch.BackColor = Color.Transparent;
+            lbl_AvgLunch.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_AvgLunch.Location = new Point(318, 236);
+            lbl_AvgLunch.Name = "lbl_AvgLunch";
+            lbl_AvgLunch.Size = new Size(19, 21);
+            lbl_AvgLunch.TabIndex = 1;
+            lbl_AvgLunch.Text = "0";
             // 
-            // label13
+            // lbl_AvgDinner
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(426, 193);
-            label13.Name = "label13";
-            label13.Size = new Size(17, 20);
-            label13.TabIndex = 1;
-            label13.Text = "0";
+            lbl_AvgDinner.AutoSize = true;
+            lbl_AvgDinner.BackColor = Color.Transparent;
+            lbl_AvgDinner.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_AvgDinner.Location = new Point(387, 236);
+            lbl_AvgDinner.Name = "lbl_AvgDinner";
+            lbl_AvgDinner.Size = new Size(19, 21);
+            lbl_AvgDinner.TabIndex = 1;
+            lbl_AvgDinner.Text = "0";
             // 
-            // label14
+            // lbl_AvgSnack
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(489, 193);
-            label14.Name = "label14";
-            label14.Size = new Size(17, 20);
-            label14.TabIndex = 1;
-            label14.Text = "0";
+            lbl_AvgSnack.AutoSize = true;
+            lbl_AvgSnack.BackColor = Color.Transparent;
+            lbl_AvgSnack.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_AvgSnack.Location = new Point(461, 236);
+            lbl_AvgSnack.Name = "lbl_AvgSnack";
+            lbl_AvgSnack.Size = new Size(19, 21);
+            lbl_AvgSnack.TabIndex = 1;
+            lbl_AvgSnack.Text = "0";
             // 
-            // label15
+            // lbl_UserCategory
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(573, 157);
-            label15.Name = "label15";
-            label15.Size = new Size(17, 20);
-            label15.TabIndex = 1;
-            label15.Text = "0";
+            lbl_UserCategory.AutoSize = true;
+            lbl_UserCategory.BackColor = Color.Transparent;
+            lbl_UserCategory.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_UserCategory.Location = new Point(585, 168);
+            lbl_UserCategory.Name = "lbl_UserCategory";
+            lbl_UserCategory.Size = new Size(19, 21);
+            lbl_UserCategory.TabIndex = 1;
+            lbl_UserCategory.Text = "0";
             // 
-            // label16
+            // lbl_AvgCategory
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(573, 193);
-            label16.Name = "label16";
-            label16.Size = new Size(17, 20);
-            label16.TabIndex = 1;
-            label16.Text = "0";
+            lbl_AvgCategory.AutoSize = true;
+            lbl_AvgCategory.BackColor = Color.Transparent;
+            lbl_AvgCategory.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_AvgCategory.Location = new Point(585, 236);
+            lbl_AvgCategory.Name = "lbl_AvgCategory";
+            lbl_AvgCategory.Size = new Size(19, 21);
+            lbl_AvgCategory.TabIndex = 1;
+            lbl_AvgCategory.Text = "0";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.BackColor = Color.Transparent;
+            label17.Font = new Font("Nirmala UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(536, 134);
+            label17.Name = "label17";
+            label17.Size = new Size(60, 21);
+            label17.TabIndex = 1;
+            label17.Text = "Toplam";
             // 
             // FormCompareWeekly
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(kryptonComboBox1);
             Controls.Add(label2);
-            Controls.Add(label16);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label15);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label12);
+            Controls.Add(lbl_AvgCategory);
+            Controls.Add(lbl_AvgSnack);
+            Controls.Add(lbl_AvgDinner);
+            Controls.Add(lbl_UserCategory);
+            Controls.Add(lbl_UserSnack);
+            Controls.Add(lbl_UserDinner);
+            Controls.Add(lbl_AvgLunch);
+            Controls.Add(label17);
             Controls.Add(label6);
-            Controls.Add(label8);
-            Controls.Add(label11);
+            Controls.Add(lbl_UserLunch);
+            Controls.Add(lbl_AvgBreakfast);
             Controls.Add(label5);
-            Controls.Add(label7);
+            Controls.Add(lbl_UserBreakfast);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(plotView2);
-            Controls.Add(plotView1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormCompareWeekly";
+            StartPosition = FormStartPosition.Manual;
             Text = "FormCompare";
             Load += FormCompareWeekly_Load;
             ((System.ComponentModel.ISupportInitialize)kryptonComboBox1).EndInit();
@@ -268,9 +282,6 @@
         }
 
         #endregion
-
-        private OxyPlot.WindowsForms.PlotView plotView1;
-        private OxyPlot.WindowsForms.PlotView plotView2;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -278,15 +289,16 @@
         private Label label5;
         private Label label6;
         private Krypton.Toolkit.KryptonComboBox kryptonComboBox1;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
+        private Label lbl_UserBreakfast;
+        private Label lbl_UserLunch;
+        private Label lbl_UserDinner;
+        private Label lbl_UserSnack;
+        private Label lbl_AvgBreakfast;
+        private Label lbl_AvgLunch;
+        private Label lbl_AvgDinner;
+        private Label lbl_AvgSnack;
+        private Label lbl_UserCategory;
+        private Label lbl_AvgCategory;
+        private Label label17;
     }
 }

@@ -242,6 +242,9 @@ namespace FormUI
             //var gram = dgv_MealList.SelectedRows[0].Cells[2].Value; // gram
         }
 
-
+        private void FormMeals_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Show();
+        }
     }
 }

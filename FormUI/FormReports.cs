@@ -32,6 +32,56 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+
+            FormDailyReport daily = new FormDailyReport();
+            daily.MdiParent = this;
+            daily.Show();
+        }
+
+        private void FormReports_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Owner.Show();
+        }
+
+        private void gunlukRaporToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDailyReport daily = new FormDailyReport();
+            //CloseOtherChildForms(daily);
+            daily.MdiParent = this;
+            daily.Show();
+        }
+
+        private void haftalikKiyasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCompareWeekly weekly = new FormCompareWeekly();
+            //CloseOtherChildForms(weekly);
+            weekly.MdiParent = this;
+            weekly.Show();
+        }
+
+        private void aylikKiyasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormCompareMonthly monthly = new FormCompareMonthly();
+            //CloseOtherChildForms(monthly);
+            monthly.MdiParent = this;
+            monthly.Show();
+        }
+
+        private void yemekRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormMostConsumed mostConsumed = new FormMostConsumed();
+            //CloseOtherChildForms(mostConsumed);
+            mostConsumed.MdiParent = this;
+            mostConsumed.Show();
+        }
+        private void CloseOtherChildForms(Form form)
+        {
+            //foreach icinde patliyor(InvalidOperationException)
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f != form)
+                    f.Close();
+            }
         }
     }
 }

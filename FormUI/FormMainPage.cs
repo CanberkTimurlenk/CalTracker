@@ -13,8 +13,10 @@ namespace FormUI
 {
     public partial class FormMainPage : Form
     {
+        private readonly int _userId;
         public FormMainPage()
         {
+            //_userId = userId;
             InitializeComponent();
         }
 
@@ -31,6 +33,35 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+        }
+
+        private void btn_CalorieTrack_Click(object sender, EventArgs e)
+        {
+            FormMeals meals = new FormMeals();
+            meals.Show();
+            meals.Owner = this;
+            this.Hide();
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            FormReports reports = new FormReports();
+            reports.Show();
+            reports.Owner = this;
+            this.Hide();
+        }
+
+        private void btn_Settings_Click(object sender, EventArgs e)
+        {
+            FormSettings settings = new FormSettings();
+            settings.Show();
+            settings.Owner = this;
+            this.Hide();
+        }
+
+        private void FormMainPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //cikis yapilip logine donmesi iyi olabilir
         }
     }
 }
