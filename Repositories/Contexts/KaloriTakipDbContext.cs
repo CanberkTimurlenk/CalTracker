@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace Repository.Context
+namespace Repositories.Context
 {
     public class KaloriTakipDbContext : DbContext
     {
@@ -12,12 +12,13 @@ namespace Repository.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Aim> Aims { get; set; }
         public DbSet<UserData> UserDatas { get; set; }
-        public DbSet<UserMeals> UserMeals { get; set; }
+        public DbSet<UserMeal> UserMeals { get; set; }
+        public DbSet<FoodAmount> FoodAmounts { get; set; }
         public DbSet<UserVerification> UserVerifications { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=127.0.0.1,11433;Database=KaloriTakipDb;User ID=SA;Password=Ab12345678;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-6262GND\\SQLEXPRESS;Initial Catalog=KaloriTakip;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
