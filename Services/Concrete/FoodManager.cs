@@ -13,6 +13,10 @@ namespace Services.Concrete
 
             => _foodRepository.GetFoodNamesContains(word);
 
+        public string GetFoodImageByFoodName(string name)
+
+            => _foodRepository.GetFoodImageByFoodName(name);
+
         public FoodNutrionals GetFoodNutrionals(string name, int gram)
         {
             var fn = _foodRepository.GetFoodNutritionals(name);
@@ -26,7 +30,6 @@ namespace Services.Concrete
                 Protein = Math.Round((fn.Protein / fn.Gram) * gram, 2),
                 Fat = Math.Round((fn.Fat / fn.Gram) * gram, 2)
             };
-
             return calculatedFoodNutrionals;
 
         }

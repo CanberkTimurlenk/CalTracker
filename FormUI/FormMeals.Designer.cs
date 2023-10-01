@@ -43,8 +43,10 @@
             btn_Add = new Krypton.Toolkit.KryptonButton();
             btn_Remove = new Krypton.Toolkit.KryptonButton();
             nud_Amount = new Krypton.Toolkit.KryptonNumericUpDown();
+            pb_Food = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgv_SelectedMealList).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_MealList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb_Food).BeginInit();
             SuspendLayout();
             // 
             // dgv_SelectedMealList
@@ -58,7 +60,6 @@
             dgv_SelectedMealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_SelectedMealList.Size = new Size(367, 317);
             dgv_SelectedMealList.TabIndex = 0;
-            
             // 
             // txt_Meal_Search
             // 
@@ -151,7 +152,8 @@
             dgv_MealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_MealList.Size = new Size(385, 317);
             dgv_MealList.TabIndex = 5;
-            //             
+            dgv_MealList.CellContentClick += dgv_MealList_CellContentClick;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -205,11 +207,20 @@
             nud_Amount.TabIndex = 7;
             nud_Amount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
+            // pb_Food
+            // 
+            pb_Food.Location = new Point(62, 589);
+            pb_Food.Name = "pb_Food";
+            pb_Food.Size = new Size(807, 392);
+            pb_Food.TabIndex = 8;
+            pb_Food.TabStop = false;
+            // 
             // FormMeals
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 743);
+            ClientSize = new Size(923, 1016);
+            Controls.Add(pb_Food);
             Controls.Add(nud_Amount);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -231,6 +242,7 @@
             Load += FormMeals_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_SelectedMealList).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_MealList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb_Food).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -252,5 +264,6 @@
         private Krypton.Toolkit.KryptonButton btn_Add;
         private Krypton.Toolkit.KryptonButton btn_Remove;
         private Krypton.Toolkit.KryptonNumericUpDown nud_Amount;
+        private PictureBox pb_Food;
     }
 }

@@ -9,5 +9,6 @@ namespace Repositories.Abstract
         IEnumerable<string> GetFoodNamesContains(string word);
         FoodNutrionals GetFoodNutritionals(string word);
         IEnumerable<int> GetFoodIdsByFoodName(IEnumerable<string> names);
+        string GetFoodImageByFoodName(string name);
     }
 }

@@ -15,6 +15,7 @@ namespace Services.Abstract
         FoodNutrionals GetFoodNutrionals(string name, int gram);
         IEnumerable<int> GetFoodIdsByFoodName(IEnumerable<string> names);
         IEnumerable<string> GetFoodNamesContains(string word);
+        string GetFoodImageByFoodName(string name);
 
     }
 }

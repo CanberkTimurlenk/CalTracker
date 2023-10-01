@@ -23,27 +23,27 @@ namespace FormUI
             var lunch = userMeals.FirstOrDefault(um => um.MealTime == MealTimes.Lunch);
             var snack = userMeals.FirstOrDefault(um => um.MealTime == MealTimes.Snack);
 
+            
 
+            lbl_BreakfastCalorie.Text = breakFast?.Nutrionals.Calorie.ToString();
+            lbl_BreakfastCarbonhidrate.Text = breakFast?.Nutrionals.Carbonhidrate.ToString();
+            lbl_BreakfastFat.Text = breakFast?.Nutrionals.Fat.ToString();
+            lbl_BreakfastProtein.Text = breakFast?.Nutrionals.Protein.ToString();
 
-            lbl_BreakfastCalorie.Text = breakFast.Calorie.ToString();
-            lbl_BreakfastCarbonhidrate.Text = breakFast.Carbonhidrate.ToString();
-            lbl_BreakfastFat.Text = breakFast.Fat.ToString();
-            lbl_BreakfastProtein.Text = breakFast.Protein.ToString();
+            lbl_LunchCalorie.Text = lunch?.Nutrionals.Calorie.ToString();
+            lbl_LunchCarbonhidrate.Text = lunch?.Nutrionals.Carbonhidrate.ToString();
+            lbl_LunchFat.Text = lunch?.Nutrionals.Fat.ToString();
+            lbl_LunchProtein.Text = lunch?.Nutrionals.Protein.ToString();
 
-            lbl_LunchCalorie.Text = lunch.Calorie.ToString();
-            lbl_LunchCarbonhidrate.Text = lunch.Carbonhidrate.ToString();
-            lbl_LunchFat.Text = lunch.Fat.ToString();
-            lbl_LunchProtein.Text = lunch.Protein.ToString();
+            lbl_DinnerCalorie.Text = dinner?.Nutrionals.Calorie.ToString();
+            lbl_DinnerCarbonhidrate.Text = dinner?.Nutrionals.Carbonhidrate.ToString();
+            lbl_DinnerFat.Text = dinner?.Nutrionals.Fat.ToString();
+            lbl_DinnerProtein.Text = dinner?.Nutrionals.Protein.ToString();
 
-            lbl_DinnerCalorie.Text = dinner.Calorie.ToString();
-            lbl_DinnerCarbonhidrate.Text = dinner.Carbonhidrate.ToString();
-            lbl_DinnerFat.Text = dinner.Fat.ToString();
-            lbl_DinnerProtein.Text = dinner.Protein.ToString();
-
-            lbl_SnackCalorie.Text = snack.Calorie.ToString();
-            lbl_SnackCarbonhidrate.Text = snack.Carbonhidrate.ToString();
-            lbl_SnackFat.Text = snack.Fat.ToString();
-            lbl_SnackProtein.Text = snack.Protein.ToString();
+            lbl_SnackCalorie.Text = snack?.Nutrionals.Calorie.ToString();
+            lbl_SnackCarbonhidrate.Text = snack?.Nutrionals.Carbonhidrate.ToString();
+            lbl_SnackFat.Text = snack?.Nutrionals.Fat.ToString();
+            lbl_SnackProtein.Text = snack?.Nutrionals.Protein.ToString();
 
         }
     }
