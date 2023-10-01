@@ -58,7 +58,7 @@
             // 
             // pv_DailyGraph
             // 
-            pv_DailyGraph.Location = new Point(139, 319);
+            pv_DailyGraph.Location = new Point(114, 322);
             pv_DailyGraph.Name = "pv_DailyGraph";
             pv_DailyGraph.PanCursor = Cursors.Hand;
             pv_DailyGraph.Size = new Size(499, 170);

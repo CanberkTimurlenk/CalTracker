@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Repository.Abstract;
 using Repository.Abstract.Base;
-using Repository.Context;
+using Repositories.Context;
 using Services.Concrete;
 
 namespace Repository.Concrete.EFCore

@@ -1,5 +1,5 @@
 ﻿using Entities.Abstract;
-using Repository.Context;
+using Repositories.Context;
 using System.Linq.Expressions;
 
 namespace Repository.Abstract.Base

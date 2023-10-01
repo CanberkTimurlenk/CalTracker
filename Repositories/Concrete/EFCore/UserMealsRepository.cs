@@ -3,7 +3,7 @@ using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using Repository.Abstract;
 using Repository.Abstract.Base;
-using Repository.Context;
+using Repositories.Context;
 
 namespace Repository.Concrete.EFCore
 {

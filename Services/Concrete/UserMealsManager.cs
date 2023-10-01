@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Services.Concrete
 {
-    public class UserMealsManager : IUserMealsService
+    public class UserMealsManager : IUserMealService 
     {
         UserMealsRepository userMealsRepository = new UserMealsRepository();
 
