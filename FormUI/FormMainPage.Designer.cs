@@ -70,6 +70,7 @@
             btn_CalorieTrack.TabIndex = 0;
             btn_CalorieTrack.TabStop = false;
             btn_CalorieTrack.Values.Text = "Kalori Takip";
+            btn_CalorieTrack.Click += btn_CalorieTrack_Click;
             // 
             // pictureBox2
             // 
@@ -112,6 +113,7 @@
             btn_Reports.TabIndex = 0;
             btn_Reports.TabStop = false;
             btn_Reports.Values.Text = "Raporlar";
+            btn_Reports.Click += btn_Reports_Click;
             // 
             // btn_Settings
             // 
@@ -136,6 +138,7 @@
             btn_Settings.TabIndex = 0;
             btn_Settings.TabStop = false;
             btn_Settings.Values.Text = "Ayarlar";
+            btn_Settings.Click += btn_Settings_Click;
             // 
             // FormMainPage
             // 
@@ -143,7 +146,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(450, 575);
+            ClientSize = new Size(450, 517);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);

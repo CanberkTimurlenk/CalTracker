@@ -13,8 +13,10 @@ namespace FormUI
 {
     public partial class FormDailyReport : Form
     {
-        public FormDailyReport()
+        private readonly int _userId;
+        public FormDailyReport(int userId)
         {
+            _userId = userId;
             InitializeComponent();
         }
 

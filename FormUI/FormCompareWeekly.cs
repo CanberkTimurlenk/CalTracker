@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Services.Abstract;
+using Services.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace FormUI
 {
     public partial class FormCompareWeekly : Form
     {
+        private readonly IUserMealService _userMealService = new UserMealManager();
         public FormCompareWeekly()
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+
         }
     }
 }

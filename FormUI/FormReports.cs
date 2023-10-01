@@ -13,8 +13,10 @@ namespace FormUI
 {
     public partial class FormReports : Form
     {
-        public FormReports()
+        private readonly int _userId;
+        public FormReports(int userId)
         {
+            _userId = userId;
             InitializeComponent();
         }
 
@@ -32,6 +34,21 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+        }
+
+        private void gunlukRaporToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormDailyReport(_userId).Show();
+        }
+
+        private void kiyasRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //batuhan sor
+        }
+
+        private void yemekRaporuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormMostConsumed(_userId).Show();   
         }
     }
 }

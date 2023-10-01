@@ -1,5 +1,5 @@
 ﻿using Entities.Concrete;
-using Repository.Abstract;
+using Repositories.Abstract;
 using Repository.Concrete.EFCore;
 using Services.Abstract;
 using System;
@@ -12,7 +12,7 @@ namespace Services.Concrete
 {
     public class AimManager : IAimService
     {
-        private readonly IAimRepository _aimRepository = new AimRepository();
+        private readonly AimRepository _aimRepository = new AimRepository();
 
         public IEnumerable<Aim> GetAll()
         {

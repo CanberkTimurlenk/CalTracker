@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Repositories.Abstract;
 using Repository.Abstract;
 using Repository.Abstract.Base;
 

@@ -21,9 +21,11 @@ namespace FormUI
         private List<MealItem> _mealItemToDelete = new List<MealItem>();
         private List<MealItem> _mealItemToAdd = new List<MealItem>();
         private List<FoodNutrionals> _dataSource = new();
+        private readonly int _userMealId;
 
-        public FormMeals()
+        public FormMeals(int userId)
         {
+            _userId = userId;
             InitializeComponent();
         }
 

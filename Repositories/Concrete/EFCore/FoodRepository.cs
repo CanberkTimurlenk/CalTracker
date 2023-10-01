@@ -1,8 +1,8 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Repositories.Context;
 using Repository.Abstract;
 using Repository.Abstract.Base;
-using Repository.Context;
 using Services.Concrete;
 
 namespace Repository.Concrete.EFCore

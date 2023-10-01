@@ -1,9 +1,9 @@
 ﻿using Entities.Concrete;
 using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
+using Repositories.Context;
 using Repository.Abstract;
 using Repository.Abstract.Base;
-using Repository.Context;
 
 namespace Repository.Concrete.EFCore
 {
@@ -20,7 +20,6 @@ namespace Repository.Concrete.EFCore
                                           .Include(um => um.FoodAmounts)
                                           .ThenInclude(fa => fa.Food)
                                           .FirstOrDefault();
-
             return result;
 
         }

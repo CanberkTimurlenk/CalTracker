@@ -20,9 +20,11 @@ namespace FormUI
 
         private readonly IUserService _userService = new UserManager();
         private readonly IAimService _aimService = new AimManager();
-        public FormSettings()
+        private readonly int _userId;
+        public FormSettings(int userId)
         {
-            InitializeComponent();
+            _userId = userId;
+            InitializeComponent(); 
         }
         private void FormSettings_Load(object sender, EventArgs e)
         {

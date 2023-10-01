@@ -52,18 +52,21 @@
             gunlukRaporToolStripMenuItem.Name = "gunlukRaporToolStripMenuItem";
             gunlukRaporToolStripMenuItem.Size = new Size(112, 24);
             gunlukRaporToolStripMenuItem.Text = "Gunluk Rapor";
+            gunlukRaporToolStripMenuItem.Click += gunlukRaporToolStripMenuItem_Click;
             // 
             // kiyasRaporuToolStripMenuItem
             // 
             kiyasRaporuToolStripMenuItem.Name = "kiyasRaporuToolStripMenuItem";
             kiyasRaporuToolStripMenuItem.Size = new Size(109, 24);
             kiyasRaporuToolStripMenuItem.Text = "Kiyas Raporu";
+            kiyasRaporuToolStripMenuItem.Click += kiyasRaporuToolStripMenuItem_Click;
             // 
             // yemekRaporuToolStripMenuItem
             // 
             yemekRaporuToolStripMenuItem.Name = "yemekRaporuToolStripMenuItem";
             yemekRaporuToolStripMenuItem.Size = new Size(118, 24);
             yemekRaporuToolStripMenuItem.Text = "Yemek Raporu";
+            yemekRaporuToolStripMenuItem.Click += yemekRaporuToolStripMenuItem_Click;
             // 
             // FormReports
             // 

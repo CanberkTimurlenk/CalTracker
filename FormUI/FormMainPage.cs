@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,10 @@ namespace FormUI
 {
     public partial class FormMainPage : Form
     {
-        public FormMainPage()
+        private readonly int _userId;
+        public FormMainPage(int userId)
         {
+            _userId = userId;
             InitializeComponent();
         }
 
@@ -31,6 +34,22 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+        }
+
+        private void btn_Settings_Click(object sender, EventArgs e)
+        {
+            new FormSettings(_userId).Show();
+
+        }
+
+        private void btn_Reports_Click(object sender, EventArgs e)
+        {
+            new FormReports(_userId).Show();
+        }
+
+        private void btn_CalorieTrack_Click(object sender, EventArgs e)
+        {
+            new FormMeals(_userId).Show();
         }
     }
 }
