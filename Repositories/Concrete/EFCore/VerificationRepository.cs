@@ -1,8 +1,8 @@
 ﻿using Entities.Concrete;
-using Repository.Abstract;
-using Repository.Abstract.Base;
+using Repositories.Abstract;
+using Repositories.Abstract.Base;
 
-namespace Repository.Concrete.EFCore
+namespace Repositories.Concrete.EFCore
 {
     public class VerificationRepository : BaseRepository<UserVerification>, IVerificationRepository
     {

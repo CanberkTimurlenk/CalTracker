@@ -1,6 +1,6 @@
 ﻿using Entities.Concrete;
 using Repositories.Abstract;
-using Repository.Concrete.EFCore;
+using Repositories.Concrete.EFCore;
 using Services.Abstract;
 using System;
 using System.Collections.Generic;

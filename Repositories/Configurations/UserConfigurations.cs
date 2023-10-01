@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Repository.Configurations
+namespace Repositories.Configurations
 {
     public class UserConfigurations : IEntityTypeConfiguration<User>
     {
@@ -13,6 +13,7 @@ namespace Repository.Configurations
             builder.Property(u => u.Email).HasMaxLength(50);
             builder.Property(u => u.Height).HasMaxLength(5);
             builder.Property(u => u.Weight).HasMaxLength(5);
+            
         }
     }
 }

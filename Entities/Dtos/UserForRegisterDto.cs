@@ -12,8 +12,5 @@ namespace Entities.Dtos
         public double Weight { get; init; }
         public UserStatus UserStatus { get; init; }
         public int AimId { get; init; }
-
     }
-
-
 }

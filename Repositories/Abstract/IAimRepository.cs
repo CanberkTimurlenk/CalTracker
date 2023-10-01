@@ -1,5 +1,5 @@
 ﻿using Entities.Concrete;
-using Repository.Abstract.Base;
+using Repositories.Abstract.Base;
 
 namespace Repositories.Abstract
 {

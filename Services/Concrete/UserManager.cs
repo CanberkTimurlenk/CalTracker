@@ -1,8 +1,8 @@
 ﻿using Entities.Concrete;
 using Entities.Enums;
 using Entities.Exceptions;
-using Repository.Abstract;
-using Repository.Concrete.EFCore;
+using Repositories.Abstract;
+using Repositories.Concrete.EFCore;
 using Services.Abstract;
 
 namespace Services.Concrete

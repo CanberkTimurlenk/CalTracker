@@ -1,11 +1,11 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Repositories.Abstract;
+using Repositories.Abstract.Base;
 using Repositories.Context;
-using Repository.Abstract;
-using Repository.Abstract.Base;
 using Services.Concrete;
 
-namespace Repository.Concrete.EFCore
+namespace Repositories.Concrete.EFCore
 {
     public class FoodRepository : BaseRepository<Food>, IFoodRepository
     {
@@ -26,10 +26,22 @@ namespace Repository.Concrete.EFCore
                             {
                                 FoodName = f.Name,
                                 Gram = f.Gram,
-                                Calorie = f.Calorie,
-                                Protein = f.Protein,
-                                Fat = f.Fat
+                                Nutrionals = new Nutrionals
+                                {
+                                    Calorie = f.Calorie,
+                                    Carbonhidrate = f.Carbonhidrate,
+                                    Fat = f.Fat,
+                                }
                             }).FirstOrDefault()!;
+        }
+
+        public string GetFoodImageByFoodName(string name)
+        {
+
+            using KaloriTakipDbContext context = new KaloriTakipDbContext();
+            return context.Foods
+                            .Where(f => f.Name.Equals(name))
+                            .Select(f => f.ImagePath).FirstOrDefault()!;
         }
 
 
@@ -40,7 +52,7 @@ namespace Repository.Concrete.EFCore
             return KaloriTakipDbContext.Foods
             .Where(food => names.Contains(food.Name))
             .Select(food => food.Id).ToList();
-          
+
         }
     }
 }

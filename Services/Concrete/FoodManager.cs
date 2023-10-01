@@ -1,6 +1,6 @@
 ﻿using Entities.Concrete;
-using Repository.Abstract;
-using Repository.Concrete.EFCore;
+using Repositories.Abstract;
+using Repositories.Concrete.EFCore;
 using Services.Abstract;
 
 namespace Services.Concrete
@@ -8,10 +8,14 @@ namespace Services.Concrete
     public class FoodManager : IFoodService
     {
         IFoodRepository _foodRepository = new FoodRepository();
+
         public IEnumerable<string> GetFoodNamesContains(string word)
 
             => _foodRepository.GetFoodNamesContains(word);
 
+        public string GetFoodImageByFoodName(string name)
+
+            => _foodRepository.GetFoodImageByFoodName(name);
 
         public FoodNutrionals GetFoodNutrionals(string name, int gram)
         {
@@ -21,12 +25,14 @@ namespace Services.Concrete
             {
                 FoodName = fn.FoodName,
                 Gram = gram,
-                Calorie = Math.Round((fn.Calorie / fn.Gram) * gram, 2),
-                Carbonhidrate = Math.Round((fn.Carbonhidrate / fn.Gram) * gram, 2),
-                Protein = Math.Round((fn.Protein / fn.Gram) * gram, 2),
-                Fat = Math.Round((fn.Fat / fn.Gram) * gram, 2)
+                Nutrionals = new Nutrionals
+                {
+                    Calorie = Math.Round((fn.Nutrionals.Calorie / fn.Gram) * gram, 2),
+                    Carbonhidrate = Math.Round((fn.Nutrionals.Carbonhidrate / fn.Gram) * gram, 2),
+                    Protein = Math.Round((fn.Nutrionals.Protein / fn.Gram) * gram, 2),
+                    Fat = Math.Round((fn.Nutrionals.Fat / fn.Gram) * gram, 2)
+                }                
             };
-
             return calculatedFoodNutrionals;
 
         }
@@ -36,19 +42,7 @@ namespace Services.Concrete
            => _foodRepository.Get(f => f.Name.Equals(name));
 
         public void AddNewFood(Food food)
-        //public void AddNewFood(string name, double calorie, double fat, double protein, double carbonhidrate,int categoryId, string? imagePath, int gram)
         {
-            //Food food = new Food() 
-            //{
-            //    Name = name,
-            //    Calorie = calorie,
-            //    Fat = fat,
-            //    Protein = protein,
-            //    Carbonhidrate = carbonhidrate,
-            //    FoodCategoryId = categoryId,
-            //    ImagePath = imagePath,
-            //    Gram = gram
-            //};
             _foodRepository.Create(food);
         }
 

@@ -1,9 +1,8 @@
 ﻿using Entities.Concrete;
 using Repositories.Abstract;
-using Repository.Abstract;
-using Repository.Abstract.Base;
+using Repositories.Abstract.Base;
 
-namespace Repository.Concrete.EFCore
+namespace Repositories.Concrete.EFCore
 {
     public class AimRepository : BaseRepository<Aim>, IAimRepository
     {

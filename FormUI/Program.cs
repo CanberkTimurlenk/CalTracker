@@ -1,3 +1,5 @@
+using Microsoft.Data.SqlClient;
+
 namespace FormUI
 {
     internal static class Program
@@ -11,7 +13,17 @@ namespace FormUI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormMeals());
+
+
+                Application.Run(new FormMeals(2));
+            /*
+            catch (SqlException)
+            {
+                MessageBox.Show("Db Connection Error");
+            }*/
+
+            
+
         }
     }
 }

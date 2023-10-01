@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Repositories.Configurations.Extensions;
 
 namespace Repository.Configurations
 {
@@ -14,7 +15,10 @@ namespace Repository.Configurations
             builder.Property(f => f.Fat).HasMaxLength(8);
             builder.Property(f => f.Carbonhidrate).HasMaxLength(8);
             builder.Property(f => f.Protein).HasMaxLength(8);
-            //desc ve imagepath maxlength vermedik
+            //desc ve imagepath maxlength vermedik           
+            builder.AddSeedData();
+
+            
         }        
     }
 }

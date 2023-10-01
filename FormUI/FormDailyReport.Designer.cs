@@ -37,31 +37,32 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
-            label23 = new Label();
-            label24 = new Label();
+            lbl_BreakfastCalorie = new Label();
+            lbl_LunchCalorie = new Label();
+            lbl_DinnerCalorie = new Label();
+            lbl_SnackCalorie = new Label();
+            lbl_BreakfastProtein = new Label();
+            lbl_LunchProtein = new Label();
+            lbl_DinnerProtein = new Label();
+            lbl_SnackProtein = new Label();
+            lbl_BreakfastCarbonhidrate = new Label();
+            lbl_BreakfastFat = new Label();
+            lbl_LunchCarbonhidrate = new Label();
+            lbl_LunchFat = new Label();
+            lbl_DinnerCarbonhidrate = new Label();
+            lbl_DinnerFat = new Label();
+            lbl_SnackCarbonhidrate = new Label();
+            lbl_SnackFat = new Label();
             kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
             SuspendLayout();
             // 
             // pv_DailyGraph
             // 
-            pv_DailyGraph.Location = new Point(139, 319);
+            pv_DailyGraph.Location = new Point(159, 425);
+            pv_DailyGraph.Margin = new Padding(3, 4, 3, 4);
             pv_DailyGraph.Name = "pv_DailyGraph";
             pv_DailyGraph.PanCursor = Cursors.Hand;
-            pv_DailyGraph.Size = new Size(499, 170);
+            pv_DailyGraph.Size = new Size(570, 227);
             pv_DailyGraph.TabIndex = 0;
             pv_DailyGraph.Text = "plotView1";
             pv_DailyGraph.ZoomHorizontalCursor = Cursors.SizeWE;
@@ -71,259 +72,261 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(200, 140);
+            label1.Location = new Point(229, 187);
             label1.Name = "label1";
-            label1.Size = new Size(49, 15);
+            label1.Size = new Size(62, 20);
             label1.TabIndex = 1;
             label1.Text = "Kahvalti";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(210, 181);
+            label2.Location = new Point(240, 241);
             label2.Name = "label2";
-            label2.Size = new Size(39, 15);
+            label2.Size = new Size(49, 20);
             label2.TabIndex = 1;
             label2.Text = "Oglen";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(206, 221);
+            label3.Location = new Point(235, 295);
             label3.Name = "label3";
-            label3.Size = new Size(43, 15);
+            label3.Size = new Size(53, 20);
             label3.TabIndex = 1;
             label3.Text = "Aksam";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(200, 259);
+            label4.Location = new Point(229, 345);
             label4.Name = "label4";
-            label4.Size = new Size(49, 15);
+            label4.Size = new Size(63, 20);
             label4.TabIndex = 1;
             label4.Text = "Aperatif";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(269, 101);
+            label5.Location = new Point(307, 135);
             label5.Name = "label5";
-            label5.Size = new Size(37, 15);
+            label5.Size = new Size(48, 20);
             label5.TabIndex = 1;
             label5.Text = "Kalori";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(325, 101);
+            label6.Location = new Point(371, 135);
             label6.Name = "label6";
-            label6.Size = new Size(45, 15);
+            label6.Size = new Size(56, 20);
             label6.TabIndex = 1;
             label6.Text = "Protein";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(379, 101);
+            label7.Location = new Point(433, 135);
             label7.Name = "label7";
-            label7.Size = new Size(76, 15);
+            label7.Size = new Size(96, 20);
             label7.TabIndex = 1;
             label7.Text = "Karbonhidrat";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(470, 101);
+            label8.Location = new Point(537, 135);
             label8.Name = "label8";
-            label8.Size = new Size(26, 15);
+            label8.Size = new Size(33, 20);
             label8.TabIndex = 1;
             label8.Text = "Yag";
             // 
-            // label9
+            // lbl_BreakfastCalorie
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(270, 140);
-            label9.Name = "label9";
-            label9.Size = new Size(13, 15);
-            label9.TabIndex = 1;
-            label9.Text = "0";
+            lbl_BreakfastCalorie.AutoSize = true;
+            lbl_BreakfastCalorie.Location = new Point(309, 187);
+            lbl_BreakfastCalorie.Name = "lbl_BreakfastCalorie";
+            lbl_BreakfastCalorie.Size = new Size(17, 20);
+            lbl_BreakfastCalorie.TabIndex = 1;
+            lbl_BreakfastCalorie.Text = "0";
             // 
-            // label10
+            // lbl_LunchCalorie
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(270, 181);
-            label10.Name = "label10";
-            label10.Size = new Size(13, 15);
-            label10.TabIndex = 1;
-            label10.Text = "0";
+            lbl_LunchCalorie.AutoSize = true;
+            lbl_LunchCalorie.Location = new Point(309, 241);
+            lbl_LunchCalorie.Name = "lbl_LunchCalorie";
+            lbl_LunchCalorie.Size = new Size(17, 20);
+            lbl_LunchCalorie.TabIndex = 1;
+            lbl_LunchCalorie.Text = "0";
             // 
-            // label11
+            // lbl_DinnerCalorie
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(270, 221);
-            label11.Name = "label11";
-            label11.Size = new Size(13, 15);
-            label11.TabIndex = 1;
-            label11.Text = "0";
+            lbl_DinnerCalorie.AutoSize = true;
+            lbl_DinnerCalorie.Location = new Point(309, 295);
+            lbl_DinnerCalorie.Name = "lbl_DinnerCalorie";
+            lbl_DinnerCalorie.Size = new Size(17, 20);
+            lbl_DinnerCalorie.TabIndex = 1;
+            lbl_DinnerCalorie.Text = "0";
             // 
-            // label12
+            // lbl_SnackCalorie
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(270, 259);
-            label12.Name = "label12";
-            label12.Size = new Size(13, 15);
-            label12.TabIndex = 1;
-            label12.Text = "0";
+            lbl_SnackCalorie.AutoSize = true;
+            lbl_SnackCalorie.Location = new Point(309, 345);
+            lbl_SnackCalorie.Name = "lbl_SnackCalorie";
+            lbl_SnackCalorie.Size = new Size(17, 20);
+            lbl_SnackCalorie.TabIndex = 1;
+            lbl_SnackCalorie.Text = "0";
             // 
-            // label13
+            // lbl_BreakfastProtein
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(334, 140);
-            label13.Name = "label13";
-            label13.Size = new Size(13, 15);
-            label13.TabIndex = 1;
-            label13.Text = "0";
+            lbl_BreakfastProtein.AutoSize = true;
+            lbl_BreakfastProtein.Location = new Point(382, 187);
+            lbl_BreakfastProtein.Name = "lbl_BreakfastProtein";
+            lbl_BreakfastProtein.Size = new Size(17, 20);
+            lbl_BreakfastProtein.TabIndex = 1;
+            lbl_BreakfastProtein.Text = "0";
             // 
-            // label14
+            // lbl_LunchProtein
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(334, 181);
-            label14.Name = "label14";
-            label14.Size = new Size(13, 15);
-            label14.TabIndex = 1;
-            label14.Text = "0";
+            lbl_LunchProtein.AutoSize = true;
+            lbl_LunchProtein.Location = new Point(382, 241);
+            lbl_LunchProtein.Name = "lbl_LunchProtein";
+            lbl_LunchProtein.Size = new Size(17, 20);
+            lbl_LunchProtein.TabIndex = 1;
+            lbl_LunchProtein.Text = "0";
             // 
-            // label15
+            // lbl_DinnerProtein
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(334, 221);
-            label15.Name = "label15";
-            label15.Size = new Size(13, 15);
-            label15.TabIndex = 1;
-            label15.Text = "0";
+            lbl_DinnerProtein.AutoSize = true;
+            lbl_DinnerProtein.Location = new Point(382, 295);
+            lbl_DinnerProtein.Name = "lbl_DinnerProtein";
+            lbl_DinnerProtein.Size = new Size(17, 20);
+            lbl_DinnerProtein.TabIndex = 1;
+            lbl_DinnerProtein.Text = "0";
             // 
-            // label16
+            // lbl_SnackProtein
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(334, 259);
-            label16.Name = "label16";
-            label16.Size = new Size(13, 15);
-            label16.TabIndex = 1;
-            label16.Text = "0";
+            lbl_SnackProtein.AutoSize = true;
+            lbl_SnackProtein.Location = new Point(382, 345);
+            lbl_SnackProtein.Name = "lbl_SnackProtein";
+            lbl_SnackProtein.Size = new Size(17, 20);
+            lbl_SnackProtein.TabIndex = 1;
+            lbl_SnackProtein.Text = "0";
             // 
-            // label17
+            // lbl_BreakfastCarbonhidrate
             // 
-            label17.AutoSize = true;
-            label17.Location = new Point(396, 140);
-            label17.Name = "label17";
-            label17.Size = new Size(13, 15);
-            label17.TabIndex = 1;
-            label17.Text = "0";
+            lbl_BreakfastCarbonhidrate.AutoSize = true;
+            lbl_BreakfastCarbonhidrate.Location = new Point(453, 187);
+            lbl_BreakfastCarbonhidrate.Name = "lbl_BreakfastCarbonhidrate";
+            lbl_BreakfastCarbonhidrate.Size = new Size(17, 20);
+            lbl_BreakfastCarbonhidrate.TabIndex = 1;
+            lbl_BreakfastCarbonhidrate.Text = "0";
             // 
-            // label18
+            // lbl_BreakfastFat
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(470, 140);
-            label18.Name = "label18";
-            label18.Size = new Size(13, 15);
-            label18.TabIndex = 1;
-            label18.Text = "0";
+            lbl_BreakfastFat.AutoSize = true;
+            lbl_BreakfastFat.Location = new Point(537, 187);
+            lbl_BreakfastFat.Name = "lbl_BreakfastFat";
+            lbl_BreakfastFat.Size = new Size(17, 20);
+            lbl_BreakfastFat.TabIndex = 1;
+            lbl_BreakfastFat.Text = "0";
             // 
-            // label19
+            // lbl_LunchCarbonhidrate
             // 
-            label19.AutoSize = true;
-            label19.Location = new Point(396, 181);
-            label19.Name = "label19";
-            label19.Size = new Size(13, 15);
-            label19.TabIndex = 1;
-            label19.Text = "0";
+            lbl_LunchCarbonhidrate.AutoSize = true;
+            lbl_LunchCarbonhidrate.Location = new Point(453, 241);
+            lbl_LunchCarbonhidrate.Name = "lbl_LunchCarbonhidrate";
+            lbl_LunchCarbonhidrate.Size = new Size(17, 20);
+            lbl_LunchCarbonhidrate.TabIndex = 1;
+            lbl_LunchCarbonhidrate.Text = "0";
             // 
-            // label20
+            // lbl_LunchFat
             // 
-            label20.AutoSize = true;
-            label20.Location = new Point(470, 181);
-            label20.Name = "label20";
-            label20.Size = new Size(13, 15);
-            label20.TabIndex = 1;
-            label20.Text = "0";
+            lbl_LunchFat.AutoSize = true;
+            lbl_LunchFat.Location = new Point(537, 241);
+            lbl_LunchFat.Name = "lbl_LunchFat";
+            lbl_LunchFat.Size = new Size(17, 20);
+            lbl_LunchFat.TabIndex = 1;
+            lbl_LunchFat.Text = "0";
             // 
-            // label21
+            // lbl_DinnerCarbonhidrate
             // 
-            label21.AutoSize = true;
-            label21.Location = new Point(396, 221);
-            label21.Name = "label21";
-            label21.Size = new Size(13, 15);
-            label21.TabIndex = 1;
-            label21.Text = "0";
+            lbl_DinnerCarbonhidrate.AutoSize = true;
+            lbl_DinnerCarbonhidrate.Location = new Point(453, 295);
+            lbl_DinnerCarbonhidrate.Name = "lbl_DinnerCarbonhidrate";
+            lbl_DinnerCarbonhidrate.Size = new Size(17, 20);
+            lbl_DinnerCarbonhidrate.TabIndex = 1;
+            lbl_DinnerCarbonhidrate.Text = "0";
             // 
-            // label22
+            // lbl_DinnerFat
             // 
-            label22.AutoSize = true;
-            label22.Location = new Point(470, 221);
-            label22.Name = "label22";
-            label22.Size = new Size(13, 15);
-            label22.TabIndex = 1;
-            label22.Text = "0";
+            lbl_DinnerFat.AutoSize = true;
+            lbl_DinnerFat.Location = new Point(537, 295);
+            lbl_DinnerFat.Name = "lbl_DinnerFat";
+            lbl_DinnerFat.Size = new Size(17, 20);
+            lbl_DinnerFat.TabIndex = 1;
+            lbl_DinnerFat.Text = "0";
             // 
-            // label23
+            // lbl_SnackCarbonhidrate
             // 
-            label23.AutoSize = true;
-            label23.Location = new Point(396, 259);
-            label23.Name = "label23";
-            label23.Size = new Size(13, 15);
-            label23.TabIndex = 1;
-            label23.Text = "0";
+            lbl_SnackCarbonhidrate.AutoSize = true;
+            lbl_SnackCarbonhidrate.Location = new Point(453, 345);
+            lbl_SnackCarbonhidrate.Name = "lbl_SnackCarbonhidrate";
+            lbl_SnackCarbonhidrate.Size = new Size(17, 20);
+            lbl_SnackCarbonhidrate.TabIndex = 1;
+            lbl_SnackCarbonhidrate.Text = "0";
             // 
-            // label24
+            // lbl_SnackFat
             // 
-            label24.AutoSize = true;
-            label24.Location = new Point(470, 259);
-            label24.Name = "label24";
-            label24.Size = new Size(13, 15);
-            label24.TabIndex = 1;
-            label24.Text = "0";
+            lbl_SnackFat.AutoSize = true;
+            lbl_SnackFat.Location = new Point(537, 345);
+            lbl_SnackFat.Name = "lbl_SnackFat";
+            lbl_SnackFat.Size = new Size(17, 20);
+            lbl_SnackFat.TabIndex = 1;
+            lbl_SnackFat.Text = "0";
             // 
             // kryptonLabel1
             // 
-            kryptonLabel1.Location = new Point(76, 30);
+            kryptonLabel1.Location = new Point(87, 40);
+            kryptonLabel1.Margin = new Padding(3, 4, 3, 4);
             kryptonLabel1.Name = "kryptonLabel1";
-            kryptonLabel1.Size = new Size(85, 20);
+            kryptonLabel1.Size = new Size(105, 24);
             kryptonLabel1.TabIndex = 2;
             kryptonLabel1.Values.Text = "Gunluk Rapor";
             // 
             // FormDailyReport
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(743, 527);
+            ClientSize = new Size(849, 703);
             Controls.Add(kryptonLabel1);
             Controls.Add(label8);
-            Controls.Add(label24);
-            Controls.Add(label16);
-            Controls.Add(label23);
-            Controls.Add(label12);
+            Controls.Add(lbl_SnackFat);
+            Controls.Add(lbl_SnackProtein);
+            Controls.Add(lbl_SnackCarbonhidrate);
+            Controls.Add(lbl_SnackCalorie);
             Controls.Add(label4);
             Controls.Add(label7);
-            Controls.Add(label22);
-            Controls.Add(label15);
-            Controls.Add(label21);
-            Controls.Add(label11);
+            Controls.Add(lbl_DinnerFat);
+            Controls.Add(lbl_DinnerProtein);
+            Controls.Add(lbl_DinnerCarbonhidrate);
+            Controls.Add(lbl_DinnerCalorie);
             Controls.Add(label3);
             Controls.Add(label6);
-            Controls.Add(label20);
-            Controls.Add(label14);
-            Controls.Add(label19);
-            Controls.Add(label10);
+            Controls.Add(lbl_LunchFat);
+            Controls.Add(lbl_LunchProtein);
+            Controls.Add(lbl_LunchCarbonhidrate);
+            Controls.Add(lbl_LunchCalorie);
             Controls.Add(label2);
             Controls.Add(label5);
-            Controls.Add(label18);
-            Controls.Add(label17);
-            Controls.Add(label13);
-            Controls.Add(label9);
+            Controls.Add(lbl_BreakfastFat);
+            Controls.Add(lbl_BreakfastCarbonhidrate);
+            Controls.Add(lbl_BreakfastProtein);
+            Controls.Add(lbl_BreakfastCalorie);
             Controls.Add(label1);
             Controls.Add(pv_DailyGraph);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormDailyReport";
             Text = "FormDailyReport";
             Load += FormDailyReport_Load;
@@ -342,22 +345,22 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
-        private Label label15;
-        private Label label16;
-        private Label label17;
-        private Label label18;
-        private Label label19;
-        private Label label20;
-        private Label label21;
-        private Label label22;
-        private Label label23;
-        private Label label24;
+        private Label lbl_BreakfastCalorie;
+        private Label lbl_LunchCalorie;
+        private Label lbl_DinnerCalorie;
+        private Label lbl_SnackCalorie;
+        private Label lbl_BreakfastProtein;
+        private Label lbl_LunchProtein;
+        private Label lbl_DinnerProtein;
+        private Label lbl_SnackProtein;
+        private Label lbl_BreakfastCarbonhidrate;
+        private Label lbl_BreakfastFat;
+        private Label lbl_LunchCarbonhidrate;
+        private Label lbl_LunchFat;
+        private Label lbl_DinnerCarbonhidrate;
+        private Label lbl_DinnerFat;
+        private Label lbl_SnackCarbonhidrate;
+        private Label lbl_SnackFat;
         private Krypton.Toolkit.KryptonLabel kryptonLabel1;
     }
 }
