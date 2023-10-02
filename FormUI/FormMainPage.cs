@@ -1,27 +1,17 @@
 ﻿using Entities.Concrete;
-using Repositories.Abstract;
-using Repositories.Concrete.EFCore;
 using Repositories.Context;
 using Services.Abstract;
 using Services.Concrete;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace FormUI
 {
     public partial class FormMainPage : Form
     {
         private readonly User _user;
+
         private readonly IUserService _userService = new UserManager();
-        KaloriTakipDbContext db = new KaloriTakipDbContext();
 
 
         public FormMainPage(User user)
@@ -62,6 +52,10 @@ namespace FormUI
         private void btn_CalorieTrack_Click(object sender, EventArgs e)
         {
             new FormMeals(_user.Id).Show();
+        }
+        private void btn_CalorieAims_Click(object sender, EventArgs e)
+        {
+            new FormRecommendation(_user.Id).Show();
         }
     }
 }

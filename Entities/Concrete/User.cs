@@ -18,7 +18,6 @@ namespace Entities.Concrete
         public int AimId { get; set; }
         public Aim Aim { get; set; }
 
-        public ICollection<UserData> UserData { get; set; }
         public UserVerification UserVerification { get; set; }
 
     }

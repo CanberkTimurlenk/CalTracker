@@ -24,7 +24,7 @@ namespace FormUI
         public FormSettings(int userId)
         {
             _userId = userId;
-            InitializeComponent(); 
+            InitializeComponent();
         }
         private void FormSettings_Load(object sender, EventArgs e)
         {
@@ -39,25 +39,25 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
-            var aims = _aimService.GetAll().Select(x => x.Name).ToList();
-            cmb_Aim.DataSource = aims;
+            cmb_Aim.DataSource = _aimService.GetAll();
+            cmb_Aim.DisplayMember = "Name";
+            cmb_Aim.ValueMember = "Id";
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            //TODO: userId yi al
-            if (!txt_Firstname.Text.Trim().IsNullOrEmpty()) _userService.ChangeUserFirstName(5, txt_Firstname.Text.Trim());
-            if (!txt_Lastname.Text.Trim().IsNullOrEmpty()) _userService.ChangeUserLastName(5, txt_Lastname.Text.Trim());
+            if (!txt_Firstname.Text.Trim().IsNullOrEmpty()) _userService.UpdateFirstnameByUserId(_userId, txt_Firstname.Text.Trim());
+            if (!txt_Lastname.Text.Trim().IsNullOrEmpty()) _userService.UpdateLastnameByUserId(_userId, txt_Lastname.Text.Trim());
         }
         private void btn_aimSave_Click_1(object sender, EventArgs e)
         {
-            if (cmb_Aim.SelectedIndex > -1) _userService.ChangeUserAim(5, cmb_Aim.SelectedValue as Aim);
+            if (cmb_Aim.SelectedIndex > -1) _userService.UpdateUserAimByUserId(_userId, (int)cmb_Aim.SelectedValue);
 
         }
 
         private void btn_HeightWeightSave_Click(object sender, EventArgs e)
         {
-            if (nud_Height.Value > 0) _userService.ChangeUserHeight(5, (double)nud_Height.Value);
-            if (nud_Weight.Value > 0) _userService.ChangeUserWeight(5, (double)nud_Weight.Value);
+            if (nud_Height.Value > 0) _userService.UpdateAimByUserId(_userId, (double)nud_Height.Value);
+            if (nud_Weight.Value > 0) _userService.UpdateWeightByUserId(_userId, (double)nud_Weight.Value);
 
         }
     }

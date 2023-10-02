@@ -41,7 +41,7 @@
             lbl_Verification.AutoSize = true;
             lbl_Verification.Font = new Font("MS UI Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_Verification.ForeColor = Color.FromArgb(32, 191, 107);
-            lbl_Verification.Location = new Point(25, 30);
+            lbl_Verification.Location = new Point(33, 3);
             lbl_Verification.Name = "lbl_Verification";
             lbl_Verification.Size = new Size(188, 34);
             lbl_Verification.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             btn_Close.ButtonStyle = Krypton.Toolkit.ButtonStyle.LowProfile;
             btn_Close.CornerRoundingRadius = -1F;
-            btn_Close.Location = new Point(245, 12);
+            btn_Close.Location = new Point(250, 3);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(28, 25);
             btn_Close.StatePressed.Back.Color1 = Color.Red;
@@ -119,7 +119,7 @@
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(285, 242);
+            ClientSize = new Size(290, 239);
             ControlBox = false;
             Controls.Add(txt_Verification);
             Controls.Add(textBox2);
@@ -129,10 +129,12 @@
             Controls.Add(lbl_Verification);
             Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(164, 165, 169);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4);
             Name = "FormVerification";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = " ";
+            Load += FormVerification_Load;
             ResumeLayout(false);
             PerformLayout();
         }

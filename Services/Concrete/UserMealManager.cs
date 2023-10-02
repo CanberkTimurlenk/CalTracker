@@ -10,7 +10,7 @@ namespace Services.Concrete
 {
     public partial class UserMealManager : IUserMealService
     {
-        private readonly IUserMealRepository _userMealRepository = new UserMealsRepository();
+        private readonly IUserMealRepository _userMealRepository = new UserMealRepository();
         private readonly IUserRepository _userRepository = new UserRepository();
 
         public IEnumerable<FoodNutrionals> GetUserMeals(int userId, DateTime mealDate, MealTimes mealTime)
@@ -20,6 +20,7 @@ namespace Services.Concrete
             if (userMeals is null)
                 return new List<FoodNutrionals>();
 
+            var nutrionals = CalculateNutrionals(userMeals.FoodAmounts);
             var foodList = new List<FoodNutrionals>();
             userMeals.FoodAmounts.ForEach(fa =>
             {
@@ -27,7 +28,12 @@ namespace Services.Concrete
                 {
                     FoodName = fa.Food.Name,
                     Gram = fa.Gram,
-                    Nutrionals = CalculateNutrionals(userMeals.FoodAmounts)
+                    Calorie = nutrionals.Calorie,
+                    Carbonhidrate = nutrionals.Carbonhidrate,
+                    Fat = nutrionals.Fat,
+                    Protein = nutrionals.Protein
+
+
                 });
             });
 
@@ -96,7 +102,7 @@ namespace Services.Concrete
 
             foreach (MealTimes mealTime in Enum.GetValues(typeof(MealTimes)))
             {
-                var totalCalorie = nutrionals.Where(mn => mn.MealTime == mealTime).Sum(mn => mn.Nutrionals.Calorie);
+                var totalCalorie = nutrionals.Where(mn => mn.MealTime == mealTime).Sum(mn => mn.Calorie);
                 typeof(PeriodicCalories).GetProperty(mealTime.ToString()).SetValue(periodicNutrionals, totalCalorie);
             }
 
@@ -104,7 +110,7 @@ namespace Services.Concrete
             return periodicNutrionals;
         }
 
-        private List<MealNutrionals> CalculateMealNutrionalsByCategoryId(IEnumerable<UserMeal> userMeals, int categoryId = 0)//, MealTimes mealTime)
+        private List<MealNutrionals> CalculateMealNutrionalsByCategoryId(IEnumerable<UserMeal> userMeals, int categoryId = 0)
         {
             var mealNutrionalsList = new List<MealNutrionals>();
 
@@ -136,7 +142,10 @@ namespace Services.Concrete
                     var mealNutrionals = new MealNutrionals
                     {
                         MealTime = mealTime,
-                        Nutrionals = CalculateNutrionals(meals.SelectMany(um => um.FoodAmounts))
+                        Calorie = nutrionals.Calorie,
+                        Carbonhidrate = nutrionals.Carbonhidrate,
+                        Fat = nutrionals.Fat,
+                        Protein = nutrionals.Protein,
                     };
 
 

@@ -107,15 +107,25 @@ namespace FormUI
             _mealItemToDelete.Clear();
             _mealItemToAdd.Clear();
 
+          
+
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+         
+
             if (dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
             {
                 var selectedFoodName = dgv_MealList.SelectedRows[0].Cells[0].Value.ToString();
 
                 var foodWithNutrionals = _foodService.GetFoodNutrionals(selectedFoodName, Convert.ToInt32(nud_Amount.Value));
+
+                if(_mealItemToAdd.Any(mi => mi.FoodName == selectedFoodName))
+                {
+                    MessageBox.Show("You cant add duplicate");
+                    return;
+                }
 
                 _dataSource.Add(foodWithNutrionals);
                 dgv_SelectedMealList.DataSource = null;
@@ -136,10 +146,11 @@ namespace FormUI
 
         private void btn_Remove_Click(object sender, EventArgs e)
         {
+            
             if (dgv_SelectedMealList.SelectedRows.Count > 0 && dgv_SelectedMealList.SelectedRows[0].Cells[0].Value != null)
             {
                 var selectedFoodName = dgv_SelectedMealList.SelectedRows[0].Cells[0].Value.ToString();
-                var selectedFoodGram = Convert.ToInt32(dgv_SelectedMealList.SelectedRows[0].Cells[2].Value);
+                var selectedFoodGram = Convert.ToInt32(dgv_SelectedMealList.SelectedRows[0].Cells[1].Value);
                 var itemToDelete = _dataSource.Find(x => x.FoodName == selectedFoodName && x.Gram == selectedFoodGram);
 
                 _dataSource.Remove(itemToDelete);

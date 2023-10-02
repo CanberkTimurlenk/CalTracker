@@ -61,7 +61,7 @@
             lbl_Registration.AutoSize = true;
             lbl_Registration.Font = new Font("MS UI Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_Registration.ForeColor = Color.FromArgb(32, 191, 107);
-            lbl_Registration.Location = new Point(186, 22);
+            lbl_Registration.Location = new Point(186, 3);
             lbl_Registration.Name = "lbl_Registration";
             lbl_Registration.Size = new Size(197, 34);
             lbl_Registration.TabIndex = 0;
@@ -164,7 +164,7 @@
             // 
             btn_CloseWindow.ButtonStyle = Krypton.Toolkit.ButtonStyle.LowProfile;
             btn_CloseWindow.CornerRoundingRadius = -1F;
-            btn_CloseWindow.Location = new Point(547, 12);
+            btn_CloseWindow.Location = new Point(546, 3);
             btn_CloseWindow.Name = "btn_CloseWindow";
             btn_CloseWindow.Size = new Size(28, 25);
             btn_CloseWindow.StatePressed.Back.Color1 = Color.Red;
@@ -368,10 +368,11 @@
             Controls.Add(lbl_Registration);
             Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(164, 165, 169);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4);
             Name = "FormRegister";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = " ";
             Load += FormRegister_Load;
             ((System.ComponentModel.ISupportInitialize)cmb_Aim).EndInit();
             ResumeLayout(false);

@@ -1,19 +1,7 @@
-﻿using Entities.Concrete;
-using Entities.Exceptions;
+﻿using Entities.Exceptions;
 using FormUI.Utilities;
 using Services;
 using Services.Concrete;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace FormUI
 {
@@ -25,7 +13,7 @@ namespace FormUI
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void lbl_CreateAccount_Click(object sender, EventArgs e)
         {
 
             new FormRegister().Show();
@@ -47,10 +35,9 @@ namespace FormUI
                 Password = txt_Password.Text
             };
 
-
             try
             {
-                var user =_authService.Login(userToLogin);
+                var user = _authService.Login(userToLogin);
                 MessageBox.Show("Logged in Successfuly!");
                 new FormMainPage(user).Show();
             }
@@ -63,7 +50,7 @@ namespace FormUI
             {
                 MessageBox.Show("Please complete the verification process");
 
-                var formVerification = new FormVerification(ex.UserId);
+                var formVerification = new FormVerification(ex.User);
                 formVerification.Show();
                 this.Hide();
             }
@@ -81,11 +68,6 @@ namespace FormUI
                 txt_Password.PasswordChar = '*';
 
             }
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_CloseWindow_Click(object sender, EventArgs e)

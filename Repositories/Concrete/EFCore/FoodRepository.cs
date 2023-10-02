@@ -26,12 +26,10 @@ namespace Repositories.Concrete.EFCore
                             {
                                 FoodName = f.Name,
                                 Gram = f.Gram,
-                                Nutrionals = new Nutrionals
-                                {
-                                    Calorie = f.Calorie,
-                                    Carbonhidrate = f.Carbonhidrate,
-                                    Fat = f.Fat,
-                                }
+                                Calorie = f.Calorie,
+                                Carbonhidrate = f.Carbonhidrate,
+                                Fat = f.Fat,
+
                             }).FirstOrDefault()!;
         }
 

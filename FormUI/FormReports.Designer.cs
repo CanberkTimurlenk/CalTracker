@@ -31,7 +31,11 @@
             menuStrip1 = new MenuStrip();
             gunlukRaporToolStripMenuItem = new ToolStripMenuItem();
             kiyasRaporuToolStripMenuItem = new ToolStripMenuItem();
+            aylıkRaporToolStripMenuItem = new ToolStripMenuItem();
+            haftalıkRaporToolStripMenuItem = new ToolStripMenuItem();
             yemekRaporuToolStripMenuItem = new ToolStripMenuItem();
+            enÇokYenenYemeklerToolStripMenuItem = new ToolStripMenuItem();
+            yemekBazlıTüketimToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,22 +55,50 @@
             // 
             gunlukRaporToolStripMenuItem.Name = "gunlukRaporToolStripMenuItem";
             gunlukRaporToolStripMenuItem.Size = new Size(112, 24);
-            gunlukRaporToolStripMenuItem.Text = "Gunluk Rapor";
+            gunlukRaporToolStripMenuItem.Text = "Günlük Rapor";
             gunlukRaporToolStripMenuItem.Click += gunlukRaporToolStripMenuItem_Click;
             // 
             // kiyasRaporuToolStripMenuItem
             // 
+            kiyasRaporuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aylıkRaporToolStripMenuItem, haftalıkRaporToolStripMenuItem });
             kiyasRaporuToolStripMenuItem.Name = "kiyasRaporuToolStripMenuItem";
             kiyasRaporuToolStripMenuItem.Size = new Size(109, 24);
-            kiyasRaporuToolStripMenuItem.Text = "Kiyas Raporu";
-            kiyasRaporuToolStripMenuItem.Click += kiyasRaporuToolStripMenuItem_Click;
+            kiyasRaporuToolStripMenuItem.Text = "Kıyas Raporu";
+            // 
+            // aylıkRaporToolStripMenuItem
+            // 
+            aylıkRaporToolStripMenuItem.Name = "aylıkRaporToolStripMenuItem";
+            aylıkRaporToolStripMenuItem.Size = new Size(224, 26);
+            aylıkRaporToolStripMenuItem.Text = "Aylık Rapor";
+            aylıkRaporToolStripMenuItem.Click += aylıkRaporToolStripMenuItem_Click;
+            // 
+            // haftalıkRaporToolStripMenuItem
+            // 
+            haftalıkRaporToolStripMenuItem.Name = "haftalıkRaporToolStripMenuItem";
+            haftalıkRaporToolStripMenuItem.Size = new Size(224, 26);
+            haftalıkRaporToolStripMenuItem.Text = "Haftalık Rapor";
+            haftalıkRaporToolStripMenuItem.Click += haftalıkRaporToolStripMenuItem_Click;
             // 
             // yemekRaporuToolStripMenuItem
             // 
+            yemekRaporuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { enÇokYenenYemeklerToolStripMenuItem, yemekBazlıTüketimToolStripMenuItem });
             yemekRaporuToolStripMenuItem.Name = "yemekRaporuToolStripMenuItem";
             yemekRaporuToolStripMenuItem.Size = new Size(118, 24);
             yemekRaporuToolStripMenuItem.Text = "Yemek Raporu";
-            yemekRaporuToolStripMenuItem.Click += yemekRaporuToolStripMenuItem_Click;
+            // 
+            // enÇokYenenYemeklerToolStripMenuItem
+            // 
+            enÇokYenenYemeklerToolStripMenuItem.Name = "enÇokYenenYemeklerToolStripMenuItem";
+            enÇokYenenYemeklerToolStripMenuItem.Size = new Size(244, 26);
+            enÇokYenenYemeklerToolStripMenuItem.Text = "En Çok Yenen Yemekler";
+            enÇokYenenYemeklerToolStripMenuItem.Click += enCokYenenYemeklerToolStripMenuItem_Click;
+            // 
+            // yemekBazlıTüketimToolStripMenuItem
+            // 
+            yemekBazlıTüketimToolStripMenuItem.Name = "yemekBazlıTüketimToolStripMenuItem";
+            yemekBazlıTüketimToolStripMenuItem.Size = new Size(244, 26);
+            yemekBazlıTüketimToolStripMenuItem.Text = "Yemek Bazlı Tüketim";
+            yemekBazlıTüketimToolStripMenuItem.Click += yemekBazliTuketimToolStripMenuItem_Click;
             // 
             // FormReports
             // 
@@ -92,5 +124,9 @@
         private ToolStripMenuItem gunlukRaporToolStripMenuItem;
         private ToolStripMenuItem kiyasRaporuToolStripMenuItem;
         private ToolStripMenuItem yemekRaporuToolStripMenuItem;
+        private ToolStripMenuItem aylıkRaporToolStripMenuItem;
+        private ToolStripMenuItem haftalıkRaporToolStripMenuItem;
+        private ToolStripMenuItem enÇokYenenYemeklerToolStripMenuItem;
+        private ToolStripMenuItem yemekBazlıTüketimToolStripMenuItem;
     }
 }

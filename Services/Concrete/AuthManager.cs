@@ -18,14 +18,14 @@ namespace Services.Concrete
         public User Login(UserForLoginDto userForLogin)
         {
             var user = _userService.GetByEmail(userForLogin.Email);
-            
+
             var IsAuthenticated = HashingHelper.VerifyPasswordHash(userForLogin.Password, user.PasswordHash, user.PasswordSalt);
 
             if (!IsAuthenticated)
                 throw new WrongCredentialsException(userForLogin.Email);
-            
+
             if (user.UserStatus == UserStatus.NotVerified)
-                throw new UserNotVerifiedException(userForLogin.Email, user.Id);
+                throw new UserNotVerifiedException(user);
             return user;
         }
 
@@ -49,7 +49,6 @@ namespace Services.Concrete
                 Weight = userForRegister.Weight,
                 UserStatus = UserStatus.NotVerified,
                 AimId = userForRegister.AimId,
-                UserData = null,
                 UserVerification = null
 
             };
@@ -61,10 +60,11 @@ namespace Services.Concrete
 
         }
 
-        public void Verify(int userId, string verificationCode)
+        public int Verify(int userId, string verificationCode)
         {
             _verificationService.ConfirmVerification(userId, verificationCode);
             _userService.UpdateStatus(userId, UserStatus.Active);
+            return userId;
 
         }
     }

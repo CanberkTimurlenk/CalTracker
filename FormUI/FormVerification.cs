@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using Entities.Concrete;
+using Services;
 using Services.Concrete;
 
 namespace FormUI
@@ -6,10 +7,11 @@ namespace FormUI
     public partial class FormVerification : Form
     {
         private readonly IAuthService _authService = new AuthManager();
+        private readonly User _user;
         private readonly int _userId;
-        public FormVerification(int userId)
+        public FormVerification(User user)
         {
-            _userId = userId;
+            _user = user;
             InitializeComponent();
         }
 
@@ -17,8 +19,10 @@ namespace FormUI
         {
             try
             {
-                _authService.Verify(_userId, txt_Verification.Text);
+                _authService.Verify(_user.Id, txt_Verification.Text);
                 MessageBox.Show("Verification successful");
+                new FormMainPage(_user).Show();
+                this.Hide();
             }
             catch (InvalidOperationException)
             {
@@ -30,6 +34,11 @@ namespace FormUI
         private void btn_Close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormVerification_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,7 +28,6 @@ namespace FormUI
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            //kaydet dedikten sonra sorsun mu yada resim bossa sorsun mu
             if (!txt_FoodName.Text.IsNullOrEmpty() && cmb_FoodCategory.SelectedIndex > -1)
             {
                 Food food = new Food()

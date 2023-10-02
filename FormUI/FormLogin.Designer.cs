@@ -35,7 +35,7 @@
             chckbox_ShowPassword = new CheckBox();
             lbl_Password = new Label();
             txt_Username = new TextBox();
-            lbl_Username = new Label();
+            lbl_Email = new Label();
             lbl_GetStarted = new Label();
             txt_Password = new TextBox();
             btn_CloseWindow = new Krypton.Toolkit.KryptonButton();
@@ -51,7 +51,7 @@
             lbl_CreateAccount.Size = new Size(132, 23);
             lbl_CreateAccount.TabIndex = 19;
             lbl_CreateAccount.Text = "Create Account";
-            lbl_CreateAccount.Click += label6_Click;
+            lbl_CreateAccount.Click += lbl_CreateAccount_Click;
             // 
             // lbl_DontHaveAccount
             // 
@@ -124,14 +124,14 @@
             txt_Username.Size = new Size(218, 27);
             txt_Username.TabIndex = 0;
             // 
-            // lbl_Username
+            // lbl_Email
             // 
-            lbl_Username.AutoSize = true;
-            lbl_Username.Location = new Point(39, 62);
-            lbl_Username.Name = "lbl_Username";
-            lbl_Username.Size = new Size(89, 23);
-            lbl_Username.TabIndex = 9;
-            lbl_Username.Text = "Username";
+            lbl_Email.AutoSize = true;
+            lbl_Email.Location = new Point(39, 62);
+            lbl_Email.Name = "lbl_Email";
+            lbl_Email.Size = new Size(54, 23);
+            lbl_Email.TabIndex = 9;
+            lbl_Email.Text = "Email";
             // 
             // lbl_GetStarted
             // 
@@ -191,7 +191,7 @@
             Controls.Add(txt_Password);
             Controls.Add(lbl_Password);
             Controls.Add(txt_Username);
-            Controls.Add(lbl_Username);
+            Controls.Add(lbl_Email);
             Controls.Add(lbl_GetStarted);
             Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(164, 165, 169);
@@ -200,7 +200,6 @@
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
-            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,7 +213,7 @@
         private CheckBox chckbox_ShowPassword;
         private Label lbl_Password;
         private TextBox txt_Username;
-        private Label lbl_Username;
+        private Label lbl_Email;
         private Label lbl_GetStarted;
         private TextBox txt_Password;
         private Krypton.Toolkit.KryptonButton btn_CloseWindow;

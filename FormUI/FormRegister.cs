@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿using Entities.Concrete;
+using Entities.Exceptions;
+using FluentValidation;
 using FormUI.Utilities;
 using Services;
 using Services.Abstract;
@@ -51,7 +53,7 @@ namespace FormUI
 
         private void registrationButton_Click(object sender, EventArgs e)
         {
-            int userId;
+            User user;
             var userToRegister = new Entities.Dtos.UserForRegisterDto
             {
                 FirstName = txt_Firstname.Text,
@@ -65,7 +67,7 @@ namespace FormUI
 
             try
             {
-                userId = _authService.Register(userToRegister).Id;
+                user = _authService.Register(userToRegister);
             }
             catch (ValidationException ex)
             {
@@ -74,7 +76,14 @@ namespace FormUI
                 return;
             }
 
-            new FormVerification(userId).Show();
+            catch (UserAlreadyExistsException ex)
+            {
+                MessageBox.Show(ex.Message);
+
+                return;
+            }
+
+            new FormVerification(user).Show();
             this.Hide();
 
         }

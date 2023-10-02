@@ -14,8 +14,7 @@ namespace Repository.Configurations
             builder.Property(f => f.Calorie).HasMaxLength(8);
             builder.Property(f => f.Fat).HasMaxLength(8);
             builder.Property(f => f.Carbonhidrate).HasMaxLength(8);
-            builder.Property(f => f.Protein).HasMaxLength(8);
-            //desc ve imagepath maxlength vermedik           
+            builder.Property(f => f.Protein).HasMaxLength(8); 
             builder.AddSeedData();
 
             

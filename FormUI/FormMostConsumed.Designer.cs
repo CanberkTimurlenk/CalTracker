@@ -32,161 +32,106 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
+            lbl_Breakfast = new Label();
+            lbl_Lunch = new Label();
+            lbl_Dinner = new Label();
+            lbl_Snack = new Label();
             label13 = new Label();
-            label14 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(312, 205);
+            label1.BackColor = Color.Transparent;
+            label1.Location = new Point(248, 226);
             label1.Name = "label1";
-            label1.Size = new Size(62, 20);
+            label1.Size = new Size(101, 72);
             label1.TabIndex = 0;
             label1.Text = "Kahvalti";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(399, 205);
+            label2.BackColor = Color.Transparent;
+            label2.Location = new Point(388, 226);
             label2.Name = "label2";
-            label2.Size = new Size(49, 20);
+            label2.Size = new Size(88, 72);
             label2.TabIndex = 0;
             label2.Text = "Oglen";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(483, 205);
+            label3.BackColor = Color.Transparent;
+            label3.Location = new Point(524, 226);
             label3.Name = "label3";
-            label3.Size = new Size(53, 20);
+            label3.Size = new Size(92, 72);
             label3.TabIndex = 0;
             label3.Text = "Aksam";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(570, 205);
+            label4.BackColor = Color.Transparent;
+            label4.Location = new Point(657, 226);
             label4.Name = "label4";
-            label4.Size = new Size(63, 20);
+            label4.Size = new Size(102, 72);
             label4.TabIndex = 0;
             label4.Text = "Aperatif";
             // 
-            // label5
+            // lbl_Breakfast
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(317, 243);
-            label5.Name = "label5";
-            label5.Size = new Size(41, 20);
-            label5.TabIndex = 0;
-            label5.Text = "food";
+            lbl_Breakfast.BackColor = Color.Transparent;
+            lbl_Breakfast.Location = new Point(258, 264);
+            lbl_Breakfast.Name = "lbl_Breakfast";
+            lbl_Breakfast.Size = new Size(80, 72);
+            lbl_Breakfast.TabIndex = 0;
+            lbl_Breakfast.Text = "food";
             // 
-            // label6
+            // lbl_Lunch
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(403, 243);
-            label6.Name = "label6";
-            label6.Size = new Size(41, 20);
-            label6.TabIndex = 0;
-            label6.Text = "food";
+            lbl_Lunch.BackColor = Color.Transparent;
+            lbl_Lunch.Location = new Point(388, 264);
+            lbl_Lunch.Name = "lbl_Lunch";
+            lbl_Lunch.Size = new Size(80, 72);
+            lbl_Lunch.TabIndex = 0;
+            lbl_Lunch.Text = "food";
             // 
-            // label7
+            // lbl_Dinner
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(488, 243);
-            label7.Name = "label7";
-            label7.Size = new Size(41, 20);
-            label7.TabIndex = 0;
-            label7.Text = "food";
+            lbl_Dinner.BackColor = Color.Transparent;
+            lbl_Dinner.Location = new Point(524, 264);
+            lbl_Dinner.Name = "lbl_Dinner";
+            lbl_Dinner.Size = new Size(80, 72);
+            lbl_Dinner.TabIndex = 0;
+            lbl_Dinner.Text = "food";
             // 
-            // label8
+            // lbl_Snack
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(575, 243);
-            label8.Name = "label8";
-            label8.Size = new Size(41, 20);
-            label8.TabIndex = 0;
-            label8.Text = "food";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(323, 281);
-            label9.Name = "label9";
-            label9.Size = new Size(17, 20);
-            label9.TabIndex = 0;
-            label9.Text = "0";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(410, 281);
-            label10.Name = "label10";
-            label10.Size = new Size(17, 20);
-            label10.TabIndex = 0;
-            label10.Text = "0";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(495, 281);
-            label11.Name = "label11";
-            label11.Size = new Size(17, 20);
-            label11.TabIndex = 0;
-            label11.Text = "0";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(582, 281);
-            label12.Name = "label12";
-            label12.Size = new Size(17, 20);
-            label12.TabIndex = 0;
-            label12.Text = "0";
+            lbl_Snack.BackColor = Color.Transparent;
+            lbl_Snack.Location = new Point(669, 264);
+            lbl_Snack.Name = "lbl_Snack";
+            lbl_Snack.Size = new Size(80, 72);
+            lbl_Snack.TabIndex = 0;
+            lbl_Snack.Text = "food";
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(233, 243);
+            label13.BackColor = Color.Transparent;
+            label13.Location = new Point(128, 264);
             label13.Name = "label13";
-            label13.Size = new Size(79, 20);
+            label13.Size = new Size(118, 72);
             label13.TabIndex = 0;
             label13.Text = "Yemek Adi";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(233, 281);
-            label14.Name = "label14";
-            label14.Size = new Size(45, 20);
-            label14.TabIndex = 0;
-            label14.Text = "Gram";
             // 
             // FormMostConsumed
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
-            Controls.Add(label12);
-            Controls.Add(label11);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label10);
+            ClientSize = new Size(965, 544);
+            Controls.Add(lbl_Snack);
+            Controls.Add(lbl_Dinner);
             Controls.Add(label4);
-            Controls.Add(label6);
-            Controls.Add(label14);
-            Controls.Add(label9);
+            Controls.Add(lbl_Lunch);
             Controls.Add(label3);
             Controls.Add(label13);
-            Controls.Add(label5);
+            Controls.Add(lbl_Breakfast);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -195,7 +140,6 @@
             Text = "FormMostConsumed";
             Load += FormMostConsumed_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -204,15 +148,10 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private Label label12;
+        private Label lbl_Breakfast;
+        private Label lbl_Lunch;
+        private Label lbl_Dinner;
+        private Label lbl_Snack;
         private Label label13;
-        private Label label14;
     }
 }

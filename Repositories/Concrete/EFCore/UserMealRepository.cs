@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Repositories.Concrete.EFCore
 {
-    public class UserMealsRepository : BaseRepository<UserMeal>, IUserMealRepository
+    public class UserMealRepository : BaseRepository<UserMeal>, IUserMealRepository
     {
 
         public UserMeal GetUserMealByUserIdAndMealDateAndMealTime(int userId, DateTime mealDate, MealTimes mealTime)

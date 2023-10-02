@@ -17,4 +17,5 @@ namespace Entities.Concrete
         public FoodCategory FoodCategory { get; set; }
     }
 }
-}
+
+

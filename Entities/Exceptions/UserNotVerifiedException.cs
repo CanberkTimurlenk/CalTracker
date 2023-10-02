@@ -1,14 +1,16 @@
-﻿namespace Services
+﻿using Entities.Concrete;
+
+namespace Services
 {
 
     public class UserNotVerifiedException : Exception
     {
 
-        public UserNotVerifiedException(string email, int userId) : base($"Verification was not completed for: {email}\nPlease Complete The Verification.")
+        public UserNotVerifiedException(User user) : base($"Verification was not completed for: {user.Email}\nPlease Complete The Verification.")
         {
-            UserId = userId;
+            User = user;
         }
-        public int UserId { get; set; }
+        public User User { get; set; }
 
     }
 }

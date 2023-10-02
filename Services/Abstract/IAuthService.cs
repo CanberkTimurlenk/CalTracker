@@ -7,7 +7,7 @@ namespace Services
     {
         User Login(UserForLoginDto userForLogin);
         User Register(UserForRegisterDto userForRegister);
-        void Verify(int userId, string verificationCode);
+        int Verify(int userId, string verificationCode);
 
     }
 }
