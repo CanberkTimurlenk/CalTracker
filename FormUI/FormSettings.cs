@@ -20,10 +20,10 @@ namespace FormUI
 
         private readonly IUserService _userService = new UserManager();
         private readonly IAimService _aimService = new AimManager();
-        private readonly int _userId;
-        public FormSettings(int userId)
+        private User _user;
+        public FormSettings(User user)
         {
-            _userId = userId;
+            _user = user;
             InitializeComponent();
         }
         private void FormSettings_Load(object sender, EventArgs e)
@@ -45,20 +45,25 @@ namespace FormUI
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (!txt_Firstname.Text.Trim().IsNullOrEmpty()) _userService.UpdateFirstnameByUserId(_userId, txt_Firstname.Text.Trim());
-            if (!txt_Lastname.Text.Trim().IsNullOrEmpty()) _userService.UpdateLastnameByUserId(_userId, txt_Lastname.Text.Trim());
+            if (!txt_Firstname.Text.Trim().IsNullOrEmpty()) _user = _userService.UpdateFirstnameByUserId(_user.Id, txt_Firstname.Text.Trim());
+            if (!txt_Lastname.Text.Trim().IsNullOrEmpty()) _user = _userService.UpdateLastnameByUserId(_user.Id, txt_Lastname.Text.Trim());
         }
         private void btn_aimSave_Click_1(object sender, EventArgs e)
         {
-            if (cmb_Aim.SelectedIndex > -1) _userService.UpdateUserAimByUserId(_userId, (int)cmb_Aim.SelectedValue);
+            if (cmb_Aim.SelectedIndex > -1) _user = _userService.UpdateUserAimByUserId(_user.Id, (int)cmb_Aim.SelectedValue);
 
         }
 
         private void btn_HeightWeightSave_Click(object sender, EventArgs e)
         {
-            if (nud_Height.Value > 0) _userService.UpdateAimByUserId(_userId, (double)nud_Height.Value);
-            if (nud_Weight.Value > 0) _userService.UpdateWeightByUserId(_userId, (double)nud_Weight.Value);
+            if (nud_Height.Value > 0) _user = _userService.UpdateAimByUserId(_user.Id, (double)nud_Height.Value);
+            if (nud_Weight.Value > 0) _user = _userService.UpdateWeightByUserId(_user.Id, (double)nud_Weight.Value);
 
+        }
+
+        private void FormSettings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            new FormMainPage(_user).Show();
         }
     }
 }

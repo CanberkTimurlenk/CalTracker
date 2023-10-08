@@ -1,4 +1,5 @@
-﻿using OxyPlot;
+﻿using Entities.Dtos;
+using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Legends;
 using OxyPlot.Series;
@@ -21,7 +22,9 @@ namespace FormUI
     public partial class FormCompareMonthly : Form
     {
         private readonly IUserMealService _userMealService = new UserMealManager();
+        private readonly ICategoryService _categoryService = new CategoryManager();
         private readonly int _userId;
+        private int selectedCategoryId;
         public FormCompareMonthly(int userId)
         {
             _userId = userId;
@@ -42,21 +45,37 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
-            cmb_Categories.DataSource=Enum.GetValues(typeof(Entities.Enums.Categories));
-            var user = _userMealService.GetUserNutrionalsByUserIdAndDateRange(_userId, DateTime.Now.AddDays(-7), DateTime.Now, cmb_Categories.SelectedIndex);
-            var otherUsers = _userMealService.GetUserNutrionalsAllByDateRange(DateTime.Now.AddDays(-7), DateTime.Now, cmb_Categories.SelectedIndex);
+            cmb_Categories.DataSource = _categoryService.GetCategoryNames().ToList();
+            var userPeriodic = _userMealService.GetUserNutrionalsByUserIdAndDateRange(_userId, DateTime.Now.AddDays(-30), DateTime.Now, cmb_Categories.SelectedIndex);
+            var othersPeriodic = _userMealService.GetUserNutrionalsAllByDateRange(DateTime.Now.AddDays(-30), DateTime.Now, cmb_Categories.SelectedIndex);
+            FillLabels(userPeriodic, othersPeriodic);
+        }
 
-            lbl_Breakfast.Text = user.Breakfast.ToString();
-            lbl_lunch.Text = user.Lunch.ToString();
-            lbl_Dinner.Text = user.Dinner.ToString();
-            lbl_Snack.Text = user.Snack.ToString();
-            lbl_Total.Text = (user.Breakfast + user.Lunch + user.Dinner + user.Snack).ToString() + " kcal";
+        private void cmb_Categories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedCategoryId = cmb_Categories.SelectedIndex;
 
-            lbl_OthersBreakfast.Text = otherUsers.Breakfast.ToString();
-            lbl_OthersLunch.Text = otherUsers.Lunch.ToString();
-            lbl_OthersDinner.Text = otherUsers.Dinner.ToString();
-            lbl_OthersSnack.Text = otherUsers.Snack.ToString();
-            lbl_OthersTotal.Text = (otherUsers.Breakfast + otherUsers.Lunch + otherUsers.Dinner + otherUsers.Snack).ToString() + " kcal";
+            var userPeriodic = _userMealService.GetUserNutrionalsByUserIdAndDateRange(_userId, DateTime.Now.AddDays(-30), DateTime.Now, selectedCategoryId);
+            var othersPeriodic = _userMealService.GetUserNutrionalsAllByDateRange(DateTime.Now.AddDays(-30), DateTime.Now, selectedCategoryId);
+            FillLabels(userPeriodic, othersPeriodic);
+
+        }
+
+        private void FillLabels(PeriodicCalories userPeriodic, PeriodicCalories othersPeriodic)
+        {
+
+            lbl_Breakfast.Text = userPeriodic.Breakfast.ToString();
+            lbl_lunch.Text = userPeriodic.Lunch.ToString();
+            lbl_Dinner.Text = userPeriodic.Dinner.ToString();
+            lbl_Snack.Text = userPeriodic.Snack.ToString();
+            lbl_Total.Text = (userPeriodic.Breakfast + userPeriodic.Lunch + userPeriodic.Dinner + userPeriodic.Snack).ToString() + " kcal";
+
+            lbl_OthersBreakfast.Text = othersPeriodic.Breakfast.ToString();
+            lbl_OthersLunch.Text = othersPeriodic.Lunch.ToString();
+            lbl_OthersDinner.Text = othersPeriodic.Dinner.ToString();
+            lbl_OthersSnack.Text = othersPeriodic.Snack.ToString();
+            lbl_OthersTotal.Text = (othersPeriodic.Breakfast + othersPeriodic.Lunch + othersPeriodic.Dinner + othersPeriodic.Snack).ToString() + " kcal";
+
         }
     }
 }

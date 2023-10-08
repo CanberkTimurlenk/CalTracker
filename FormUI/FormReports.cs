@@ -36,7 +36,7 @@ namespace FormUI
 
             var daily = new FormDailyReport(_userId);
             daily.MdiParent = this;
-            daily.Show();            
+            daily.Show();
         }
 
         private void gunlukRaporToolStripMenuItem_Click(object sender, EventArgs e)

@@ -16,7 +16,9 @@ namespace FormUI
         private void lbl_CreateAccount_Click(object sender, EventArgs e)
         {
 
-            new FormRegister().Show();
+            FormRegister register = new FormRegister();
+            register.Owner = this;
+            register.Show();
             this.Hide();
 
         }
@@ -39,7 +41,16 @@ namespace FormUI
             {
                 var user = _authService.Login(userToLogin);
                 MessageBox.Show("Logged in Successfuly!");
-                new FormMainPage(user).Show();
+                this.Hide();
+                if (user.UserAccess is Entities.Enums.UserAccess.Standard)
+                {
+                    FormMainPage mainPag = new FormMainPage(user);
+                    mainPag.Owner = this;
+                    mainPag.Show();
+                }
+                else
+                    new FormAdmin().Show();
+
             }
             catch (WrongCredentialsException)
             {
@@ -54,7 +65,10 @@ namespace FormUI
                 formVerification.Show();
                 this.Hide();
             }
-
+            catch (UserNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void checkboxShowPass_CheckedChanged(object sender, EventArgs e)
@@ -75,5 +89,6 @@ namespace FormUI
             this.Close();
 
         }
+
     }
 }

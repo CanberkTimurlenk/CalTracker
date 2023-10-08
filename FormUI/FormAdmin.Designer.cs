@@ -59,7 +59,8 @@ namespace FormUI
             txt_FoodName.Margin = new Padding(3, 4, 3, 4);
             txt_FoodName.Name = "txt_FoodName";
             txt_FoodName.PaletteMode = PaletteMode.Office365Silver;
-            txt_FoodName.Size = new Size(137, 27);
+            txt_FoodName.Size = new Size(137, 25);
+            txt_FoodName.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             txt_FoodName.TabIndex = 0;
             // 
             // kryptonLabel1
@@ -69,6 +70,7 @@ namespace FormUI
             kryptonLabel1.Name = "kryptonLabel1";
             kryptonLabel1.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel1.Size = new Size(39, 24);
+            kryptonLabel1.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel1.TabIndex = 1;
             kryptonLabel1.Values.Text = "Isim";
             // 
@@ -79,6 +81,7 @@ namespace FormUI
             kryptonLabel2.Name = "kryptonLabel2";
             kryptonLabel2.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel2.Size = new Size(50, 24);
+            kryptonLabel2.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel2.TabIndex = 1;
             kryptonLabel2.Values.Text = "Kalori";
             // 
@@ -89,6 +92,7 @@ namespace FormUI
             kryptonLabel3.Name = "kryptonLabel3";
             kryptonLabel3.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel3.Size = new Size(60, 24);
+            kryptonLabel3.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel3.TabIndex = 1;
             kryptonLabel3.Values.Text = "Protein";
             // 
@@ -99,6 +103,7 @@ namespace FormUI
             kryptonLabel4.Name = "kryptonLabel4";
             kryptonLabel4.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel4.Size = new Size(37, 24);
+            kryptonLabel4.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel4.TabIndex = 1;
             kryptonLabel4.Values.Text = "Yag";
             // 
@@ -109,6 +114,7 @@ namespace FormUI
             kryptonLabel5.Name = "kryptonLabel5";
             kryptonLabel5.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel5.Size = new Size(101, 24);
+            kryptonLabel5.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel5.TabIndex = 1;
             kryptonLabel5.Values.Text = "Karbonhidrat";
             // 
@@ -119,6 +125,7 @@ namespace FormUI
             kryptonLabel6.Name = "kryptonLabel6";
             kryptonLabel6.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel6.Size = new Size(49, 24);
+            kryptonLabel6.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel6.TabIndex = 1;
             kryptonLabel6.Values.Text = "Gram";
             // 
@@ -129,6 +136,7 @@ namespace FormUI
             kryptonLabel7.Name = "kryptonLabel7";
             kryptonLabel7.PaletteMode = PaletteMode.Office365Silver;
             kryptonLabel7.Size = new Size(52, 24);
+            kryptonLabel7.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel7.TabIndex = 1;
             kryptonLabel7.Values.Text = "Resim";
             // 
@@ -145,13 +153,14 @@ namespace FormUI
             // 
             // kryptonLabel8
             // 
-            kryptonLabel8.Location = new Point(65, 107);
+            kryptonLabel8.Location = new Point(55, 106);
             kryptonLabel8.Margin = new Padding(3, 4, 3, 4);
             kryptonLabel8.Name = "kryptonLabel8";
             kryptonLabel8.PaletteMode = PaletteMode.Office365Silver;
-            kryptonLabel8.Size = new Size(50, 24);
+            kryptonLabel8.Size = new Size(69, 24);
+            kryptonLabel8.StateCommon.ShortText.Font = new Font("Nirmala UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonLabel8.TabIndex = 1;
-            kryptonLabel8.Values.Text = "Kalori";
+            kryptonLabel8.Values.Text = "Kategori";
             // 
             // cmb_FoodCategory
             // 
@@ -159,13 +168,13 @@ namespace FormUI
             cmb_FoodCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_FoodCategory.DropDownWidth = 121;
             cmb_FoodCategory.IntegralHeight = false;
-            cmb_FoodCategory.Items.AddRange(new object[] { "Deniz Ürün", "Tavuk", "Meyve", "Tatlı", "Süt ve Süt Ürünleri", "Kırmız Et", "Kahvaltı", "Tahıl", "Soslar", "Fastfood", "Sebze", "Salatalar", "Çerez", "Çorba", "Yağ" });
             cmb_FoodCategory.Location = new Point(125, 105);
             cmb_FoodCategory.Margin = new Padding(3, 4, 3, 4);
             cmb_FoodCategory.Name = "cmb_FoodCategory";
             cmb_FoodCategory.PaletteMode = PaletteMode.Office365Silver;
             cmb_FoodCategory.Size = new Size(138, 25);
             cmb_FoodCategory.StateCommon.ComboBox.Content.TextH = PaletteRelativeAlign.Near;
+            cmb_FoodCategory.StateCommon.Item.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             cmb_FoodCategory.TabIndex = 4;
             // 
             // nud_Calorie
@@ -175,7 +184,8 @@ namespace FormUI
             nud_Calorie.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nud_Calorie.Name = "nud_Calorie";
             nud_Calorie.PaletteMode = PaletteMode.Office365Silver;
-            nud_Calorie.Size = new Size(137, 26);
+            nud_Calorie.Size = new Size(137, 24);
+            nud_Calorie.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             nud_Calorie.TabIndex = 5;
             // 
             // nud_Protein
@@ -185,7 +195,8 @@ namespace FormUI
             nud_Protein.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nud_Protein.Name = "nud_Protein";
             nud_Protein.PaletteMode = PaletteMode.Office365Silver;
-            nud_Protein.Size = new Size(137, 26);
+            nud_Protein.Size = new Size(137, 24);
+            nud_Protein.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             nud_Protein.TabIndex = 5;
             // 
             // nud_Fat
@@ -195,7 +206,8 @@ namespace FormUI
             nud_Fat.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nud_Fat.Name = "nud_Fat";
             nud_Fat.PaletteMode = PaletteMode.Office365Silver;
-            nud_Fat.Size = new Size(137, 26);
+            nud_Fat.Size = new Size(137, 24);
+            nud_Fat.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             nud_Fat.TabIndex = 5;
             // 
             // nud_Carbonhidrate
@@ -205,7 +217,8 @@ namespace FormUI
             nud_Carbonhidrate.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nud_Carbonhidrate.Name = "nud_Carbonhidrate";
             nud_Carbonhidrate.PaletteMode = PaletteMode.Office365Silver;
-            nud_Carbonhidrate.Size = new Size(137, 26);
+            nud_Carbonhidrate.Size = new Size(137, 24);
+            nud_Carbonhidrate.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             nud_Carbonhidrate.TabIndex = 5;
             // 
             // nud_Gram
@@ -215,7 +228,8 @@ namespace FormUI
             nud_Gram.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             nud_Gram.Name = "nud_Gram";
             nud_Gram.PaletteMode = PaletteMode.Office365Silver;
-            nud_Gram.Size = new Size(137, 26);
+            nud_Gram.Size = new Size(137, 24);
+            nud_Gram.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             nud_Gram.TabIndex = 5;
             // 
             // txt_PictureUrl
@@ -224,9 +238,9 @@ namespace FormUI
             txt_PictureUrl.Margin = new Padding(3, 4, 3, 4);
             txt_PictureUrl.Name = "txt_PictureUrl";
             txt_PictureUrl.PaletteMode = PaletteMode.Office365Silver;
-            txt_PictureUrl.Size = new Size(174, 27);
+            txt_PictureUrl.Size = new Size(174, 25);
+            txt_PictureUrl.StateCommon.Content.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             txt_PictureUrl.TabIndex = 0;
-            txt_PictureUrl.TextChanged += txt_PictureUrl_TextChanged;
             // 
             // btn_Save
             // 
@@ -243,10 +257,22 @@ namespace FormUI
             btn_Save.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_Save.StateCommon.Border.DrawBorders = PaletteDrawBorders.Top | PaletteDrawBorders.Bottom | PaletteDrawBorders.Left | PaletteDrawBorders.Right;
             btn_Save.StateCommon.Border.Rounding = 40F;
+            btn_Save.StateCommon.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Save.StateDisabled.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Save.StateNormal.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Save.StateNormal.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_Save.StateNormal.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Save.StatePressed.Back.Color1 = Color.FromArgb(128, 255, 128);
+            btn_Save.StatePressed.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_Save.StatePressed.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Save.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_Save.StateTracking.Border.Color2 = Color.DarkGreen;
             btn_Save.StateTracking.Border.DrawBorders = PaletteDrawBorders.Top | PaletteDrawBorders.Bottom | PaletteDrawBorders.Left | PaletteDrawBorders.Right;
+            btn_Save.StateTracking.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             btn_Save.TabIndex = 6;
             btn_Save.TabStop = false;
             btn_Save.Values.Text = "Kaydet";
+            btn_Save.Click += btn_Save_Click;
             // 
             // btn_SelectPicture
             // 
@@ -263,10 +289,22 @@ namespace FormUI
             btn_SelectPicture.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_SelectPicture.StateCommon.Border.DrawBorders = PaletteDrawBorders.Top | PaletteDrawBorders.Bottom | PaletteDrawBorders.Left | PaletteDrawBorders.Right;
             btn_SelectPicture.StateCommon.Border.Rounding = 40F;
+            btn_SelectPicture.StateCommon.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_SelectPicture.StateDisabled.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_SelectPicture.StateNormal.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_SelectPicture.StateNormal.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_SelectPicture.StateNormal.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_SelectPicture.StatePressed.Back.Color1 = Color.FromArgb(128, 255, 128);
+            btn_SelectPicture.StatePressed.Back.Color2 = Color.FromArgb(32, 191, 107);
+            btn_SelectPicture.StatePressed.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_SelectPicture.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_SelectPicture.StateTracking.Border.Color2 = Color.DarkGreen;
             btn_SelectPicture.StateTracking.Border.DrawBorders = PaletteDrawBorders.Top | PaletteDrawBorders.Bottom | PaletteDrawBorders.Left | PaletteDrawBorders.Right;
+            btn_SelectPicture.StateTracking.Content.ShortText.Font = new Font("Nirmala UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             btn_SelectPicture.TabIndex = 7;
             btn_SelectPicture.TabStop = false;
             btn_SelectPicture.Values.Text = "Resim Ekle";
+            btn_SelectPicture.Click += btn_SelectPicture_Click_1;
             // 
             // FormAdmin
             // 
@@ -293,9 +331,12 @@ namespace FormUI
             Controls.Add(kryptonLabel1);
             Controls.Add(txt_PictureUrl);
             Controls.Add(txt_FoodName);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "FormAdmin";
             Text = "FormAdmin";
+            FormClosing += FormAdmin_FormClosing;
             Load += FormAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)pb_FoodPicture).EndInit();
             ((System.ComponentModel.ISupportInitialize)cmb_FoodCategory).EndInit();

@@ -1,6 +1,7 @@
 ﻿using Entities.Dtos;
 using Entities.Enums;
 using Krypton.Toolkit;
+using Microsoft.EntityFrameworkCore;
 using Services.Abstract;
 using Services.Concrete;
 using System.Data;
@@ -96,24 +97,38 @@ namespace FormUI
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            var userMealId = _userMealService.CreateUserMeal(_userId, selectedMealTime, DateTime.Now);
+            try
+            {
 
-            if (_mealItemToAdd.Count > 0)
-                _foodAmountService.AddRangeMealItems(_mealItemToAdd, userMealId);
+                var userMealId = _userMealService.CreateUserMeal(_userId, selectedMealTime, DateTime.Now);
 
-            if (_mealItemToDelete.Count > 0)
-                _foodAmountService.RemoveRangeMealItems(_mealItemToDelete, userMealId);
+                if (_mealItemToAdd.Count > 0)
+                    _foodAmountService.AddRangeMealItems(_mealItemToAdd, userMealId);
 
-            _mealItemToDelete.Clear();
-            _mealItemToAdd.Clear();
+                if (_mealItemToDelete.Count > 0)
+                    _foodAmountService.RemoveRangeMealItems(_mealItemToDelete, userMealId);
 
-          
+                _mealItemToDelete.Clear();
+                _mealItemToAdd.Clear();
+
+                SetDgvContent();
+                dgv_SelectedMealList.Enabled = true;
+            }
+            catch (DbUpdateException)
+            {
+                MessageBox.Show("You cant add duplicate");
+                _mealItemToDelete.Clear();
+                _mealItemToAdd.Clear();
+                SetDgvContent();
+                if (dgv_SelectedMealList.RowCount > 0)
+                    dgv_SelectedMealList.Enabled = true;
+            }
 
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-         
+            dgv_SelectedMealList.Enabled = false;
 
             if (dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
             {
@@ -121,7 +136,7 @@ namespace FormUI
 
                 var foodWithNutrionals = _foodService.GetFoodNutrionals(selectedFoodName, Convert.ToInt32(nud_Amount.Value));
 
-                if(_mealItemToAdd.Any(mi => mi.FoodName == selectedFoodName))
+                if (_mealItemToAdd.Any(mi => mi.FoodName == selectedFoodName))
                 {
                     MessageBox.Show("You cant add duplicate");
                     return;
@@ -146,7 +161,7 @@ namespace FormUI
 
         private void btn_Remove_Click(object sender, EventArgs e)
         {
-            
+
             if (dgv_SelectedMealList.SelectedRows.Count > 0 && dgv_SelectedMealList.SelectedRows[0].Cells[0].Value != null)
             {
                 var selectedFoodName = dgv_SelectedMealList.SelectedRows[0].Cells[0].Value.ToString();
@@ -197,16 +212,16 @@ namespace FormUI
 
         private void dgv_MealList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
+            if (dgv_MealList.SelectedRows.Count > 0 && dgv_MealList.SelectedRows[0].Cells[0].Value != null)
             {
                 var selectedFoodName = dgv_MealList.SelectedRows[0].Cells[0].Value.ToString();
                 var image = _foodService.GetFoodImageByFoodName(selectedFoodName);
 
-                if(image is not null)
-                pb_Food.Load(image);
-                
+                if (image is not null)
+                    pb_Food.Load(image);
+
             }
-            
+
         }
     }
 }

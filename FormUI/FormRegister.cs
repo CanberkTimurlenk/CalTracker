@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.Enums;
 using Entities.Exceptions;
 using FluentValidation;
 using FormUI.Utilities;
@@ -63,6 +64,7 @@ namespace FormUI
                 Height = Convert.ToDouble(num_Height.Value),
                 Weight = Convert.ToDouble(num_Weight.Value),
                 AimId = Convert.ToInt32(cmb_Aim.SelectedValue),
+                UserAccess = UserAccess.Standard
             };
 
             try
@@ -83,13 +85,16 @@ namespace FormUI
                 return;
             }
 
-            new FormVerification(user).Show();
+            FormVerification verification = new FormVerification(user);
+            verification.Owner = this;//
+            verification.Show();//
             this.Hide();
 
         }
 
         private void btn_CloseWindow_Click(object sender, EventArgs e)
         {
+            this.Owner.Show();
             this.Close();
         }
     }

@@ -63,6 +63,7 @@
             // nud_Height
             // 
             nud_Height.Location = new Point(15, 37);
+            nud_Height.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             nud_Height.Name = "nud_Height";
             nud_Height.Size = new Size(150, 27);
             nud_Height.TabIndex = 1;
@@ -70,12 +71,14 @@
             // nud_Weight
             // 
             nud_Weight.Location = new Point(15, 82);
+            nud_Weight.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             nud_Weight.Name = "nud_Weight";
             nud_Weight.Size = new Size(150, 27);
             nud_Weight.TabIndex = 1;
             // 
             // cmb_Aim
             // 
+            cmb_Aim.DropDownStyle = ComboBoxStyle.DropDownList;
             cmb_Aim.FormattingEnabled = true;
             cmb_Aim.Location = new Point(6, 37);
             cmb_Aim.Name = "cmb_Aim";
@@ -100,15 +103,24 @@
             btn_Save.Location = new Point(174, 46);
             btn_Save.Margin = new Padding(3, 4, 3, 4);
             btn_Save.Name = "btn_Save";
-            btn_Save.OverrideDefault.Back.Color1 = Color.White;
+            btn_Save.OverrideDefault.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Save.OverrideDefault.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_Save.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             btn_Save.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_Save.OverrideFocus.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Save.OverrideFocus.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_Save.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_Save.Size = new Size(125, 42);
             btn_Save.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 107);
             btn_Save.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_Save.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_Save.StateCommon.Border.Rounding = 40F;
+            btn_Save.StatePressed.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Save.StatePressed.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_Save.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_Save.StateTracking.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_Save.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_Save.StateTracking.Border.Color2 = Color.DarkGreen;
             btn_Save.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_Save.TabIndex = 9;
             btn_Save.TabStop = false;
@@ -132,15 +144,24 @@
             btn_aimSave.Location = new Point(174, 27);
             btn_aimSave.Margin = new Padding(3, 4, 3, 4);
             btn_aimSave.Name = "btn_aimSave";
-            btn_aimSave.OverrideDefault.Back.Color1 = Color.White;
+            btn_aimSave.OverrideDefault.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_aimSave.OverrideDefault.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_aimSave.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             btn_aimSave.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_aimSave.OverrideFocus.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_aimSave.OverrideFocus.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_aimSave.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_aimSave.Size = new Size(125, 42);
             btn_aimSave.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 107);
             btn_aimSave.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_aimSave.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_aimSave.StateCommon.Border.Rounding = 40F;
+            btn_aimSave.StatePressed.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_aimSave.StatePressed.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_aimSave.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_aimSave.StateTracking.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_aimSave.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_aimSave.StateTracking.Border.Color2 = Color.DarkGreen;
             btn_aimSave.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_aimSave.TabIndex = 9;
             btn_aimSave.TabStop = false;
@@ -165,15 +186,24 @@
             btn_HeightWeightSave.Location = new Point(174, 47);
             btn_HeightWeightSave.Margin = new Padding(3, 4, 3, 4);
             btn_HeightWeightSave.Name = "btn_HeightWeightSave";
-            btn_HeightWeightSave.OverrideDefault.Back.Color1 = Color.White;
+            btn_HeightWeightSave.OverrideDefault.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_HeightWeightSave.OverrideDefault.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_HeightWeightSave.OverrideDefault.Back.ImageStyle = Krypton.Toolkit.PaletteImageStyle.Stretch;
             btn_HeightWeightSave.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            btn_HeightWeightSave.OverrideFocus.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_HeightWeightSave.OverrideFocus.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_HeightWeightSave.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_HeightWeightSave.Size = new Size(125, 42);
             btn_HeightWeightSave.StateCommon.Back.Color1 = Color.FromArgb(32, 191, 107);
             btn_HeightWeightSave.StateCommon.Back.Color2 = Color.FromArgb(128, 255, 128);
             btn_HeightWeightSave.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_HeightWeightSave.StateCommon.Border.Rounding = 40F;
+            btn_HeightWeightSave.StatePressed.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_HeightWeightSave.StatePressed.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_HeightWeightSave.StateTracking.Back.Color1 = Color.FromArgb(32, 191, 107);
+            btn_HeightWeightSave.StateTracking.Back.Color2 = Color.FromArgb(128, 255, 128);
+            btn_HeightWeightSave.StateTracking.Border.Color1 = Color.DarkGreen;
+            btn_HeightWeightSave.StateTracking.Border.Color2 = Color.DarkGreen;
             btn_HeightWeightSave.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             btn_HeightWeightSave.TabIndex = 9;
             btn_HeightWeightSave.TabStop = false;
@@ -188,8 +218,12 @@
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FormSettings";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormSettings";
+            FormClosing += FormSettings_FormClosing;
             Load += FormSettings_Load;
             ((System.ComponentModel.ISupportInitialize)nud_Height).EndInit();
             ((System.ComponentModel.ISupportInitialize)nud_Weight).EndInit();

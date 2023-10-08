@@ -47,7 +47,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(914, 30);
+            menuStrip1.Size = new Size(916, 30);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -68,14 +68,14 @@
             // aylıkRaporToolStripMenuItem
             // 
             aylıkRaporToolStripMenuItem.Name = "aylıkRaporToolStripMenuItem";
-            aylıkRaporToolStripMenuItem.Size = new Size(224, 26);
+            aylıkRaporToolStripMenuItem.Size = new Size(188, 26);
             aylıkRaporToolStripMenuItem.Text = "Aylık Rapor";
             aylıkRaporToolStripMenuItem.Click += aylıkRaporToolStripMenuItem_Click;
             // 
             // haftalıkRaporToolStripMenuItem
             // 
             haftalıkRaporToolStripMenuItem.Name = "haftalıkRaporToolStripMenuItem";
-            haftalıkRaporToolStripMenuItem.Size = new Size(224, 26);
+            haftalıkRaporToolStripMenuItem.Size = new Size(188, 26);
             haftalıkRaporToolStripMenuItem.Text = "Haftalık Rapor";
             haftalıkRaporToolStripMenuItem.Click += haftalıkRaporToolStripMenuItem_Click;
             // 
@@ -104,12 +104,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(916, 580);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
             Name = "FormReports";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormReports";
             Load += FormReports_Load;
             menuStrip1.ResumeLayout(false);

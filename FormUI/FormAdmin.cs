@@ -18,7 +18,8 @@ namespace FormUI
 {
     public partial class FormAdmin : Form
     {
-        IFoodService _foodService = new FoodManager();
+        private readonly IFoodService _foodService = new FoodManager();
+        private readonly ICategoryService _categoryService = new CategoryManager();
         private string? _foodPicPath;
 
         public FormAdmin()
@@ -41,13 +42,13 @@ namespace FormUI
                     ImagePath = _foodPicPath,
                     Gram = (int)nud_Gram.Value
                 };
+
                 _foodService.AddNewFood(food);
                 FormHelpers.Clear(this.Controls);
+                MessageBox.Show("Food added");
             }
             else
-            {
                 MessageBox.Show("Isim ve Kategori Bos Gecilemez");
-            }
         }
 
         private void btn_SelectPicture_Click(object sender, EventArgs e)
@@ -57,7 +58,6 @@ namespace FormUI
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            btn_SelectPicture.Enabled = false;
             this.BackColor = Color.FromArgb(32, 191, 107);
             LinearGradientBrush linearGradientBrush = new LinearGradientBrush(
                 this.ClientRectangle,
@@ -69,17 +69,29 @@ namespace FormUI
             {
                 e.Graphics.FillRectangle(linearGradientBrush, this.ClientRectangle);
             };
+
+            cmb_FoodCategory.DataSource = _categoryService.GetCategoryNames().ToList();
         }
 
-        private void txt_PictureUrl_TextChanged(object sender, EventArgs e)
+
+        private void FormAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Çıkış Yapmak İstediğinize Emin Misiniz?", "Uyarı", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                Application.ExitThread();
+        }
+
+        private void btn_SelectPicture_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txt_PictureUrl.Text))
-                btn_SelectPicture.Enabled = true;
-            else
             {
-                btn_SelectPicture.Enabled = false;
-                pb_FoodPicture.ImageLocation = null;
+                pb_FoodPicture.ImageLocation = txt_PictureUrl.Text;
+                pb_FoodPicture.Load();
+
             }
+
+            else
+                pb_FoodPicture.ImageLocation = null;
+
         }
     }
 }

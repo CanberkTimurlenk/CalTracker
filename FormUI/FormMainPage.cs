@@ -40,8 +40,8 @@ namespace FormUI
 
         private void btn_Settings_Click(object sender, EventArgs e)
         {
-            new FormSettings(_user.Id).Show();
-
+            new FormSettings(_user).Show();
+            this.Close();
         }
 
         private void btn_Reports_Click(object sender, EventArgs e)
@@ -56,6 +56,13 @@ namespace FormUI
         private void btn_CalorieAims_Click(object sender, EventArgs e)
         {
             new FormRecommendation(_user.Id).Show();
+        }
+
+        private void btn_exitApplication_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Çıkış Yapmak İstediğinize Emin Misiniz?", "Uyarı", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
+                Application.ExitThread();
         }
     }
 }

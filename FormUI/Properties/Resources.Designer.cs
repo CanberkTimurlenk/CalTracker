@@ -59,5 +59,15 @@ namespace FormUI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _CITYPNG_COM_PNG_Green_Light_Bulb_Idea_Icon_Symbol___1000x1000 {
+            get {
+                object obj = ResourceManager.GetObject("[CITYPNG.COM]PNG Green Light Bulb Idea Icon Symbol - 1000x1000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
