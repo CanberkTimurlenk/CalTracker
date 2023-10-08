@@ -43,47 +43,58 @@ namespace Services.Concrete
             _userRepository.Update(user);
         }
 
-        public void UpdateFirstnameByUserId(int userId, string newFirstname)
+        public User UpdateFirstnameByUserId(int userId, string newFirstname)
         {
-           var user = _userRepository.GetById(userId);
+            var user = _userRepository.GetById(userId);
 
             user.FirstName = newFirstname;
 
             _userRepository.Update(user);
+
+            return user;
+
         }
 
-        public void UpdateLastnameByUserId(int userId, string newLastname)
+        public User UpdateLastnameByUserId(int userId, string newLastname)
         {
             var user = _userRepository.GetById(userId);
 
             user.LastName = newLastname;
 
             _userRepository.Update(user);
+
+            return user;
         }
 
-        public void UpdateUserAimByUserId(int userId, int aimId)
+        public User UpdateUserAimByUserId(int userId, int aimId)
         {
             var user = _userRepository.GetById(userId);
             var aimToUpdate = _aimRepository.GetById(aimId);
 
             user.Aim = aimToUpdate;
             _userRepository.Update(user);
+
+            return user;
         }
 
-        public void UpdateAimByUserId(int userId, double newHeight)
+        public User UpdateAimByUserId(int userId, double newHeight)
         {
             var user = _userRepository.GetById(userId);
 
             user.Height = newHeight;
             _userRepository.Update(user);
+
+            return user;
         }
 
-        public void UpdateWeightByUserId(int userId, double newWeight)
+        public User UpdateWeightByUserId(int userId, double newWeight)
         {
             var user = _userRepository.GetById(userId);
 
             user.Weight = newWeight;
             _userRepository.Update(user);
+
+            return user;
         }
 
         public string CalculateBmi(int userId, double height, double weight)
@@ -92,17 +103,17 @@ namespace Services.Concrete
 
             user.Weight = weight;
             user.Height = height;
-            double status = (weight /(Math.Pow(height,2)));
-            
+            double status = (weight / (Math.Pow(height, 2)));
+
             if (status < 18.5)
                 return BmiStatus.UnderWeight.ToString();
 
             else if (status >= 18.5 && status < 25)
                 return BmiStatus.NormalWeight.ToString();
-            
-            else if (status >= 25 && status < 30)            
+
+            else if (status >= 25 && status < 30)
                 return BmiStatus.Overweight.ToString();
-            
+
             else
                 return BmiStatus.Obesity.ToString();
 
@@ -113,21 +124,16 @@ namespace Services.Concrete
             var user = _userRepository.GetById(userId);
             user.Weight = weight;
             if (activity == ActivitiyStatus.VeryLowActivitiy)
-            {
                 return (int)(user.Weight * CalorieCalculations.TotalHour * CalorieCalculations.VeryLowActivitiy);
-            }
+
             else if (activity == ActivitiyStatus.LightActivity)
-            {
                 return (int)(user.Weight * CalorieCalculations.TotalHour * CalorieCalculations.LightActivity);
-            }
+
             else if (activity == ActivitiyStatus.ModerateActivity)
-            {
                 return (int)(user.Weight * CalorieCalculations.TotalHour * CalorieCalculations.ModerateActivity);
-            }
+
             else
-            {
                 return (int)(user.Weight * CalorieCalculations.TotalHour * CalorieCalculations.HighActivity);
-            }
 
         }
 
