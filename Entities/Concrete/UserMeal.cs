@@ -11,6 +11,6 @@ namespace Entities.Concrete
         public User User { get; set; }
         public int UserId { get; set; }
 
-        public List<FoodAmount> FoodAmounts { get; set; }
+        public ICollection<FoodAmount> FoodAmounts { get; set; }
     }
 }
