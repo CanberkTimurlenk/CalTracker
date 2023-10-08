@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Repositories.Configurations.Extensions;
 
 namespace Repositories.Configurations
 {
@@ -13,7 +14,10 @@ namespace Repositories.Configurations
             builder.Property(u => u.Email).HasMaxLength(50);
             builder.Property(u => u.Height).HasMaxLength(5);
             builder.Property(u => u.Weight).HasMaxLength(5);
-            
+
+            builder.AddSeedData();
+
         }
     }
 }
+
