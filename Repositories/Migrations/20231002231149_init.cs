@@ -55,6 +55,7 @@ namespace Repositories.Migrations
                     Height = table.Column<double>(type: "float", maxLength: 5, nullable: false),
                     Weight = table.Column<double>(type: "float", maxLength: 5, nullable: false),
                     UserStatus = table.Column<int>(type: "int", nullable: false),
+                    UserAccess = table.Column<int>(type: "int", nullable: false),
                     AimId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -91,34 +92,6 @@ namespace Repositories.Migrations
                         name: "FK_Foods_FoodCategories_FoodCategoryId",
                         column: x => x.FoodCategoryId,
                         principalTable: "FoodCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserDatas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    BodyMassIndex = table.Column<double>(type: "float", nullable: false),
-                    BmiStatus = table.Column<int>(type: "int", nullable: false),
-                    DailyCalorie = table.Column<double>(type: "float", nullable: false),
-                    DailyFat = table.Column<double>(type: "float", nullable: false),
-                    DailyCarbonhidrate = table.Column<double>(type: "float", nullable: false),
-                    DailyProtein = table.Column<double>(type: "float", nullable: false),
-                    RequiredCalorie = table.Column<double>(type: "float", nullable: false),
-                    WaterAmount = table.Column<double>(type: "float", nullable: false),
-                    Date = table.Column<DateTime>(type: "date", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserDatas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserDatas_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -163,7 +136,7 @@ namespace Repositories.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FoodAmount",
+                name: "FoodAmounts",
                 columns: table => new
                 {
                     FoodId = table.Column<int>(type: "int", nullable: false),
@@ -172,19 +145,29 @@ namespace Repositories.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FoodAmount", x => new { x.FoodId, x.UserMealId });
+                    table.PrimaryKey("PK_FoodAmounts", x => new { x.FoodId, x.UserMealId });
                     table.ForeignKey(
-                        name: "FK_FoodAmount_Foods_FoodId",
+                        name: "FK_FoodAmounts_Foods_FoodId",
                         column: x => x.FoodId,
                         principalTable: "Foods",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FoodAmount_UserMeals_UserMealId",
+                        name: "FK_FoodAmounts_UserMeals_UserMealId",
                         column: x => x.UserMealId,
                         principalTable: "UserMeals",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Aims",
+                columns: new[] { "Id", "Coefficient", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1.0, "Kilo Verme" },
+                    { 2, 1.0, "Kilo Alma" },
+                    { 3, 1.0, "Kilo Koruma" }
                 });
 
             migrationBuilder.InsertData(
@@ -271,7 +254,7 @@ namespace Repositories.Migrations
                     { 55, 216.0, 28.200000762939453, null, 11.0, 4, 100, "https://picsum.photos/500/500", "Çikolatalı Dondurma", 3.7999999523162842 },
                     { 56, 262.0, 43.150001525878906, null, 5.0, 4, 170, "https://picsum.photos/500/500", "Sütlü İrmik Tatlısı", 7.0 },
                     { 57, 532.0, 64.900001525878906, null, 25.200000762939453, 4, 100, "https://picsum.photos/500/500", "İrmik Helvası", 7.7699999809265137 },
-                    { 58, 294.0, 43.5, null, 12.180000305175781, 4, 90, "https://picsum.photos/500/500", "Un Helvası", 0.11999999731779099 },
+                    { 58, 294.0, 43.5, null, 12.180000305175781, 4, 90, "https://picsum.photos/500/500", "Kağıt Helva", 0.11999999731779099 },
                     { 59, 660.0, 79.0, null, 34.349998474121094, 4, 160, "https://picsum.photos/500/500", "Baklava", 12.359999656677246 },
                     { 60, 422.0, 51.75, null, 22.549999237060547, 4, 145, "https://picsum.photos/500/500", "Kadayıf", 6.8499999046325684 },
                     { 61, 242.0, 34.450000762939453, null, 14.75, 4, 82, "https://picsum.photos/500/500", "Soğuk Baklava", 3.2999999523162842 },
@@ -296,8 +279,8 @@ namespace Repositories.Migrations
                     { 80, 72.0, 0.37999999523162842, null, 5.0, 5, 25, "https://picsum.photos/500/500", "Örgü Peynir", 6.25 },
                     { 81, 68.0, 1.5800000429153442, null, 4.929999828338623, 5, 25, "https://picsum.photos/500/500", "Dil Peyniri", 4.3000001907348633 },
                     { 82, 90.0, 0.25999999046325684, null, 7.380000114440918, 5, 25, "https://picsum.photos/500/500", "Hellim Peyniri", 6.9800000190734863 },
-                    { 83, 90.0, 0.6600000262260437, null, 6.7100000381469727, 5, 30, "https://picsum.photos/500/500", "Beyaz Peynir", 6.6100001335144043 },
-                    { 84, 61.0, 0.0, null, 5.0999999046325684, 5, 15, "https://picsum.photos/500/500", "Beyaz Peynir", 3.7100000381469727 },
+                    { 83, 90.0, 0.6600000262260437, null, 6.7100000381469727, 5, 30, "https://picsum.photos/500/500", "Permesan Peynir", 6.6100001335144043 },
+                    { 84, 61.0, 0.0, null, 5.0999999046325684, 5, 15, "https://picsum.photos/500/500", "Cheddar Peynir", 3.7100000381469727 },
                     { 85, 122.0, 9.3199996948242188, null, 6.5, 5, 200, "https://picsum.photos/500/500", "Yoğurt", 6.940000057220459 },
                     { 86, 115.0, 11.0, null, 4.8499999046325684, 5, 200, "https://picsum.photos/500/500", "Cacık", 6.6599998474121094 },
                     { 87, 78.0, 0.56000000238418579, null, 5.309999942779541, 2, 50, "https://picsum.photos/500/500", "Haşlanmış Yumurta", 6.3000001907348633 },
@@ -429,14 +412,14 @@ namespace Repositories.Migrations
                     { 213, 71.0, 11.699999809265137, null, 1.25, 13, 20, "https://picsum.photos/500/500", "Sarı Leblebi", 3.7300000190734863 },
                     { 214, 72.0, 11.899999618530273, null, 1.2000000476837158, 13, 20, "https://picsum.photos/500/500", "Beyaz Leblebi", 3.7899999618530273 },
                     { 215, 97.0, 2.5699999332427979, null, 9.3599996566772461, 13, 15, "https://picsum.photos/500/500", "Fındık", 2.2999999523162842 },
-                    { 216, 97.0, 3.619999885559082, null, 8.3900003433227539, 13, 17, "https://picsum.photos/500/500", "Sarı Leblebi", 3.5499999523162842 },
+                    { 216, 97.0, 3.619999885559082, null, 8.3900003433227539, 13, 17, "https://picsum.photos/500/500", "Pembe Leblebi", 3.5499999523162842 },
                     { 217, 170.0, 4.8400001525878906, null, 14.770000457763672, 13, 30, "https://picsum.photos/500/500", "Yer Fıstığı", 7.7399997711181641 },
                     { 218, 103.0, 5.0900001525878906, null, 8.25, 13, 18, "https://picsum.photos/500/500", "Antep Fıstığı", 3.7899999618530273 },
                     { 219, 52.0, 1.1000000238418579, null, 5.2199997901916504, 13, 10, "https://picsum.photos/500/500", "Ceviz", 1.2200000286102295 },
                     { 220, 104.40000152587891, 2.6800000667572021, null, 8.4200000762939453, 13, 20, "https://picsum.photos/500/500", "Kabak Çekirdeği", 6.5999999046325684 },
                     { 221, 111.0, 6.0399999618530273, null, 8.7700004577636719, 13, 20, "https://picsum.photos/500/500", "Çiğ Kaju", 3.6400001049041748 },
                     { 222, 230.0, 13.079999923706055, null, 18.540000915527344, 13, 40, "https://picsum.photos/500/500", "Kaju Fıstığı Kavrulmuş", 6.119999885559082 },
-                    { 223, 32.0, 5.1999998092651367, null, 0.75999999046325684, 13, 7, "https://picsum.photos/500/500", "Sarı Leblebi", 0.6600000262260437 },
+                    { 223, 32.0, 5.1999998092651367, null, 0.75999999046325684, 13, 7, "https://picsum.photos/500/500", "Siyah Leblebi", 0.6600000262260437 },
                     { 224, 267.0, 68.900001525878906, null, 1.2000000476837158, 13, 100, "https://picsum.photos/500/500", "Erik Kurusu", 3.5 },
                     { 225, 277.0, 71.199996948242188, null, 0.5, 13, 100, "https://picsum.photos/500/500", "Üzüm Kurusu", 2.2999999523162842 },
                     { 226, 284.0, 72.199996948242188, null, 1.2000000476837158, 13, 100, "https://picsum.photos/500/500", "Kayısı Kurusu", 5.4000000953674316 },
@@ -569,7 +552,7 @@ namespace Repositories.Migrations
                     { 353, 161.0, 17.649999618530273, null, 8.6800003051757812, 4, 45, "https://picsum.photos/500/500", "Yulafli Fit Kurabiye", 5.4800000190734863 },
                     { 354, 102.0, 19.389999389648438, null, 1.5399999618530273, 4, 45, "https://picsum.photos/500/500", "Kuru Uzumlu Diyet Kurabiye", 3.4600000381469727 },
                     { 355, 184.0, 19.309999465942383, null, 10.220000267028809, 4, 30, "https://picsum.photos/500/500", "Tuzlu Pastane Kurabiyesi", 3.8199999332427979 },
-                    { 356, 128.0, 21.059999465942383, null, 4.6700000762939453, 4, 30, "https://picsum.photos/500/500", "Tuzlu Pastane Kurabiyesi", 0.18000000715255737 },
+                    { 356, 128.0, 21.059999465942383, null, 4.6700000762939453, 4, 30, "https://picsum.photos/500/500", "Tuzsuz Pastane Kurabiyesi", 0.18000000715255737 },
                     { 357, 167.0, 14.970000267028809, null, 60.669998168945312, 4, 35, "https://picsum.photos/500/500", "Kandil Simidi", 2.9300000667572021 },
                     { 358, 275.0, 57.139999389648438, null, 3.5699999332427979, 1, 100, "https://picsum.photos/500/500", "Simit", 10.710000038146973 },
                     { 359, 243.0, 22.329999923706055, null, 14.739999771118164, 1, 70, "https://picsum.photos/500/500", "Poğaça", 4.9099998474121094 },
@@ -581,7 +564,7 @@ namespace Repositories.Migrations
                     { 365, 268.0, 36.709999084472656, null, 10.829999923706055, 8, 75, "https://picsum.photos/500/500", "Cikolatalı Acma", 5.320000171661377 },
                     { 366, 354.0, 31.25, null, 22.950000762939453, 8, 90, "https://picsum.photos/500/500", "Zeytinli Acma", 5.2699999809265137 },
                     { 367, 250.0, 45.159999847412109, null, 0.62999999523162842, 8, 180, "https://picsum.photos/500/500", "Etsiz Kuru Fasulye", 17.510000228881836 },
-                    { 368, 322.0, 41.159999847412109, null, 0.62999999523162842, 8, 200, "https://picsum.photos/500/500", "Etsiz Kuru Fasulye", 11.800000190734863 },
+                    { 368, 322.0, 41.159999847412109, null, 0.62999999523162842, 8, 200, "https://picsum.photos/500/500", "Etli Kuru Fasulye", 11.800000190734863 },
                     { 369, 132.0, 22.420000076293945, null, 2.3900001049041748, 8, 200, "https://picsum.photos/500/500", "Bezelye Yemegi    ", 6.1500000953674316 },
                     { 370, 164.0, 17.040000915527344, null, 4.5199999809265137, 8, 230, "https://picsum.photos/500/500", "Mercimnek Yemegi ", 8.9700002670288086 },
                     { 371, 140.0, 42.830001831054688, null, 14.140000343322754, 8, 140, "https://picsum.photos/500/500", "ZeytinFatlı Barbunya ", 15.989999771118164 },
@@ -596,9 +579,14 @@ namespace Repositories.Migrations
                     { 380, 40.0, 0.0099999997764825821, null, 4.5, 15, 4, "https://picsum.photos/500/500", "Zeytin Fati ", 0.0 }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "AimId", "Email", "FirstName", "Height", "LastName", "PasswordHash", "PasswordSalt", "UserAccess", "UserStatus", "Weight" },
+                values: new object[] { 3, 1, "admin", "Admin", 1.8, "Admin", new byte[] { 108, 201, 165, 162, 112, 59, 180, 38, 187, 6, 81, 121, 8, 251, 225, 102, 89, 166, 151, 220, 72, 221, 161, 222, 194, 58, 78, 214, 35, 54, 234, 34, 98, 89, 162, 119, 0, 116, 87, 132, 75, 27, 15, 7, 137, 46, 249, 85, 121, 122, 15, 201, 153, 108, 253, 134, 202, 214, 171, 3, 100, 171, 142, 51 }, new byte[] { 218, 189, 128, 231, 168, 98, 232, 98, 139, 76, 236, 125, 11, 48, 125, 153, 166, 3, 24, 232, 92, 172, 60, 249, 240, 145, 203, 137, 156, 151, 225, 241, 181, 73, 180, 119, 86, 175, 146, 71, 27, 159, 156, 177, 31, 106, 30, 172, 1, 131, 212, 1, 222, 200, 24, 155, 128, 130, 141, 187, 154, 166, 193, 212, 166, 251, 231, 198, 99, 113, 142, 93, 168, 187, 54, 113, 122, 216, 169, 54, 179, 67, 58, 64, 138, 58, 87, 249, 194, 9, 159, 250, 227, 177, 172, 49, 93, 8, 170, 199, 201, 111, 240, 22, 144, 154, 154, 219, 81, 255, 69, 3, 78, 67, 210, 204, 181, 236, 119, 170, 44, 71, 39, 101, 142, 174, 201, 28 }, 1, 1, 80.0 });
+
             migrationBuilder.CreateIndex(
-                name: "IX_FoodAmount_UserMealId",
-                table: "FoodAmount",
+                name: "IX_FoodAmounts_UserMealId",
+                table: "FoodAmounts",
                 column: "UserMealId");
 
             migrationBuilder.CreateIndex(
@@ -607,9 +595,10 @@ namespace Repositories.Migrations
                 column: "FoodCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserDatas_UserId",
-                table: "UserDatas",
-                column: "UserId");
+                name: "IX_Foods_Name",
+                table: "Foods",
+                column: "Name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserMeals_UserId",
@@ -626,10 +615,7 @@ namespace Repositories.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FoodAmount");
-
-            migrationBuilder.DropTable(
-                name: "UserDatas");
+                name: "FoodAmounts");
 
             migrationBuilder.DropTable(
                 name: "UserVerifications");

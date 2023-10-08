@@ -12,7 +12,7 @@ using Repositories.Context;
 namespace Repositories.Migrations
 {
     [DbContext(typeof(KaloriTakipDbContext))]
-    [Migration("20231001200308_init")]
+    [Migration("20231002231149_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -45,6 +45,26 @@ namespace Repositories.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Aims");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Coefficient = 1.0,
+                            Name = "Kilo Verme"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Coefficient = 1.0,
+                            Name = "Kilo Alma"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Coefficient = 1.0,
+                            Name = "Kilo Koruma"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.Food", b =>
@@ -91,6 +111,9 @@ namespace Repositories.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FoodCategoryId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.ToTable("Foods");
 
@@ -788,7 +811,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 4,
                             Gram = 90,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Un Helvası",
+                            Name = "Kağıt Helva",
                             Protein = 0.11999999731779099
                         },
                         new
@@ -1088,7 +1111,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 5,
                             Gram = 30,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Beyaz Peynir",
+                            Name = "Permesan Peynir",
                             Protein = 6.6100001335144043
                         },
                         new
@@ -1100,7 +1123,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 5,
                             Gram = 15,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Beyaz Peynir",
+                            Name = "Cheddar Peynir",
                             Protein = 3.7100000381469727
                         },
                         new
@@ -2684,7 +2707,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 13,
                             Gram = 17,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Sarı Leblebi",
+                            Name = "Pembe Leblebi",
                             Protein = 3.5499999523162842
                         },
                         new
@@ -2768,7 +2791,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 13,
                             Gram = 7,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Sarı Leblebi",
+                            Name = "Siyah Leblebi",
                             Protein = 0.6600000262260437
                         },
                         new
@@ -4364,7 +4387,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 4,
                             Gram = 30,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Tuzlu Pastane Kurabiyesi",
+                            Name = "Tuzsuz Pastane Kurabiyesi",
                             Protein = 0.18000000715255737
                         },
                         new
@@ -4508,7 +4531,7 @@ namespace Repositories.Migrations
                             FoodCategoryId = 8,
                             Gram = 200,
                             ImagePath = "https://picsum.photos/500/500",
-                            Name = "Etsiz Kuru Fasulye",
+                            Name = "Etli Kuru Fasulye",
                             Protein = 11.800000190734863
                         },
                         new
@@ -4672,7 +4695,7 @@ namespace Repositories.Migrations
 
                     b.HasIndex("UserMealId");
 
-                    b.ToTable("FoodAmount");
+                    b.ToTable("FoodAmounts");
                 });
 
             modelBuilder.Entity("Entities.Concrete.FoodCategory", b =>
@@ -4811,6 +4834,9 @@ namespace Repositories.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<int>("UserAccess")
+                        .HasColumnType("int");
+
                     b.Property<int>("UserStatus")
                         .HasColumnType("int");
 
@@ -4823,51 +4849,22 @@ namespace Repositories.Migrations
                     b.HasIndex("AimId");
 
                     b.ToTable("Users");
-                });
 
-            modelBuilder.Entity("Entities.Concrete.UserData", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BmiStatus")
-                        .HasColumnType("int");
-
-                    b.Property<double>("BodyMassIndex")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyCalorie")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyCarbonhidrate")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyFat")
-                        .HasColumnType("float");
-
-                    b.Property<double>("DailyProtein")
-                        .HasColumnType("float");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("date");
-
-                    b.Property<double>("RequiredCalorie")
-                        .HasColumnType("float");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("WaterAmount")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserDatas");
+                    b.HasData(
+                        new
+                        {
+                            Id = 3,
+                            AimId = 1,
+                            Email = "admin",
+                            FirstName = "Admin",
+                            Height = 1.8,
+                            LastName = "Admin",
+                            PasswordHash = new byte[] { 108, 201, 165, 162, 112, 59, 180, 38, 187, 6, 81, 121, 8, 251, 225, 102, 89, 166, 151, 220, 72, 221, 161, 222, 194, 58, 78, 214, 35, 54, 234, 34, 98, 89, 162, 119, 0, 116, 87, 132, 75, 27, 15, 7, 137, 46, 249, 85, 121, 122, 15, 201, 153, 108, 253, 134, 202, 214, 171, 3, 100, 171, 142, 51 },
+                            PasswordSalt = new byte[] { 218, 189, 128, 231, 168, 98, 232, 98, 139, 76, 236, 125, 11, 48, 125, 153, 166, 3, 24, 232, 92, 172, 60, 249, 240, 145, 203, 137, 156, 151, 225, 241, 181, 73, 180, 119, 86, 175, 146, 71, 27, 159, 156, 177, 31, 106, 30, 172, 1, 131, 212, 1, 222, 200, 24, 155, 128, 130, 141, 187, 154, 166, 193, 212, 166, 251, 231, 198, 99, 113, 142, 93, 168, 187, 54, 113, 122, 216, 169, 54, 179, 67, 58, 64, 138, 58, 87, 249, 194, 9, 159, 250, 227, 177, 172, 49, 93, 8, 170, 199, 201, 111, 240, 22, 144, 154, 154, 219, 81, 255, 69, 3, 78, 67, 210, 204, 181, 236, 119, 170, 44, 71, 39, 101, 142, 174, 201, 28 },
+                            UserAccess = 1,
+                            UserStatus = 1,
+                            Weight = 80.0
+                        });
                 });
 
             modelBuilder.Entity("Entities.Concrete.UserMeal", b =>
@@ -4949,17 +4946,6 @@ namespace Repositories.Migrations
                     b.Navigation("Aim");
                 });
 
-            modelBuilder.Entity("Entities.Concrete.UserData", b =>
-                {
-                    b.HasOne("Entities.Concrete.User", "User")
-                        .WithMany("UserData")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Entities.Concrete.UserMeal", b =>
                 {
                     b.HasOne("Entities.Concrete.User", "User")
@@ -4994,8 +4980,6 @@ namespace Repositories.Migrations
 
             modelBuilder.Entity("Entities.Concrete.User", b =>
                 {
-                    b.Navigation("UserData");
-
                     b.Navigation("UserVerification")
                         .IsRequired();
                 });
