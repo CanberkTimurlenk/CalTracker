@@ -41,3 +41,14 @@ Canberk TİMURLENK
 Doğukan DOĞAN
 
 Batuhan Bora ALAFTAR
+
+
+<img title="login" src="https://github.com/CanberkTimurlenk/CalTracker/assets/18058846/d71d1ab9-020d-4335-981e-a0cfc5e1fc7b" style="margin-bottom:100px;" alt="login"  />
+&nbsp
+<br>
+
+<img title="register" src="https://github.com/CanberkTimurlenk/CalTracker/assets/18058846/f2f7c4de-7551-4c8d-8b54-ec7e2441bf37" alt="register" />
+
+<img title="menu" src="https://github.com/CanberkTimurlenk/CalTracker/assets/18058846/de972077-5fe9-4103-94f6-95459ee6fbfc" alt="menu" />
+
+<img title="addMeals" src="https://github.com/CanberkTimurlenk/CalTracker/assets/18058846/5ce9d98a-014c-4a4d-bfaa-9638afec2ceb" alt="addMeals" />
